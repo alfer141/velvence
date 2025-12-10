@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion"
 import { useState } from "react"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 
 export function Hero() {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,7 +33,7 @@ export function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/velvence-main-bg.webp')",
+          backgroundImage: "url('/images/home/velvence_main_bg.webp')",
         }}
       />
       <div className="absolute inset-0 bg-black/20" />
@@ -40,56 +42,133 @@ export function Hero() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="absolute top-0 left-0 right-0 z-50"
+        className="absolute top-8 left-0 right-0 z-50 flex justify-center px-4 sm:px-6"
       >
-        <div className="max-w-screen-lg mx-auto px-6 py-4 flex items-center justify-between w-full">
-          {/* Logo */}
-          <motion.div className="w-32 h-auto" whileHover={{ scale: 1.05 }}>
-            <svg viewBox="0 0 200 50" className="w-full h-auto" preserveAspectRatio="xMidYMid meet">
-              {/* Placeholder para logo - reemplazar con imagen real */}
-              <text x="10" y="35" fontSize="24" fontWeight="bold" className="fill-white">
-                Velvence
-              </text>
-            </svg>
-          </motion.div>
+        <div className="w-full max-w-xl bg-white rounded-2xl shadow-lg">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3">
+            {/* Logo */}
+            <motion.div className="flex-shrink-0 h-8 w-32" whileHover={{ scale: 1.05 }}>
+              <Image
+                src="/images/global/velvence_dark_logo.svg"
+                alt="Velvence"
+                width={128}
+                height={32}
+                className="h-full w-auto"
+                priority
+              />
+            </motion.div>
 
-          {/* Navegación */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#resultados" className="text-white hover:text-accent-lime transition text-sm">
-              Resultados
-            </a>
-            <a href="#proceso" className="text-white hover:text-accent-lime transition text-sm">
-              Proceso y tecnología
-            </a>
-            <a href="#protocolos" className="text-white hover:text-accent-lime transition text-sm">
-              Protocolos y precios
-            </a>
-            <a href="#tratamientos" className="text-white hover:text-accent-lime transition text-sm">
-              Tratamientos
-            </a>
-            <a href="#nosotros" className="text-white hover:text-accent-lime transition text-sm">
-              Nosotros
-            </a>
-          </nav>
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-3 flex-1 px-4">
+              <a
+                href="#resultados"
+                className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              >
+                Resultados
+              </a>
+              <a
+                href="#proceso"
+                className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              >
+                Proceso
+              </a>
+              <a
+                href="#protocolos"
+                className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              >
+                Protocolos
+              </a>
+              <a
+                href="#tratamientos"
+                className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              >
+                Tratamientos
+              </a>
+              <a
+                href="#nosotros"
+                className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              >
+                Nosotros
+              </a>
+            </nav>
 
-          {/* CTA Header */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:block px-6 py-2 bg-primary-dark text-white font-semibold rounded-lg hover:shadow-lg transition"
-          >
-            Agendar cita
-          </motion.button>
+            {/* CTA Button */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden lg:block px-4 py-2 bg-primary-dark text-white font-semibold rounded-lg hover:shadow-lg transition flex-shrink-0 text-xs"
+            >
+              Agendar cita
+            </motion.button>
 
-          {/* Mobile menu button */}
-          <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+            {/* Mobile menu button */}
+            <button
+              className="lg:hidden text-primary-dark flex-shrink-0"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="border-t border-sand-10 px-4 sm:px-6 py-4 bg-white rounded-b-2xl"
+            >
+              <nav className="flex flex-col gap-2">
+                <a
+                  href="#resultados"
+                  className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Resultados
+                </a>
+                <a
+                  href="#proceso"
+                  className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Proceso y tecnología
+                </a>
+                <a
+                  href="#protocolos"
+                  className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Protocolos y precios
+                </a>
+                <a
+                  href="#tratamientos"
+                  className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Tratamientos
+                </a>
+                <a
+                  href="#nosotros"
+                  className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Nosotros
+                </a>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full px-4 py-2 bg-primary-dark text-white font-semibold rounded-lg hover:shadow-lg transition mt-2 text-sm"
+                >
+                  Agendar cita
+                </motion.button>
+              </nav>
+            </motion.div>
+          )}
         </div>
       </motion.header>
 
+      {/* Hero Content */}
       <div className="relative z-10 max-w-screen-lg w-full px-6 flex items-center min-h-screen">
         <motion.div
           variants={containerVariants}
@@ -109,22 +188,22 @@ export function Hero() {
 
           {/* Descripción */}
           <motion.p variants={itemVariants} className="text-white/90 leading-relaxed text-base">
-            At Lifecycle, we help organizations future-proof operations through smart planning, efficient systems, and
-            sustainable execution.
+            Transforma tu sonrisa más sana, limpia y brillante en una sesión con nuestra clínica de blanqueamiento
+            dental.
           </motion.p>
 
-          {/* CTA Principal */}
           <motion.button
             variants={itemVariants}
-            whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgba(255, 255, 255, 0.3)" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgba(224, 235, 241, 0.3)" }}
             whileTap={{ scale: 0.95 }}
-            className="w-full px-8 py-3 bg-white text-primary-dark font-semibold rounded-lg transition"
+            className="w-full px-8 py-3 text-primary-dark font-semibold rounded-lg transition bg-secondary-light hover:bg-secondary-light/90"
           >
             Precios y tratamientos
           </motion.button>
 
-          <motion.div variants={itemVariants} className="mt-6 p-4 bg-accent-lime rounded-xl flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary-dark/10 flex items-center justify-center flex-shrink-0">
+          {/* Highlight card */}
+          <motion.div variants={itemVariants} className="mt-6 p-4 rounded-xl flex items-start gap-3 bg-white">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-accent">
               <svg className="w-6 h-6 text-primary-dark" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
               </svg>

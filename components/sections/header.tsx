@@ -14,9 +14,9 @@ export function Header() {
       transition={{ duration: 0.5 }}
       className="sticky top-0 z-50 bg-white border-b border-sand"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className=" mx-auto px-6 py-4 flex items-center justify-between">
         <motion.div className="w-40 h-auto" whileHover={{ scale: 1.05 }}>
-          <Image src="/velvence-dark-logo.svg" alt="Velvence" width={160} height={40} className="w-full h-auto" />
+          <Image src="/images/global/velvence_dark_logo.svg" alt="Velvence" width={160} height={40} className="w-full h-auto" />
         </motion.div>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -42,7 +42,7 @@ export function Header() {
           whileTap={{ scale: 0.95 }}
           className="hidden md:block px-6 py-2 bg-primary-dark text-white font-semibold rounded-lg hover:shadow-lg transition"
         >
-          Agendar cita
+          Agendar citass
         </motion.button>
 
         <button className="md:hidden text-primary-dark" onClick={() => setIsOpen(!isOpen)}>
