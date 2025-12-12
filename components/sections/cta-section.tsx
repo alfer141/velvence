@@ -9,8 +9,8 @@ export function CTASection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Espacio para imagen */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="aspect-square rounded-2xl overflow-hidden shadow-xl"
@@ -23,10 +23,10 @@ export function CTASection() {
 
           {/* Contenido */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
             <h2 className="text-4xl font-bold text-primary-dark">Un proceso pensado en tu experiencia</h2>

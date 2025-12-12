@@ -9,8 +9,8 @@ export function TestimonialSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Testimonial */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="space-y-6"
@@ -27,10 +27,10 @@ export function TestimonialSection() {
 
           {/* Imagen testimonial */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="aspect-square rounded-2xl overflow-hidden shadow-xl"
             style={{ backgroundColor: "#E0EBF1" }}
           >
