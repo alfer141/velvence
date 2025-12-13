@@ -7,6 +7,7 @@ import { BenefitsSection } from "@/components/sections/benefits-section"
 import { ResultsGallery } from "@/components/sections/results-gallery"
 import { ReviewsSection } from "@/components/sections/reviews-section"
 import { AboutProcess } from "@/components/sections/about-process"
+import { TechnologySection } from "@/components/sections/technology-section"
 import { Footer } from "@/components/sections/footer"
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <BeforeAfterGallery />
       <AboutProcess />
       <ReviewsSection />
+      <TechnologySection />
       <ProcessSection />
       <BenefitsSection />
       <ResultsGallery />
