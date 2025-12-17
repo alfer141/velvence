@@ -13,7 +13,7 @@ const processSteps = [
     icon: Sparkles,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    image: "/placeholder.svg?height=500&width=400",
+    image: "/images/home/pre_blanqueamiento.webp?height=500&width=400",
   },
   {
     id: "blanqueamiento",
@@ -21,7 +21,7 @@ const processSteps = [
     icon: Zap,
     description:
       "Aplicamos la tecnología Philips Zoom para aclarar tus dientes hasta 8 tonos en una sola sesión de 45 minutos con total seguridad.",
-    image: "/placeholder.svg?height=500&width=400",
+    image: "/images/home/kit_philips_zoom.webp?height=500&width=400",
   },
   {
     id: "resultados",
@@ -29,7 +29,7 @@ const processSteps = [
     icon: Target,
     description:
       "Disfruta de una sonrisa más brillante de inmediato. Te proporcionamos un kit de mantenimiento para prolongar los resultados.",
-    image: "/placeholder.svg?height=500&width=400",
+    image: "/images/home/Zoom.webp?height=500&width=400",
   },
 ]
 
@@ -154,7 +154,7 @@ export function AboutProcess() {
             <div className="absolute inset-0 rounded-2xl overflow-hidden" style={{ backgroundColor: "#E0EBF1" }}>
               <div className="absolute inset-0 backdrop-blur-sm bg-secondary-light/50" />
               <p className="absolute inset-0 flex items-center justify-center text-gray-400 text-sm">
-                Background Image Placeholder
+                Proceso del blanqueamiento dental
               </p>
             </div>
 
@@ -184,3 +184,5 @@ export function AboutProcess() {
     </section>
   )
 }
+
+export default AboutProcess
