@@ -2,12 +2,10 @@
 import { Hero } from "@/components/sections/hero"
 import { FeaturesSection } from "@/components/sections/features-section"
 import { BeforeAfterGallery } from "@/components/sections/before-after-gallery"
-import { ProcessSection } from "@/components/sections/process-section"
-import { BenefitsSection } from "@/components/sections/benefits-section"
-import { ResultsGallery } from "@/components/sections/results-gallery"
 import { ReviewsSection } from "@/components/sections/reviews-section"
 import { AboutProcess } from "@/components/sections/about-process"
 import { TechnologySection } from "@/components/sections/technology-section"
+import { CTABanner } from "@/components/sections/cta-banner"
 import { Footer } from "@/components/sections/footer"
 
 export default function Home() {
@@ -20,9 +18,8 @@ export default function Home() {
       <AboutProcess />
       <ReviewsSection />
       <TechnologySection />
-      <ProcessSection />
-      <BenefitsSection />
-      <ResultsGallery />
+      {/* CTA Banner added before the footer */}
+      <CTABanner />
       <Footer />
     </div>
   )

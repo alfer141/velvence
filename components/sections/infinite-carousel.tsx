@@ -11,11 +11,11 @@ interface LogoItem {
 }
 
 const logos: LogoItem[] = [
-  { src: "/images/global/ems_logo.svg", alt: "EMS", width: 100, height: 60 },
-  { src: "/images/global/philips_zoom_logo.svg", alt: "Philips Zoom", width: 100, height: 60 },
-  { src: "/images/global/beyond_logo.svg", alt: "Beyond", width: 100, height: 60 },
-  { src: "/images/global/therabody_logo.svg", alt: "Therabody", width: 100, height: 60 },
-  { src: "/images/global/gbt_logo.svg", alt: "GBT", width: 100, height: 60 },
+  { src: "/images/global/ems_logo.svg", alt: "EMS", width: 80, height: 48 },
+  { src: "/images/global/philips_zoom_logo.svg", alt: "Philips Zoom", width: 80, height: 48 },
+  { src: "/images/global/beyond_logo.svg", alt: "Beyond", width: 80, height: 48 },
+  { src: "/images/global/therabody_logo.svg", alt: "Therabody", width: 80, height: 48 },
+  { src: "/images/global/gbt_logo.svg", alt: "GBT", width: 80, height: 48 },
 ]
 
 export function InfiniteCarousel() {
@@ -44,7 +44,7 @@ export function InfiniteCarousel() {
               alt={logo.alt}
               width={logo.width}
               height={logo.height}
-              className="h-12 md:h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+              className="h-10 md:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
               loading="lazy"
             />
           </div>

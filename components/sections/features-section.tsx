@@ -37,30 +37,11 @@ export function FeaturesSection() {
             transition={{ duration: 0.6 }}
             className="lg:col-start-2"
           >
-            <p className="text-lg md:text-xl leading-relaxed text-primary-dark max-w-xl">
+            <p className="text-xl md:text-2xl leading-relaxed text-primary-dark max-w-xl">
               We specialize in crafting intuitive digital experiences and immersive 3D visuals that tell your story in a
               compelling way that sticks. We're here to make the complicated feel simple and the simple feel remarkable.
               Let's get to work.
             </p>
-          </motion.div>
-
-          {/* Left side image */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-start-1 lg:row-start-1"
-          >
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-              <Image
-                src="/images/home/aboutUs_image_1.webp"
-                alt="Tratamiento dental"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
           </motion.div>
         </div>
 
@@ -72,7 +53,7 @@ export function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="w-full rounded-2xl overflow-hidden mt-12 md:mt-16"
         >
-          <div className="relative w-full aspect-video">
+          <div className="relative w-full aspect-[21/9]">
             <Image
               src="/images/home/aboutUs_image_1.webp"
               alt="Sección de tratamiento"
