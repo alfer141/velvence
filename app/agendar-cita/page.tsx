@@ -102,7 +102,7 @@ export default function AgendarCita() {
               {/* Email */}
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm text-gray-600 font-normal">
-                  Número de contacto
+                  Correo electrónico
                 </Label>
                 <Input
                   id="email"
@@ -175,7 +175,7 @@ export default function AgendarCita() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-white text-2xl lg:text-3xl font-light leading-relaxed text-balance"
                   >
-                    Tu sonrisa es el reflejo <br> de ser imparable
+                    Tu sonrisa es el reflejo <br /> de ser imparable
                   </motion.p>
                   <motion.p
                     initial={{ opacity: 0, y: 10 }}
