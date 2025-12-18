@@ -1,12 +1,40 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { CircleCheckBig } from "lucide-react"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { useState } from "react"
+
+const faqs = [
+  {
+    question: "If you don't see your question here send a massage directly to our team",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "Can you help me meet sustainable foodie bloggers?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "How is your approach different from traditional consulting firms?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "Do you have speakers for global summits?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "How do we get started with Lifecycle?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+]
 
 export default function BlanqueamientoDentalPage() {
   const [activeTab, setActiveTab] = useState(0)
@@ -79,58 +107,33 @@ export default function BlanqueamientoDentalPage() {
     "philips-blanqueamiento.webp",
   ]
 
-  const faqs = [
-    {
-      question: "If you don't see your question here send a massage directly to our team",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      question: "Can you help me meet sustainable foodie bloggers?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      question: "How is your approach different from traditional consulting firms?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      question: "Do you have speakers for global summits?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      question: "How do we get started with Lifecycle?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ]
-
   const technologies = [
     {
-      title: "Protocolo EMS AirFlow Biofilm Guide",
+      title: "Previene y repara caries en etapa temprana ",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       stat: "20%",
       logo: "/images/global/ems_logo.svg",
       logoAlt: "EMS AirFlow Logo",
+      icon: "gleam_black.svg",
     },
     {
-      title: "Sistema de blanqueamiento Philips Zoom!",
+      title: "Elimina manchas superficiales",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       stat: "5X",
       logo: "/images/global/philips_zoom_logo.svg",
       logoAlt: "Philips Zoom Logo",
+      icon: "gleam_black.svg",
     },
     {
-      title: "Protocolo de confort y relajación velvence",
+      title: "Preserva y repara el esmalte",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       stat: "5X",
       logo: "/images/global/therabody_logo.svg",
       logoAlt: "Therabody Logo",
+      icon: "gleam_black.svg",
     },
   ]
 
@@ -231,7 +234,7 @@ export default function BlanqueamientoDentalPage() {
           {/* Header Grid */}
           <div className="grid lg:grid-cols-2 gap-12 mb-12">
             <motion.div {...fadeInUp} className="space-y-6">
-              <p className="text-accent text-sm font-medium">[Acerca de]</p>
+              <p className="text-sm font-medium text-primary opacity-70">[Acerca de]</p>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
                 Un tratamiento ideal para renovar tu sonrisa
               </h2>
@@ -321,7 +324,7 @@ export default function BlanqueamientoDentalPage() {
             {/* Left: Tab Interface */}
             <motion.div {...fadeInUp} className="space-y-8">
               <div>
-                <p className="text-accent text-sm font-medium mb-4">[Beneficios]</p>
+                <p className="text-sm font-medium mb-4 text-primary opacity-75">[Beneficios]</p>
                 <h3 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark mb-8">
                   Una limpieza dental con nosotros incluye:
                 </h3>
@@ -345,12 +348,13 @@ export default function BlanqueamientoDentalPage() {
                       >
                         {item.icon === "shield-check" && (
                           <svg
-                            className={`w-5 h-5 ${activeTab === index ? "text-white" : "text-gray-600"}`}
+                            className={`w-5 h-5 text-foreground ${activeTab === index ? "text-white" : "text-gray-600"}`}
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
                           >
                             <path
+                              className="text-foreground"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                               strokeWidth={2}
@@ -366,6 +370,7 @@ export default function BlanqueamientoDentalPage() {
                             viewBox="0 0 24 24"
                           >
                             <path
+                              className="text-foreground"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                               strokeWidth={2}
@@ -381,10 +386,11 @@ export default function BlanqueamientoDentalPage() {
                             viewBox="0 0 24 24"
                           >
                             <path
+                              className="text-primary"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                               strokeWidth={2}
-                              d="M21 21l-6-6m2 16l4-16M6 9h14M4 15h14"
+                              d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
                             />
                           </svg>
                         )}
@@ -396,6 +402,7 @@ export default function BlanqueamientoDentalPage() {
                             viewBox="0 0 24 24"
                           >
                             <path
+                              className="text-primary"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                               strokeWidth={2}
@@ -464,21 +471,15 @@ export default function BlanqueamientoDentalPage() {
                 className="bg-[#F7F6F4] p-6 md:p-8 rounded-lg border-b-[3px] border-accent flex flex-col justify-between min-h-[320px]"
               >
                 <div>
+                  <Image
+                    src={`/images/led-icons/${tech.icon}`}
+                    alt={tech.title}
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
                   <h3 className="text-xl md:text-2xl font-normal text-primary-dark mb-4 leading-tight">{tech.title}</h3>
                   <p className="text-sm md:text-base text-primary-dark/70 leading-relaxed mb-8">{tech.description}</p>
-                </div>
-
-                <div className="flex items-end justify-between">
-                  <div className="text-5xl md:text-6xl font-light text-primary-dark">{tech.stat}</div>
-                  <div className="flex items-center justify-center w-20 h-12 md:w-24 md:h-14">
-                    <Image
-                      src={tech.logo || "/placeholder.svg"}
-                      alt={tech.logoAlt}
-                      width={96}
-                      height={56}
-                      className="w-full h-auto object-contain opacity-60"
-                    />
-                  </div>
                 </div>
               </motion.div>
             ))}
@@ -487,34 +488,6 @@ export default function BlanqueamientoDentalPage() {
       </section>
 
       {/* Features Cards with LED Icons */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center space-y-6"
-              >
-                <div className="flex justify-center">
-                  <Image
-                    src={`/images/led-icons/${feature.icon}`}
-                    alt={feature.title}
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                  />
-                </div>
-                <h3 className="text-xl font-medium text-primary-dark">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Infinite Carousel Section */}
       <section className="py-20 lg:py-32 bg-white overflow-hidden">
@@ -544,7 +517,7 @@ export default function BlanqueamientoDentalPage() {
       <section className="py-20 lg:py-32 bg-arena">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
           <motion.div {...fadeInUp} className="space-y-6">
-            <p className="text-accent text-sm font-medium">[Ask us about]</p>
+            <p className="text-sm font-medium text-primary opacity-75">[Ask us about]</p>
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
               Frequently Asked Questions
             </h2>
@@ -556,40 +529,65 @@ export default function BlanqueamientoDentalPage() {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <motion.details
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group border border-gray-200 rounded-lg overflow-hidden"
-              >
-                <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
-                  <span className="font-medium text-primary-dark">{faq.question}</span>
-                  <span className="text-xl text-gray-400 group-open:rotate-180 transition-transform">↓</span>
-                </summary>
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed">{faq.answer}</div>
-              </motion.details>
+              <FAQItem key={index} faq={faq} index={index} />
             ))}
           </div>
         </div>
       </section>
 
       <Footer />
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-        }
-      `}</style>
     </div>
+  )
+}
+
+function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
+  const [isOpen, setIsOpen] = useState(index === 0)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className={`rounded-lg overflow-hidden border transition-all duration-300 ${
+        isOpen ? "border-primary-dark bg-primary-dark" : "border-gray-200 bg-white"
+      }`}
+    >
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full flex items-center justify-between p-6 text-left transition-colors duration-300 hover:bg-opacity-90 ${
+          isOpen ? "bg-primary-dark" : "hover:bg-gray-50"
+        }`}
+      >
+        <span className={`font-medium transition-colors duration-300 ${isOpen ? "text-white" : "text-primary-dark"}`}>
+          {faq.question}
+        </span>
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className={`text-xl transition-colors duration-300 ${isOpen ? "text-white" : "text-gray-400"}`}
+        >
+          ↓
+        </motion.span>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`overflow-hidden border-t transition-colors duration-300 ${
+              isOpen ? "border-white/20 bg-primary-dark" : ""
+            }`}
+          >
+            <div className={`px-6 py-6 transition-colors duration-300 ${isOpen ? "text-white" : "text-gray-600"}`}>
+              {faq.answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   )
 }
