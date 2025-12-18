@@ -8,22 +8,22 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Velvence - Clínica Dental Estética",
+  title: "Velvence® | Clínica de Blanqueamiento Dental",
   description:
-    "Especialistas en odontología estética y procedimientos dentales avanzados. Sonrisas más lindas, procedimientos 100% confiables.",
+    "Clínica líder en blanqueamiento y aclaramiento dental en México. Limpieza dental profesional con tecnología avanzada. Resultados visibles desde la primera sesión",
   generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/velvence-icon.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/velvence-icon.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/velvence-icon.svg",
         type: "image/svg+xml",
       },
     ],
