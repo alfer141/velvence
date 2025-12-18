@@ -26,27 +26,27 @@ export function Footer() {
             <h4 className="text-primary-dark font-semibold text-lg mb-6">Menú</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <a href="/" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <a href="/#tecnologia" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Tecnología
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <a href="/precios" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Precios
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <a href="/agendar-cita" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Agendar cita
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <a href="/#casos-clinicos" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Casos clínicos
                 </a>
               </li>

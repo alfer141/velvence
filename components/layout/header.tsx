@@ -50,12 +50,12 @@ export function Header({ variant = "static" }: HeaderProps) {
             >
               Proceso
             </a>
-            <a
-              href="/#protocolos"
+            <Link
+              href="/precios"
               className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
             >
-              Protocolos
-            </a>
+              Protocolos y precios
+            </Link>
             <a
               href="/#tratamientos"
               className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
@@ -114,13 +114,13 @@ export function Header({ variant = "static" }: HeaderProps) {
               >
                 Proceso y tecnología
               </a>
-              <a
-                href="/#protocolos"
+              <Link
+                href="/precios"
                 className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
                 Protocolos y precios
-              </a>
+              </Link>
               <a
                 href="/#tratamientos"
                 className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
