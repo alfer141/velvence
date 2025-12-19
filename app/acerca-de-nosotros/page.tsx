@@ -196,16 +196,11 @@ export default function AboutUsPage() {
               <h2 className="text-3xl lg:text-4xl font-light text-primary-dark">Así nace Velvence</h2>
               <div className="space-y-4 text-primary-dark/70 leading-relaxed">
                 <p>
-                  Velvence nace de la fusión del arte de crear las mejores sonrisas con la pasión de la Dra. Ximena por
-                  la profilaxis dental. En el 1996 egresó de la universidad en un país en el que no pudiste decidir si
-                  estudiar o no lo que ella deseaba, y la asignatura de las encías, la profilaxis y el blanqueamiento
-                  dental empezado en un día inesperado tuvo que consolidarse con estudios posteriores.
+                  Velvence nace de la unión de dos grandes motivaciones: la pasión de la Dra. Ofelia por el autocuidado, el bienestar 
+                  y la salud bucal, y el entusiasmo de Alex., su esposo, por la experiencia, el diseño y la innovación.
                 </p>
                 <p>
-                  Juntos, hemos logrado complementaremente alineados como el primer equipo de limpieza dental, en México
-                  vendedor autorizado de Philips Zoom y GBT, que ha emprendido técnicas innovadoras en cada nivel de
-                  servicio. La técnica y el lado de la sonrisa como una mirada pura del alma de una experiencia de salud
-                  holística se mezclan en Velvence.
+                  Juntos, como equipo, conceptualizamos Velvence como el primer centro en México verdaderamente especializado en transformar el cuidado bucal, poniendo en el centro tratamientos fundamentales como la profilaxis y el blanqueamiento dental, entendidos no solo como procedimientos estéticos, sino como parte de una experiencia integral de salud y confianza
                 </p>
               </div>
             </motion.div>
