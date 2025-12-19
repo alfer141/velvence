@@ -62,12 +62,12 @@ export function Header({ variant = "static" }: HeaderProps) {
             >
               Tratamientos
             </a>
-            <a
-              href="/#nosotros"
+            <Link
+              href="/acerca-de-nosotros"
               className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
             >
               Nosotros
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Button */}
@@ -128,13 +128,13 @@ export function Header({ variant = "static" }: HeaderProps) {
               >
                 Tratamientos
               </a>
-              <a
-                href="/#nosotros"
+              <Link
+                href="/acerca-de-nosotros"
                 className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
                 Nosotros
-              </a>
+              </Link>
               <Link href="/agendar-cita">
                 <motion.button
                   whileHover={{ scale: 1.02 }}

@@ -46,6 +46,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/acerca-de-nosotros" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                  Acerca de nosotros
+                </a>
+              </li>
+              <li>
                 <a href="/#casos-clinicos" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Casos clínicos
                 </a>
