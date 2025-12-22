@@ -36,9 +36,32 @@ const components = {
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string }
+  params: { slug?: string } | Promise<{ slug?: string }>
 }) {
-  const { slug } = params
+  // En algunos setups de Next, `params` puede venir como Promise.
+  // Además, si `slug` viene undefined, Sanity lanza: "param $slug referenced, but not provided".
+  const resolvedParams = await Promise.resolve(params)
+  const slug = resolvedParams?.slug
+
+  // Si no hay slug válido, mostramos "Post no encontrado" sin intentar ejecutar la query.
+  if (!slug || typeof slug !== "string") {
+    return (
+      <>
+        <Header variant="static" />
+        <main className="min-h-screen bg-white flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-3xl font-light text-primary mb-4">Post no encontrado</h1>
+            <Link href="/blog" className="text-accent hover:underline flex items-center gap-2 justify-center">
+              <ArrowLeft className="w-4 h-4" />
+              Volver al blog
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
   const post = await client.fetch(query, { slug })
 
   // Si no existe el post, mostramos mensaje
