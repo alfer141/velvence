@@ -8,8 +8,9 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   body
 }`
 
-export default async function PostPage({params}: {params: {slug: string}}) {
-  const post = await client.fetch(query, {slug: params.slug})
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = await client.fetch(query, { slug })
 
   if (!post) return <main className="p-8">Post no encontrado</main>
 
