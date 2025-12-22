@@ -5,12 +5,10 @@ import { apiVersion, dataset, projectId } from "./sanity/env"
 import { schema } from "./sanity/schemaTypes"
 import { structure } from "./sanity/structure"
 
-const config = defineConfig({
+export default defineConfig({
   basePath: "/studio",
   projectId,
   dataset,
   schema,
   plugins: [structureTool({ structure }), visionTool({ defaultApiVersion: apiVersion })],
 })
-
-export default config
