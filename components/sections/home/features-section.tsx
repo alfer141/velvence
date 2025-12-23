@@ -38,9 +38,7 @@ export function FeaturesSection() {
             className="lg:col-start-2"
           >
             <p className="text-xl md:text-2xl leading-relaxed text-primary-dark max-w-xl">
-              We specialize in crafting intuitive digital experiences and immersive 3D visuals that tell your story in a
-              compelling way that sticks. We're here to make the complicated feel simple and the simple feel remarkable.
-              Let's get to work.
+              Trabajamos con tecnología avanzada y marcas líderes en blanqueamiento y limpieza dental para resultados efectivos, seguros y que amarás. Cada protocolo está pensado para proteger la salud de tus dientes mientras les devuelve su brillo natural. Aquí, nuestra técnica se une con una experiencia diseñada para sentirse cómoda y extraordinaria.
             </p>
           </motion.div>
         </div>
