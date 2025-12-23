@@ -1,4 +1,4 @@
-import { createPageMetadata } from "@/lib/metadata"
+"use client"
 import { Hero } from "@/components/sections/home/hero"
 import { FeaturesSection } from "@/components/sections/home/features-section"
 import { BeforeAfterGallery } from "@/components/sections/home/before-after-gallery"
@@ -8,15 +8,10 @@ import { TechnologySection } from "@/components/sections/home/technology-section
 import { CTABanner } from "@/components/sections/home/cta-banner"
 import { Footer } from "@/components/layout/footer"
 
-export const metadata = createPageMetadata({
-  title: "Velvence® | Blanqueamiento Dental Profesional",
-  description:
-    "Descubre la experiencia de blanqueamiento dental más avanzada. Resultados visibles desde la primera sesión con tecnología EMS Airflow.",
-})
-
-export default function Home() {
+export function HomePageClient() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Header integrated in Hero */}
       <Hero />
       <FeaturesSection />
       <BeforeAfterGallery />

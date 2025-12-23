@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/metadata"
 import { client } from "@/lib/sanity.client"
 import { groq } from "next-sanity"
 import { PortableText } from "@portabletext/react"
@@ -6,8 +7,9 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Calendar, User, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from "next"
 
-// Query para obtener un post específico con todos sus datos
+// Query para obtener un post específico
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   publishedAt,
@@ -31,6 +33,54 @@ const components = {
       </a>
     ),
   },
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug?: string } | Promise<{ slug?: string }>
+}): Promise<Metadata> {
+  const resolvedParams = await Promise.resolve(params)
+  const slug = resolvedParams?.slug
+
+  if (!slug || typeof slug !== "string") {
+    return createPageMetadata({
+      title: "Velvence® | Post no encontrado",
+      description: "El post que buscas no existe.",
+    })
+  }
+
+  const post = await client.fetch(query, { slug })
+
+  if (!post) {
+    return createPageMetadata({
+      title: "Velvence® | Post no encontrado",
+      description: "El post que buscas no existe.",
+    })
+  }
+
+  const ogImage = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined
+
+  return createPageMetadata({
+    title: `${post.title} | Velvence® Blog`,
+    description: post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+    openGraph: {
+      title: post.title,
+      description: post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+      images: ogImage
+        ? [
+            {
+              url: ogImage,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : undefined,
+      type: "article",
+      publishedTime: post.publishedAt,
+    },
+  })
 }
 
 export default async function PostPage({

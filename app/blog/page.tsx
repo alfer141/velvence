@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/metadata"
 import Link from "next/link"
 import { client } from "@/lib/sanity.client"
 import { groq } from "next-sanity"
@@ -5,6 +6,16 @@ import { urlFor } from "@/lib/sanity.image"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Calendar } from "lucide-react"
+
+export const metadata = createPageMetadata({
+  title: "Velvence® | Blog",
+  description:
+    "Lee nuestro blog sobre salud bucal, blanqueamiento dental, tips de higiene y novedades en tecnología dental.",
+  openGraph: {
+    title: "Velvence® | Blog",
+    description: "Artículos y tips sobre salud bucal, blanqueamiento dental y cuidado de tus dientes.",
+  },
+})
 
 // Query para obtener todos los posts con sus datos
 const query = groq`*[_type == "post"] | order(publishedAt desc) {
