@@ -6,8 +6,8 @@ import { InfiniteCarousel } from "./infinite-carousel"
 
 export function FeaturesSection() {
   return (
-    <section id="servicios" className="relative bg-sand-50 py-20 md:py-32">
-      <div className="max-w-screen-2xl mx-auto px-6 space-y-16 md:space-y-24">
+    <section id="servicios" className="relative bg-sand-50 pt-12">
+      <div className="max-w-screen-2xl mx-auto">
         {/* Subtitle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,10 +25,10 @@ export function FeaturesSection() {
         <InfiniteCarousel />
 
         {/* Divider */}
-        <div className="border-t border-dashed border-sand-30" />
+        <div className="border-t border-dashed border-black/30" />
 
         {/* Content with text and image */}
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mt-24">
           {/* Right side text content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
