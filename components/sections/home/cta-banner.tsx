@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
+const MotionLink = motion(Link)
 
 export function CTABanner() {
   return (
@@ -50,22 +52,22 @@ export function CTABanner() {
             transition={{ delay: 0.4 }}
             className="text-white/90 text-base leading-relaxed mb-8"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam
+            Da el siguiente paso hacia una sonrisa que se siente tan bien como se ve. Agenda tu sesión de blanqueamiento o limpieza dental en Velvence y vive una experiencia pensada para tu comodidad, bienestar y resultados reales, con atención profesional y la mejor tecnología al servicio de tu sonrisa
           </motion.p>
 
-          <motion.button
+          <MotionLink
+            href="/agendar-cita"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-primary-dark px-8 py-4 rounded-lg font-medium hover:bg-sand-light transition-colors flex items-center gap-2"
+            className="bg-white text-primary-dark px-8 py-4 rounded-lg font-medium hover:bg-sand-light transition-colors flex items-center gap-2 inline-flex"
           >
             Solicitar cita
             <ArrowRight className="w-5 h-5" />
-          </motion.button>
+          </MotionLink>
         </div>
       </motion.div>
     </section>

@@ -7,7 +7,7 @@ const technologies = [
   {
     title: "Protocolo EMS AirFlow Biofilm Guide",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Elimina las manchas de tus dientes con tecnología EMS AirFlow para una limpieza dental profunda y precisa, enfocada en eliminar biofilm de forma eficaz y cómoda, respetando el esmalte y la salud bucal. ",
     stat: "20%",
     logo: "/images/global/ems_logo.svg",
     logoAlt: "EMS AirFlow Logo",
@@ -15,7 +15,7 @@ const technologies = [
   {
     title: "Sistema de blanqueamiento Philips Zoom!",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Trabajamos con Philips Zoom, un sistema de blanqueamiento dental profesional que permite aclarar hasta 8 tonos en una sola sesión, con protocolos seguros, sin dolor y resultados visibles desde el primer momento.",
     stat: "5X",
     logo: "/images/global/philips_zoom_logo.svg",
     logoAlt: "Philips Zoom Logo",
@@ -23,7 +23,7 @@ const technologies = [
   {
     title: "Protocolo de confort y relajación velvence",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Integramos un protocolo de confort diseñado para reducir tensión e inducir a una relajación profunda (tipo spa) durante el tratamiento, transformando el blanqueamiento dental en una experiencia única y sensorial",
     stat: "5X",
     logo: "/images/global/therabody_logo.svg",
     logoAlt: "Therabody Logo",
@@ -58,8 +58,10 @@ export function TechnologySection() {
             className="flex items-center"
           >
             <p className="text-base md:text-lg text-primary-dark/80 leading-relaxed">
-              Somos el primer centro especializado en y enfocado en técnicas avanzadas de Blanqueamiento dental en
-              México
+              Somos el primer centro especializado en blanqueamiento dental en México, 
+              con sede principal en Querétaro que integra tecnología avanzada, 
+              protocolos clínicos confort para ofrecer resultados precisos y una 
+              experiencia única en cada tratamiento de limpieza y blanqueamiento dental
             </p>
           </motion.div>
         </div>

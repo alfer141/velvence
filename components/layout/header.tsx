@@ -16,7 +16,7 @@ export function Header({ variant = "static" }: HeaderProps) {
   const containerClasses =
     variant === "floating"
       ? "absolute top-8 left-0 right-0 z-50 flex justify-center px-4 sm:px-6"
-      : "sticky top-0 z-50 flex justify-center px-4 sm:px-6 py-4 bg-white shadow-sm"
+      : "sticky top-0 z-50 flex justify-center px-4 sm:px-6 py-4"
 
   return (
     <motion.header initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }} className={containerClasses}>
