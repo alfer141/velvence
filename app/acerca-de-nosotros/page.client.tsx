@@ -309,10 +309,11 @@ export function AboutUsClientPage() {
                     </div>
 
                     {/* CTA Button */}
-                    <Link href="/agendar-cita">
-                      <a className="mt-6 px-6 py-3 bg-white/50 hover:bg-white/70 text-primary-dark rounded-lg font-medium transition-colors w-fit">
-                        Solicitar cita
-                      </a>
+                    <Link
+                      href="/agendar-cita"
+                      className="mt-6 px-6 py-3 bg-white/50 hover:bg-white/70 text-primary-dark rounded-lg font-medium transition-colors w-fit inline-block"
+                    >
+                      Solicitar cita
                     </Link>
                   </div>
                 </motion.div>
