@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function CTABanner() {
   return (
@@ -54,18 +55,20 @@ export function CTABanner() {
             dolore magna aliqua. Ut enim ad minim veniam
           </motion.p>
 
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-primary-dark px-8 py-4 rounded-lg font-medium hover:bg-sand-light transition-colors flex items-center gap-2"
-          >
-            Solicitar cita
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
+          <Link href="/agendar-cita">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-primary-dark px-8 py-4 rounded-lg font-medium hover:bg-sand-light transition-colors flex items-center gap-2"
+            >
+              Solicitar cita
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
+          </Link>
         </div>
       </motion.div>
     </section>

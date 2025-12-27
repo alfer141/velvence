@@ -7,6 +7,7 @@ import { ReviewsSection } from "@/components/sections/home/reviews-section"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { MapPin } from "lucide-react"
+import Link from "next/link"
 
 const carouselImages = [
   "/images/carrusel/Airflow EMS Blanqueamiento dental Profesional.webp",
@@ -308,9 +309,11 @@ export function AboutUsClientPage() {
                     </div>
 
                     {/* CTA Button */}
-                    <button className="mt-6 px-6 py-3 bg-white/50 hover:bg-white/70 text-primary-dark rounded-lg font-medium transition-colors w-fit">
-                      Solicitar cita
-                    </button>
+                    <Link href="/agendar-cita">
+                      <a className="mt-6 px-6 py-3 bg-white/50 hover:bg-white/70 text-primary-dark rounded-lg font-medium transition-colors w-fit">
+                        Solicitar cita
+                      </a>
+                    </Link>
                   </div>
                 </motion.div>
               ))}

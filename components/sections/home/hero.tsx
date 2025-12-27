@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { Header } from "@/components/layout/header"
+import Link from "next/link"
 
 export function Hero() {
   const [isOpen, setIsOpen] = useState(false)
@@ -63,14 +64,16 @@ export function Hero() {
             dental.
           </motion.p>
 
-          <motion.button
-            variants={itemVariants}
-            whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgba(224, 235, 241, 0.3)" }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full px-8 py-3 text-primary-dark font-semibold rounded-lg transition bg-secondary-light hover:bg-secondary-light/90"
-          >
-            Precios y tratamientos
-          </motion.button>
+          <Link href="/precios">
+            <motion.button
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgba(224, 235, 241, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full px-8 py-3 text-primary-dark font-semibold rounded-lg transition bg-secondary-light hover:bg-secondary-light/90"
+            >
+              Precios y tratamientos
+            </motion.button>
+          </Link>
 
           {/* Highlight card */}
           <motion.div variants={itemVariants} className="mt-6 p-4 rounded-xl flex items-start gap-3 bg-white">
