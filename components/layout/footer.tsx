@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link";
 import { Instagram, Facebook, Twitter } from "lucide-react"
 
 export function Footer() {
@@ -26,24 +27,24 @@ export function Footer() {
             <h4 className="text-primary-dark font-semibold text-lg mb-6">Menú</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="/" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Inicio
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#tecnologia" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="/#tecnologia" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Tecnología
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/precios" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="/precios" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Precios
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/agendar-cita" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="/agendar-cita" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Agendar cita
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="/acerca-de-nosotros" className="text-gray-600 hover:text-primary-dark transition text-sm">
@@ -51,9 +52,9 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#casos-clinicos" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="/#casos-clinicos" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Casos clínicos
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>
@@ -95,24 +96,24 @@ export function Footer() {
             <h4 className="text-primary-dark font-semibold text-lg mb-6">Enlaces</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link   href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Aviso de privacidad
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Términos y condiciones
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Trabaja con nosotros
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
-                  Conoce la marca
-                </a>
+                <Link href="/blog" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                  Blog Consejos y novedades
+                </Link>
               </li>
             </ul>
           </motion.div>
@@ -144,13 +145,13 @@ export function Footer() {
             transition={{ delay: 0.5 }}
             className="flex items-center justify-center gap-6"
           >
-            <a href="#" className="text-primary-dark hover:text-accent-lime transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/velvence.mx/" target="_blank" className="text-primary-dark hover:text-accent-lime transition-colors" aria-label="Instagram">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="#" className="text-primary-dark hover:text-accent-lime transition-colors" aria-label="Facebook">
+            <a href="https://www.facebook.com/velvence" target="_blank" className="text-primary-dark hover:text-accent-lime transition-colors" aria-label="Facebook">
               <Facebook className="w-6 h-6" />
             </a>
-            <a href="#" className="text-primary-dark hover:text-accent-lime transition-colors" aria-label="Twitter">
+            <a href="https://www.tiktok.com/@velvence.mx" className="text-primary-dark hover:text-accent-lime transition-colors" aria-label="Tiktok">
               <Twitter className="w-6 h-6" />
             </a>
           </motion.div>
@@ -164,9 +165,11 @@ export function Footer() {
             className="text-right"
           >
             <p className="text-gray-600 text-sm leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat
+              En Velvence creemos en el cuidado personal como parte del bienestar integral.
+                A través de odontología preventiva con tratamientos como  limpieza y blanqueamiento dental, 
+                ayudamos a mantener una sonrisa más saludable y luminosa, fortaleciendo 
+                la confianza al sonreír y promoviendo una buena salud bucal a largo 
+                plazo con resultados seguros, sin dolor y altamente efectivos.
             </p>
           </motion.div>
         </div>
