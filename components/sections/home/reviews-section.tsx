@@ -89,7 +89,7 @@ export function ReviewsSection() {
           viewport={{ once: true }}
           className="text-accent text-sm font-medium mb-12"
         >
-          La experiencia Velvence, contada por nuestros pacientes
+          [Reseñas]
         </motion.p>
 
         <div className="relative min-h-[400px] md:min-h-[300px]">
