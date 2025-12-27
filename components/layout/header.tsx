@@ -1,9 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import Link from "next/link"
 
 interface HeaderProps {
@@ -12,6 +12,7 @@ interface HeaderProps {
 
 export function Header({ variant = "static" }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isTratamientosOpen, setIsTratamientosOpen] = useState(false)
 
   const containerClasses =
     variant === "floating"
@@ -37,34 +38,69 @@ export function Header({ variant = "static" }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-3 flex-1 px-4">
+          <nav className="hidden lg:flex items-center gap-1 flex-1 px-4">
             <a
               href="/#resultados"
-              className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              className="text-xs text-primary-dark hover:bg-gray-100 transition font-medium whitespace-nowrap px-3 py-2 rounded-full"
             >
               Resultados
             </a>
             <a
               href="/#proceso"
-              className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              className="text-xs text-primary-dark hover:bg-gray-100 transition font-medium whitespace-nowrap px-3 py-2 rounded-full"
             >
               Proceso
             </a>
             <Link
               href="/precios"
-              className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              className="text-xs text-primary-dark hover:bg-gray-100 transition font-medium whitespace-nowrap px-3 py-2 rounded-full"
             >
               Protocolos y precios
             </Link>
-            <a
-              href="/#tratamientos"
-              className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+            <div
+              className="relative"
+              onMouseEnter={() => setIsTratamientosOpen(true)}
+              onMouseLeave={() => setIsTratamientosOpen(false)}
             >
-              Tratamientos
-            </a>
+              <button className="text-xs text-primary-dark hover:bg-gray-100 transition font-medium whitespace-nowrap flex items-center gap-1 px-3 py-2 rounded-full">
+                Tratamientos
+                <ChevronDown className={`w-3 h-3 transition-transform ${isTratamientosOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {isTratamientosOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl py-2 z-50 border border-gray-100"
+                  >
+                    <Link
+                      href="/tratamientos/blanqueamiento-dental"
+                      className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
+                    >
+                      Blanqueamiento dental
+                    </Link>
+                    <Link
+                      href="/proximamente"
+                      className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
+                    >
+                      Limpieza / Profilaxis dental
+                    </Link>
+                    <Link
+                      href="/proximamente"
+                      className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
+                    >
+                      Blanqueamiento y limpieza dental
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <Link
               href="/acerca-de-nosotros"
-              className="text-xs text-primary-dark hover:text-accent-lime transition font-medium whitespace-nowrap"
+              className="text-xs text-primary-dark hover:bg-gray-100 transition font-medium whitespace-nowrap px-3 py-2 rounded-full"
             >
               Nosotros
             </Link>
@@ -102,35 +138,69 @@ export function Header({ variant = "static" }: HeaderProps) {
             <nav className="flex flex-col gap-2">
               <a
                 href="/#resultados"
-                className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                className="text-sm text-primary-dark hover:bg-gray-100 transition font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
                 Resultados
               </a>
               <a
                 href="/#proceso"
-                className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                className="text-sm text-primary-dark hover:bg-gray-100 transition font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
                 Proceso y tecnología
               </a>
               <Link
                 href="/precios"
-                className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                className="text-sm text-primary-dark hover:bg-gray-100 transition font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
                 Protocolos y precios
               </Link>
-              <a
-                href="/#tratamientos"
-                className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                Tratamientos
-              </a>
+              <div className="flex flex-col">
+                <button
+                  onClick={() => setIsTratamientosOpen(!isTratamientosOpen)}
+                  className="text-sm text-primary-dark hover:bg-gray-100 transition font-medium py-2 flex items-center justify-between"
+                >
+                  Tratamientos
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isTratamientosOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {isTratamientosOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="pl-4 flex flex-col gap-1"
+                    >
+                      <Link
+                        href="/tratamientos/blanqueamiento-dental"
+                        className="text-sm text-primary-dark/70 hover:bg-gray-100 transition py-2"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Blanqueamiento dental
+                      </Link>
+                      <Link
+                        href="/proximamente"
+                        className="text-sm text-primary-dark/70 hover:bg-gray-100 transition py-2"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Limpieza / Profilaxis dental
+                      </Link>
+                      <Link
+                        href="/proximamente"
+                        className="text-sm text-primary-dark/70 hover:bg-gray-100 transition py-2"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Blanqueamiento y limpieza dental
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <Link
                 href="/acerca-de-nosotros"
-                className="text-sm text-primary-dark hover:text-accent-lime transition font-medium py-2"
+                className="text-sm text-primary-dark hover:bg-gray-100 transition font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
                 Nosotros

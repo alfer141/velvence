@@ -82,11 +82,11 @@ export function AboutUsClientPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-secondary-light/80 to-secondary-light/60 -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary-light/80 to-secondary-light/60" />
         </div>
 
         {/* Nav inside hero */}
-        <div className="relative z-50">
+        <div className="relative z-10">
           <Header variant="floating" />
         </div>
 
