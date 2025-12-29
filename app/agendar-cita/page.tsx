@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import type React from "react"
+import Link from "next/link"
 
 import { motion } from "framer-motion"
 import Image from "next/image"
@@ -21,17 +22,16 @@ export default function AgendarCita() {
     aceptaOfertas: false,
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = (_e: React.FormEvent) => {
+    // Allow native form submit to Formspree.
     console.log("Form submitted:", formData)
-    // Handle form submission
   }
 
   return (
     <div className="min-h-screen bg-white">
       <Header variant="static" />
 
-      <main className="container mx-auto px-4 py-12 lg:py-20">
+      <main className="max-w-screen-xl  mx-auto px-4 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Form */}
           <motion.div
@@ -42,7 +42,16 @@ export default function AgendarCita() {
           >
             <h1 className="text-4xl lg:text-5xl font-light text-primary-dark mb-8">Agendar cita</h1>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6"
+              action="https://formspree.io/f/xjgvlggo"
+              method="POST"
+            >
+            <input type="hidden" name="_redirect" value="https://velvence.mx/" />
+            <input type="hidden" name="clinica" value={formData.clinica} />
+            <input type="hidden" name="nombre" value={formData.nombre} />
+            <input type="hidden" name="aceptaOfertas" value={formData.aceptaOfertas ? "si" : "no"} />
               {/* Clinic Selection */}
               <div className="space-y-2">
                 <Label htmlFor="clinica" className="text-sm text-gray-600 font-normal">
@@ -59,10 +68,9 @@ export default function AgendarCita() {
                     <SelectValue placeholder="Selecciona clínica" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="cdmx-polanco">CDMX - Polanco</SelectItem>
-                    <SelectItem value="cdmx-condesa">CDMX - Condesa</SelectItem>
-                    <SelectItem value="monterrey">Monterrey</SelectItem>
-                    <SelectItem value="guadalajara">Guadalajara</SelectItem>
+                    <SelectItem value="qro-constituyentes">Querétaro - Prol. Constituyentes</SelectItem>
+                    <SelectItem value="edomex-ODA">Edo. Mex - Ojo de Agua</SelectItem>
+                    
                   </SelectContent>
                 </Select>
               </div>
@@ -73,6 +81,7 @@ export default function AgendarCita() {
                   Nombre completo
                 </Label>
                 <Input
+                  name="nombre"
                   id="nombre"
                   type="text"
                   placeholder="Nombre completo*"
@@ -89,6 +98,7 @@ export default function AgendarCita() {
                   Número de contacto
                 </Label>
                 <Input
+                  name="telefono"
                   id="telefono"
                   type="tel"
                   placeholder="Número de contacto*"
@@ -105,6 +115,7 @@ export default function AgendarCita() {
                   Correo electrónico
                 </Label>
                 <Input
+                  name="email"
                   id="email"
                   type="email"
                   placeholder="Correo electrónico*"
@@ -118,6 +129,7 @@ export default function AgendarCita() {
               {/* Checkbox */}
               <div className="flex items-start gap-3">
                 <Checkbox
+                    name="ofertas"
                   id="ofertas"
                   checked={formData.aceptaOfertas}
                   onCheckedChange={(checked) =>
@@ -143,10 +155,7 @@ export default function AgendarCita() {
 
               {/* Disclaimer */}
               <p className="text-xs text-gray-500 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-                Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris maecenas. Ut enim ad
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqua ex ea commodo consequat.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                Al enviar este formulario, aceptas nuestros <Link href="/terminos-y-condiciones">Términos y Condiciones</Link> y el Aviso de Privacidad, y autorizas el contacto por parte de Velvence para dar seguimiento a tu solicitud.
               </p>
             </form>
           </motion.div>
