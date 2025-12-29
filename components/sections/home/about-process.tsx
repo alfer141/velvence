@@ -12,7 +12,7 @@ const processSteps = [
     title: "Preparación",
     icon: Sparkles,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "Antes de iniciar el blanqueamiento dental, realizamos una valoración previa y un examen dental para asegurarnos de que tus dientes estén listos para el tratamiento y brindarte una experiencia cómoda desde el inicio.",
     image: "/images/home/pre_blanqueamiento.webp?height=500&width=400",
   },
   {
@@ -20,7 +20,7 @@ const processSteps = [
     title: "Blanqueamiento",
     icon: Zap,
     description:
-      "Aplicamos la tecnología Philips Zoom para aclarar tus dientes hasta 8 tonos en una sola sesión de 45 minutos con total seguridad.",
+      "Aplicamos la tecnología Philips Zoom para aclarar tus dientes hasta 8 tonos en una sola sesión de entre 30 a 45 minutos, sin comprometer ni dañar tu esmalte, ya que en el consultorio utilizamos tecnología de vanguardia.",
     image: "/images/home/kit_philips_zoom.webp?height=500&width=400",
   },
   {
@@ -28,7 +28,7 @@ const processSteps = [
     title: "Resultados",
     icon: Target,
     description:
-      "Disfruta de una sonrisa más brillante de inmediato. Te proporcionamos un kit de mantenimiento para prolongar los resultados.",
+      " Tus dientes estarán visiblemente más blancos al finalizar la sesión. Además, te entregamos un kit de mantenimiento para ayudar a prolongar los resultados de tu blanqueamiento en casa.",
     image: "/images/home/Zoom.webp?height=500&width=400",
   },
 ]
@@ -74,14 +74,17 @@ export function AboutProcess() {
           >
             {/* Static Header */}
             <div className="space-y-4">
-              <span className="text-primary-dark/70 text-sm font-medium">[Proceso del blanqueamiento]</span>
-              <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark leading-tight text-balance">
-                Un proceso pensado en tu experiencia
-              </h2>
+              <h2 className="text-primary-dark/70 text-sm font-medium">[Proceso del blanqueamiento]</h2>
+              <h3 className="text-4xl lg:text-5xl font-bold text-primary-dark leading-tight text-balance">
+                El paso a paso de una experiencia cómoda para dientes más blancos
+              </h3>
               <p className="text-gray-600 leading-relaxed max-w-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat
+                El proceso de aclarado dental está diseñado para que te sientas tranquilo, 
+                cómodo y acompañado en todo momento. Desde el inicio y hasta después de tu 
+                sesión, ponemos atención en cómo te sientes durante el tratamiento, 
+                resolviendo dudas frecuentes como la sensibilidad dental y el cuidado posterior, 
+                para que al final te vayas con una sonrisa reluciente y una sensación de bienestar 
+                incomparable. 🍃
               </p>
             </div>
 

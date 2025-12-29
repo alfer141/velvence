@@ -51,8 +51,7 @@ export function CTABanner() {
             transition={{ delay: 0.4 }}
             className="text-white/90 text-base leading-relaxed mb-8"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam
+            Da el siguiente paso hacia una sonrisa que se siente tan bien como se ve. Agenda tu sesión de blanqueamiento o limpieza dental en Velvence y vive una experiencia pensada para tu comodidad, bienestar y resultados reales, con atención profesional y la mejor tecnología al servicio de tu sonrisa.
           </motion.p>
 
           <Link href="/agendar-cita">

@@ -87,9 +87,11 @@ export function ReviewsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-accent text-sm font-medium mb-12"
-        >
-          [Reseñas]
+          className="text-accent text-base font-medium mb-12"
+        >   
+            <span className="inline-block text-white">[Reseñas] </span><br />
+
+           La experiencia Velvence, contada por nuestros pacientes
         </motion.p>
 
         <div className="relative min-h-[400px] md:min-h-[300px]">
