@@ -48,7 +48,7 @@ export default function AgendarCita() {
               action="https://formspree.io/f/xjgvlggo"
               method="POST"
             >
-            <input type="hidden" name="_redirect" value="https://velvence.mx/" />
+            <input type="hidden" name="_redirect" value="https://velvence.mx/agendar-cita/registro-recibido" />
             <input type="hidden" name="clinica" value={formData.clinica} />
             <input type="hidden" name="nombre" value={formData.nombre} />
             <input type="hidden" name="aceptaOfertas" value={formData.aceptaOfertas ? "si" : "no"} />
