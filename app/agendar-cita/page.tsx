@@ -12,13 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import Script from "next/script";
-
-<Script
-  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-  async
-  defer
-/>
+import Script from "next/script"
 
 export default function AgendarCita() {
   const [formData, setFormData] = useState({
@@ -29,14 +23,49 @@ export default function AgendarCita() {
     aceptaOfertas: false,
   })
 
-  const handleSubmit = (_e: React.FormEvent) => {
-    // Allow native form submit to Formspree.
-    console.log("Form submitted:", formData)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      const token = (window as any).turnstile?.getResponse()
+
+      if (!token) {
+        alert("Por favor completa el CAPTCHA")
+        setIsSubmitting(false)
+        return
+      }
+
+      const formDataObj = new FormData(e.currentTarget)
+      formDataObj.append("cf-turnstile-response", token)
+
+      // Send to Formspree
+      const response = await fetch("https://formspree.io/f/xjgvlggo", {
+        method: "POST",
+        body: formDataObj,
+      })
+
+      if (response.ok) {
+        // Redirect to thank you page
+        window.location.href = "https://velvence.mx/agendar-cita/registro-recibido"
+      } else {
+        alert("Error al enviar el formulario. Por favor intenta de nuevo.")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      alert("Error al enviar el formulario. Por favor intenta de nuevo.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <div className="min-h-screen bg-white">
       <Header variant="static" />
+
+      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
 
       <main className="max-w-screen-xl  mx-auto px-4 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -49,16 +78,7 @@ export default function AgendarCita() {
           >
             <h1 className="text-4xl lg:text-5xl font-light text-primary-dark mb-8">Agendar cita</h1>
 
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-6"
-              action="https://formspree.io/f/xjgvlggo"
-              method="POST"
-            >
-            <input type="hidden" name="_redirect" value="https://velvence.mx/agendar-cita/registro-recibido" />
-            <input type="hidden" name="clinica" value={formData.clinica} />
-            <input type="hidden" name="nombre" value={formData.nombre} />
-            <input type="hidden" name="aceptaOfertas" value={formData.aceptaOfertas ? "si" : "no"} />
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Clinic Selection */}
               <div className="space-y-2">
                 <Label htmlFor="clinica" className="text-sm text-gray-600 font-normal">
@@ -77,7 +97,6 @@ export default function AgendarCita() {
                   <SelectContent>
                     <SelectItem value="qro-constituyentes">Querétaro - Prol. Constituyentes</SelectItem>
                     <SelectItem value="edomex-ODA">Edo. Mex - Ojo de Agua</SelectItem>
-                    
                   </SelectContent>
                 </Select>
               </div>
@@ -136,7 +155,7 @@ export default function AgendarCita() {
               {/* Checkbox */}
               <div className="flex items-start gap-3">
                 <Checkbox
-                    name="ofertas"
+                  name="ofertas"
                   id="ofertas"
                   checked={formData.aceptaOfertas}
                   onCheckedChange={(checked) =>
@@ -151,22 +170,27 @@ export default function AgendarCita() {
                   Me gustaría recibir ofertas y novedades de Velvence
                 </Label>
               </div>
+
               <div
-                    className="cf-turnstile"
-                    data-sitekey="0x4AAAAAACJpgfmlcis0Dngh"
-                    />
+                className="cf-turnstile"
+                data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAACJpgfmlcis0Dngh"}
+                data-theme="light"
+              />
 
               {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full h-12 bg-primary-dark hover:bg-primary-dark/90 text-white rounded-md font-normal"
+                disabled={isSubmitting}
+                className="w-full h-12 bg-primary-dark hover:bg-primary-dark/90 text-white rounded-md font-normal disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Solicitar cita
+                {isSubmitting ? "Enviando..." : "Solicitar cita"}
               </Button>
 
               {/* Disclaimer */}
               <p className="text-xs text-gray-500 leading-relaxed">
-                Al enviar este formulario, aceptas nuestros <Link href="/terminos-y-condiciones">Términos y Condiciones</Link> y el Aviso de Privacidad, y autorizas el contacto por parte de Velvence para dar seguimiento a tu solicitud.
+                Al enviar este formulario, aceptas nuestros{" "}
+                <Link href="/terminos-y-condiciones">Términos y Condiciones</Link> y el Aviso de Privacidad, y autorizas
+                el contacto por parte de Velvence para dar seguimiento a tu solicitud.
               </p>
             </form>
           </motion.div>
