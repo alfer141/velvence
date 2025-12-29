@@ -50,13 +50,13 @@ export function Hero() {
         >
           {/* Etiqueta */}
           <motion.div variants={itemVariants} className="inline-block">
-            <span className="text-sm text-white font-medium tracking-wide">[Clínica de blanqueamiento dental]</span>
+            <h1 className="text-sm text-white font-medium tracking-wide">[Clínica de blanqueamiento dental]</h1>
           </motion.div>
 
           {/* Título */}
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white leading-tight">
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white leading-tight">
             Transforma tu sonrisa más sana, limpia y brillante en una sesión
-          </motion.h1>
+          </motion.h2>
 
           {/* Descripción */}
           <motion.p variants={itemVariants} className="text-white/90 leading-relaxed text-base">
