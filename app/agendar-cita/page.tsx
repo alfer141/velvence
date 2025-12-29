@@ -12,6 +12,13 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import Script from "next/script";
+
+<Script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer
+/>
 
 export default function AgendarCita() {
   const [formData, setFormData] = useState({
@@ -144,6 +151,10 @@ export default function AgendarCita() {
                   Me gustaría recibir ofertas y novedades de Velvence
                 </Label>
               </div>
+              <div
+                    className="cf-turnstile"
+                    data-sitekey="0x4AAAAAACJpgfmlcis0Dngh"
+                    />
 
               {/* Submit Button */}
               <Button
