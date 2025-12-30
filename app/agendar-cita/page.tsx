@@ -2,6 +2,7 @@
 import { useState } from "react"
 import type React from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 import { motion } from "framer-motion"
 import Image from "next/image"
@@ -15,6 +16,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Script from "next/script"
 
 export default function AgendarCita() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     clinica: "",
     nombre: "",
@@ -30,7 +32,8 @@ export default function AgendarCita() {
     setIsSubmitting(true)
 
     try {
-      const token = (window as any).turnstile?.getResponse()
+      const turnstileElement = document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement
+      const token = turnstileElement?.value
 
       if (!token) {
         alert("Por favor completa el CAPTCHA")
@@ -39,22 +42,24 @@ export default function AgendarCita() {
       }
 
       const formDataObj = new FormData(e.currentTarget)
-      formDataObj.append("cf-turnstile-response", token)
 
-      // Send to Formspree
       const response = await fetch("https://formspree.io/f/xjgvlggo", {
         method: "POST",
         body: formDataObj,
+        headers: {
+          Accept: "application/json",
+        },
       })
 
       if (response.ok) {
-        // Redirect to thank you page
-        window.location.href = "https://velvence.mx/agendar-cita/registro-recibido"
+        router.push("/agendar-cita/registro-recibido")
       } else {
+        const data = await response.json()
+        console.error("[v0] Formspree error:", data)
         alert("Error al enviar el formulario. Por favor intenta de nuevo.")
       }
     } catch (error) {
-      console.error("Form submission error:", error)
+      console.error("[v0] Form submission error:", error)
       alert("Error al enviar el formulario. Por favor intenta de nuevo.")
     } finally {
       setIsSubmitting(false)
@@ -65,7 +70,13 @@ export default function AgendarCita() {
     <div className="min-h-screen bg-white">
       <Header variant="static" />
 
-      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+        onLoad={() => console.log("[v0] Turnstile script loaded")}
+        onError={() => console.error("[v0] Turnstile script failed to load")}
+      />
 
       <main className="max-w-screen-xl  mx-auto px-4 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -85,6 +96,7 @@ export default function AgendarCita() {
                   Selecciona tu clínica
                 </Label>
                 <Select
+                  name="clinica"
                   value={formData.clinica}
                   onValueChange={(value) => setFormData({ ...formData, clinica: value })}
                 >
@@ -95,10 +107,11 @@ export default function AgendarCita() {
                     <SelectValue placeholder="Selecciona clínica" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="qro-constituyentes">Querétaro - Prol. Constituyentes</SelectItem>
-                    <SelectItem value="edomex-ODA">Edo. Mex - Ojo de Agua</SelectItem>
+                    <SelectItem value="Querétaro - Prol. Constituyentes">Querétaro - Prol. Constituyentes</SelectItem>
+                    <SelectItem value="Edo. Mex - Ojo de Agua">Edo. Mex - Ojo de Agua</SelectItem>
                   </SelectContent>
                 </Select>
+                <input type="hidden" name="clinica" value={formData.clinica} />
               </div>
 
               {/* Full Name */}
@@ -175,6 +188,7 @@ export default function AgendarCita() {
                 className="cf-turnstile"
                 data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAACJpgfmlcis0Dngh"}
                 data-theme="light"
+                data-callback="onTurnstileSuccess"
               />
 
               {/* Submit Button */}
@@ -237,6 +251,14 @@ export default function AgendarCita() {
       </main>
 
       <Footer />
+
+      <Script id="turnstile-callback" strategy="afterInteractive">
+        {`
+          window.onTurnstileSuccess = function(token) {
+            console.log('[v0] Turnstile token received:', token ? 'valid' : 'invalid');
+          }
+        `}
+      </Script>
     </div>
   )
 }
