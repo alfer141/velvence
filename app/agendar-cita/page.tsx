@@ -186,7 +186,7 @@ export default function AgendarCita() {
 
               <div
                 className="cf-turnstile"
-                data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAACJpgfmlcis0Dngh"}
+                data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
                 data-theme="light"
                 data-callback="onTurnstileSuccess"
               />

@@ -86,9 +86,7 @@ export function AboutUsClientPage() {
         </div>
 
         {/* Nav inside hero */}
-        <div className="relative z-10">
-          <Header variant="floating" />
-        </div>
+        <Header variant="floating" />
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-40 lg:pt-48 text-center">

@@ -152,7 +152,7 @@ export default function BlanqueamientoDentalPage() {
           />
         </div>
 
-        <div className="relative z-20">
+        <div className="relative z-50">
           <Header variant="floating" />
         </div>
 
