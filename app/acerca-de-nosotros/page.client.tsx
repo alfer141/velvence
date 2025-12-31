@@ -64,7 +64,7 @@ export function AboutUsClientPage() {
 
   useEffect(() => {
     // Calculate total width: (image width + margin) * number of images
-    const imageWidth = 384 // w-96 = 24rem = 384px
+    const imageWidth = 320 // Updated to 320px width + margin for carousel calculation
     const margin = 16 // mx-2 = 0.5rem * 2 = 16px
     setTotalWidth((imageWidth + margin) * carouselImages.length)
   }, [])
@@ -122,29 +122,43 @@ export function AboutUsClientPage() {
         </div>
       </section>
 
-      {/* 4-Image Grid Section */}
+      {/* Infinite Carousel Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {carouselImages.slice(0, 4).map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="aspect-[3/4] rounded-lg overflow-hidden"
-              >
-                <Image
-                  src={image || "/placeholder.svg"}
-                  alt={`Velvence clínica imagen ${index + 1}`}
-                  width={400}
-                  height={533}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+        <div className="max-w-7xl mx-auto px-6 mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl lg:text-3xl font-light text-primary-dark text-center"
+          >
+            Un vistazo a nuestra clínica
+          </motion.h2>
+        </div>
+
+        <div className="overflow-hidden w-full" role="region" aria-label="Galería de servicios de Velvence">
+          <motion.div
+            className="flex"
+            style={{ width: totalWidth * 2 }}
+            animate={{ x: [-0, -totalWidth] }}
+            transition={{
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "loop",
+              ease: "linear",
+              duration: 78,
+            }}
+          >
+            {repeatedImages.map((src, idx) => (
+              <img
+                key={idx}
+                src={src || "/placeholder.svg"}
+                alt={`Clínica Velvence imagen ${idx + 1}`}
+                className="rounded-lg object-cover mx-2 shadow transition-transform duration-300"
+                style={{ width: "320px", height: "400px" }}
+                loading="lazy"
+                draggable={false}
+              />
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -318,46 +332,6 @@ export function AboutUsClientPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Infinite Carousel Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl lg:text-3xl font-light text-primary-dark text-center"
-          >
-            Un vistazo a nuestra clínica
-          </motion.h2>
-        </div>
-
-        <div className="overflow-hidden w-full" role="region" aria-label="Galería de servicios de Velvence">
-          <motion.div
-            className="flex"
-            style={{ width: totalWidth * 2 }}
-            animate={{ x: [-0, -totalWidth] }}
-            transition={{
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "loop",
-              ease: "linear",
-              duration: 78,
-            }}
-          >
-            {repeatedImages.map((src, idx) => (
-              <img
-                key={idx}
-                src={src || "/placeholder.svg"}
-                alt={`Clínica Velvence imagen ${idx + 1}`}
-                className="rounded-lg object-cover mx-2 shadow transition-transform duration-300"
-                style={{ width: "250px", aspectRatio: "4/5" }}
-                loading="lazy"
-                draggable={false}
-              />
-            ))}
-          </motion.div>
         </div>
       </section>
 
