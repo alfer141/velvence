@@ -208,7 +208,7 @@ export default function AgendarCita() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full h-12 border-2 border-[#BFD2D9] hover:bg-[#BFD2D9]/5 text-primary-dark rounded-md font-normal transition-colors gap-2"
               >
-                <Image src="/public/images/whatsapp_color_icn.svg" alt="WhatsApp" width={20} height={20} />
+                <Image src="/images/whatsapp_color_icn.svg" alt="WhatsApp" width={20} height={20} />
                 Agendar cita por WhatsApp
               </a>
 
