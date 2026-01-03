@@ -16,6 +16,7 @@
   --secondary-light: #e0ebf1;
   --primary-dark: #18273a;
   --footer-gray: #f6f8f8;
+  --whatsapp-border: #bfd2d9;
 
   --background: oklch(1 0 0);
   --foreground: var(--primary-dark);
@@ -137,6 +138,19 @@
   --color-secondary-light: var(--secondary-light);
   --color-primary-dark: var(--primary-dark);
   --color-footer-gray: var(--footer-gray);
+  --color-whatsapp-border: var(--whatsapp-border);
+}
+
+@layer components {
+  .vertical-lines-pattern {
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(191, 210, 217, 0.5) 0px,
+      rgba(191, 210, 217, 0.5) 1px,
+      transparent 1px,
+      transparent 50px
+    );
+  }
 }
 
 @layer base {

@@ -78,8 +78,10 @@ export default function AgendarCita() {
         onError={() => console.error("[v0] Turnstile script failed to load")}
       />
 
-      <main className="max-w-screen-xl  mx-auto px-4 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <main className="max-w-screen-xl mx-auto px-4 py-12 lg:py-20">
+        <div className="absolute inset-0 pointer-events-none" />
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
           {/* Left Column - Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -199,6 +201,16 @@ export default function AgendarCita() {
               >
                 {isSubmitting ? "Enviando..." : "Solicitar cita"}
               </Button>
+
+              <a
+                href="https://wa.me/5215521819153?text=Quiero%20agendar%20una%20cita"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full h-12 border-2 border-[#BFD2D9] hover:bg-[#BFD2D9]/5 text-primary-dark rounded-md font-normal transition-colors gap-2"
+              >
+                <Image src="/public/images/whatsapp_color_icn.svg" alt="WhatsApp" width={20} height={20} />
+                Agendar cita por WhatsApp
+              </a>
 
               {/* Disclaimer */}
               <p className="text-xs text-gray-500 leading-relaxed">
