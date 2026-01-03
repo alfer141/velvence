@@ -47,14 +47,14 @@ const branches = [
   {
     id: 1,
     name: "Sucursal Marqués",
-    address: "Pro. Constituyentes, Qro. Mex.",
-    image: "/images/about/velvence_consultorio_principal.webp",
+    address: "Blv. De la Luz, Adolfo López Mateos, Qro. Mex",
+    image: "/placeholder.svg?height=444&width=826",
   },
   {
     id: 2,
     name: "Sucursal AIFA",
-    address: "Calzada de la Hacienda, Ojo de Agua, Mex.",
-    image: "/images/about/Suc-ojo-de-agua.webp",
+    address: "Blv. De la Luz, Adolfo López Mateos, Qro. Mex",
+    image: "/placeholder.svg?height=444&width=826",
   },
 ]
 
@@ -186,7 +186,7 @@ export function AboutUsClientPage() {
               className="relative aspect-square rounded-lg overflow-hidden bg-secondary-light/30"
             >
               <Image
-                src="/images/about/about_Us.webp"
+                src="/placeholder.svg?height=600&width=600"
                 alt="Origen de Velvence"
                 fill
                 className="object-cover"
