@@ -37,33 +37,209 @@ export function PreciosClientPage() {
     },
   ]
 
-  const faqs = [
-    {
-      question: "¿Cuánto duran los resultados?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-      question: "¿Cuánto duran los resultados?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      question: "¿Cuánto duran los resultados?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      question: "¿Cuánto duran los resultados?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      question: "¿Cuánto duran los resultados?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ]
+ const faqs = [
+  {
+    question: "¿Qué incluye exactamente  el costo del blanqueamiento dental?",
+    answer: (
+      <>
+        <p className="text-sm leading-relaxed">
+          Nuestro protocolo de: Aclaramiento Dental Clínico con un costo de
+          $5,800 mxn incluye:
+        </p>
+
+        <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed">
+          <li>
+            Examen dental para evaluar la salud general de tus dientes y encías.
+          </li>
+          <li>
+            Profilaxis (limpieza dental profunda) debajo de la línea de las
+            encías para eliminar la acumulación de bacterias (biofilm) con
+            tecnología EMS Dental (Airflow).
+          </li>
+          <li>
+            Sesión de blanqueamiento de 30 a 45 minutos con tecnología Philips
+            Zoom.
+          </li>
+          <li>
+            Extras de confort como: SmartGoggles, Theragun y audífonos relajantes
+            para una experiencia placentera.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "¿El blanqueamiento dental duele o causa sensibilidad?",
+    answer: (
+      <>
+        <p className="text-sm leading-relaxed">
+          No el blanqueamiento dental no causa dolor.
+        </p>
+
+        <p className="text-sm leading-relaxed mt-3">
+          Nuestro protocolo de blanqueamiento dental profesional está diseñado
+          para que el tratamiento sea cómodo y, en la gran mayoría de los casos,
+          indoloro, minimizando al máximo la sensibilidad.
+        </p>
+
+        <p className="text-sm leading-relaxed mt-3">
+          Antes de iniciar, realizamos una valoración clínica para confirmar que
+          eres candidato y ajustar el procedimiento a tu caso. Durante la sesión
+          cuidamos cada variable que influye en la sensibilidad y en los
+          resultados: sellado gingival para proteger encías, tiempo de exposición
+          controlado, concentración del gel adecuada y un protocolo de aplicación
+          supervisado.
+        </p>
+
+        <p className="text-sm leading-relaxed mt-3">
+          Si llegara a presentarse sensibilidad, suele ser leve y temporal, y
+          contamos con medidas específicas para controlarla sin comprometer el
+          resultado.
+        </p>
+      </>
+    ),
+  },
+  {
+    question:
+      "¿Cuánto duran los resultados del blanqueamiento dental y como alargo los resultados?",
+    answer: (
+      <>
+        <p className="text-sm leading-relaxed">
+          Los resultados suelen durar hasta un año o incluso más siempre y cuando
+          tengas los cuidados adecuados como:
+        </p>
+
+        <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed">
+          <li>Una adecuada higiene regular.</li>
+          <li>Recomendamos Limpiezas periódicas cada 6 u 8 Meses.</li>
+        </ul>
+
+        <p className="text-sm leading-relaxed mt-3">
+          En consulta te orientamos a detalle sobre como cuidar tus resultados.
+        </p>
+      </>
+    ),
+  },
+  {
+    question:
+      "¿Qué diferencia hay entre el  protocolo Biofilm  y el Blanqueamiento Dental clínico en Velvence?",
+    answer: (
+      <>
+        <p className="text-sm leading-relaxed">
+          En Velvence ofrecemos tratamientos preventivos y estéticos con un
+          impacto directo e inmediato tanto en la salud bucal como en la
+          confianza de nuestros pacientes.
+        </p>
+
+        <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed">
+          <li>
+            Protocolo Biofilm Control: Es una limpieza dental profunda enfocada
+            en eliminar el biofilm y mejorar la salud de encías y dientes.
+          </li>
+          <li>
+            Protocolo de Aclaramiento Dental Clínico: Incluye el Protocolo
+            Biofilm + la sesión de blanqueamiento con tecnología Philips Zoom
+            para lograr un tono más claro de forma segura y controlada.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "¿Cuántos tonos puedo aclarar y de que depende el resultado?",
+    answer: (
+      <>
+        <p className="text-sm leading-relaxed">
+          Con nuestro protocolo de Blanqueamiento dental hemos registrado hasta 8
+          tonos con una única sesión en la escala VITA. Siendo 5, o 6 tonos el
+          resultado más común entre nuestros pacientes y esto depende de los
+          siguientes factores:
+        </p>
+
+        <ul className="mt-3 list-disc pl-5 text-sm leading-relaxed">
+          <li>
+            El color inicial: Los dientes que inician e protocolo en tonos más
+            obscuros suelen mostrar un cambio mucho más notorio.
+          </li>
+          <li>
+            El tipo de manchas, si las manchas son extrínsecas como: (Café, té,
+            tabaco, o pigmentos alimenticios) suelen responder mejor al
+            tratamiento.
+          </li>
+          <li>
+            Estructura del diente como: El esmalte, color de la dentina y la
+            translucidez del diente estos factores varían en como se muestra el
+            resultado final.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    question: "¿El blanqueamiento dental daña  el esmalte?",
+    answer: (
+      <p className="text-sm leading-relaxed">
+        No. Cuando el blanqueamiento se realiza de forma clínica y supervisada,
+        no daña el esmalte. En Velvence hacemos una valoración previa y
+        ajustamos concentración del gel y tiempos de exposición para cuidar tu
+        salud bucal y minimizar la sensibilidad.
+      </p>
+    ),
+  },
+  {
+    question: "¿Quién NO es candidato ideal para blanqueamiento? ",
+    answer: (
+      <>
+        <p className="text-sm leading-relaxed">
+          El blanqueamiento dental no se realiza en pacientes en embarazo o
+          lactancia.
+        </p>
+
+        <p className="text-sm leading-relaxed mt-3">
+          Además, si tienes restauraciones en los dientes frontales (como
+          carillas, resinas o amalgamas), es importante saber que no cambian de
+          color con el blanqueamiento, por lo que primero evaluamos tu caso para
+          evitar diferencias de tono.
+        </p>
+
+        <p className="text-sm leading-relaxed mt-3">
+          Por último, el tratamiento no se recomienda cuando el cambio de color
+          se debe principalmente a manchas por tetraciclinas o hipomineralización,
+          ya que los resultados pueden ser limitados o poco predecibles.
+        </p>
+      </>
+    ),
+  },
+  {
+    question: "¿Cuáles son los cuidados posteriores al aclarado dental?",
+    answer: (
+      <p className="text-sm leading-relaxed">
+        No se requiere ningún cuidado en especial más allá de tu cepillado
+        regular. Únicamente, el día de la aplicación, para evitar cualquier
+        posible incomodidad, deberás evitar bebidas muy calientes o muy frías,
+        ya que puede presentarse sensibilidad temporal (Un día como máximo)
+        después del blanqueamiento.
+      </p>
+    ),
+  },
+  {
+    question: "¿Qué formas de pago aceptan? ¿Ofrecen meses sin intereses?",
+    answer: (
+      <>
+        <p className="text-sm leading-relaxed">
+          Aceptamos múltiples formas de pago para tu comodidad: efectivo,
+          transferencia y todas las tarjetas de débito o crédito.
+        </p>
+
+        <p className="text-sm leading-relaxed mt-3">
+          Si quieres saber si hay alguna promoción activa de meses sin intereses,
+          te recomendamos preguntar directamente en nuestros canales de contacto
+          principales: Instagram o WhatsApp.
+        </p>
+      </>
+    ),
+  },
+]
 
   return (
     <div className="min-h-screen bg-white">
@@ -229,7 +405,7 @@ export function PreciosClientPage() {
               className="space-y-4"
             >
               {faqs.map((faq, index) => (
-                <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
+                <div key={index} className="border border-gray-200 rounded-xl overflow-hidden cursor-pointer">
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className={`w-full px-6 py-5 flex items-center justify-between transition ${
@@ -250,7 +426,7 @@ export function PreciosClientPage() {
                         className="overflow-hidden"
                       >
                         <div className="px-6 py-5 bg-primary-dark text-white">
-                          <p className="text-sm leading-relaxed">{faq.answer}</p>
+                          {faq.answer}
                         </div>
                       </motion.div>
                     )}
