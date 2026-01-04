@@ -390,9 +390,10 @@ export function PreciosClientPage() {
               </h3>
 
               <p className="text-gray-600 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
+                Aquí encontrarás todo lo que necesitas saber antes de iniciar: costos, pasos del protocolo,
+                cuidados posteriores y criterios de elegibilidad. Nuestro objetivo es que tengas expectativas 
+                realistas y una experiencia cómoda, con resultados medibles y un plan claro de mantenimiento.
+
               </p>
             </motion.div>
 
