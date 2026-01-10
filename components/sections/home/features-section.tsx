@@ -28,7 +28,7 @@ export function FeaturesSection() {
         <div className="border-t border-dashed border-black/30" />
 
         {/* Content with text and image */}
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mt-24">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center mt-24 px-6">
           {/* Right side text content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full rounded-2xl overflow-hidden mt-12 md:mt-16"
+          className="w-full rounded-2xl overflow-hidden mt-12 md:mt-16 xl:px-0 px-6"
         >
           <div className="relative w-full aspect-[21/9]">
             <Image
