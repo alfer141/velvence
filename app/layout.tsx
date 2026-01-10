@@ -74,6 +74,22 @@ export default function RootLayout({
             src="https://www.facebook.com/tr?id=1421247669695549&ev=PageView&noscript=1"
           />
         </noscript>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FQS78C697L"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga4"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-FQS78C697L');
+            `,
+          }}
+        />
       </head>
       <body className={`font-sans antialiased`}>
         {children}
