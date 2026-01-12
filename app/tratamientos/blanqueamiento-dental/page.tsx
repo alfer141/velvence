@@ -10,30 +10,37 @@ import { useState } from "react"
 
 const faqs = [
   {
-    question: "If you don't see your question here send a massage directly to our team",
+    question: "¿Duele el blanqueamiento dental?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "En la mayoría de los casos, el blanqueamiento dental profesional no duele. Lo que algunas personas sienten es una sensación temporal (como “cosquilleo” o leve sensibilidad), especialmente si ya tenían sensibilidad previa. En Velvence hacemos una valoración previa de encías y esmalte, y ajustamos el protocolo para que el tratamiento sea cómodo y seguro."
   },
   {
-    question: "Can you help me meet sustainable foodie bloggers?",
+    question: "¿Me va a dar sensibilidad después? ¿Cuánto dura?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Puede haber sensibilidad dental leve y temporal, pero no le ocurre a todos. Cuando aparece, suele durar de unas horas hasta 24–48 horas. Factores como dientes sensibles, recesión de encías o desgaste del esmalte pueden influir. Por eso la clave es hacerlo de forma profesional: evaluamos tu caso y te damos recomendaciones de cuidado para minimizarla (por ejemplo, evitar extremos de temperatura el mismo día)."
   },
   {
-    question: "How is your approach different from traditional consulting firms?",
+    question: "¿En cuánto tiempo veo resultados y cuántos tonos aclara?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Los resultados son inmediatos: sales de tu cita con una sonrisa visiblemente más blanca. En un blanqueamiento dental profesional, lo común es aclarar varios tonos desde la primera sesión, y en Velvence el objetivo del protocolo es lograr de 5 a 8 tonos en una sola cita según diagnóstico y tipo de mancha. También te explicamos qué resultado es realista para ti antes de comenzar.",
   },
   {
-    question: "Do you have speakers for global summits?",
+    question: " ¿Cuánto duran los resultados del aclarado dental?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "La duración depende de hábitos y del tipo de mancha, pero en promedio el resultado puede mantenerse meses e incluso más tiempo con buenos cuidados. Café, té, vino tinto y tabaco pueden acelerar el re-manchar. La mejor forma de prolongarlo es mantener una buena higiene, realizar limpiezas profesionales periódicas y seguir las recomendaciones posteriores a tu sesión.",
+  },
+
+  {
+    question: "¿Qué manchas sí se quitan y cuáles no?",
+    answer:
+      "El blanqueamiento dental funciona muy bien para manchas externas (por café, té, vino, tabaco y pigmentos) y para el amarillamiento natural con el tiempo. Hay manchas más complejas que pueden responder menos, como algunas manchas internas (por ciertos medicamentos, traumatismos o dientes con endodoncia). Por eso hacemos una valoración: te decimos qué tan buen candidato eres y qué resultado esperar para evitar falsas expectativas.",
   },
   {
-    question: "How do we get started with Lifecycle?",
+    question: "¿Necesito limpieza dental antes del blanqueamiento?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Sí, en la mayoría de los casos se recomienda una limpieza dental profesional antes del blanqueamiento. ¿Por qué? Porque remover placa, biofilm y manchas superficiales ayuda a que el gel actúe de forma más uniforme y los resultados sean mejores. Además, mejora la salud de encías y reduce el riesgo de molestias durante el tratamiento.",
   },
+
 ]
 
 export default function BlanqueamientoDentalPage() {
@@ -70,27 +77,27 @@ export default function BlanqueamientoDentalPage() {
   const tabItems = [
     {
       icon: "shield-check",
-      title: "Eliminación de placa y Sarro (GBT protocol)",
+      title: "Examen dental previo",
       description:
-        "Fieldwork is an architecture firm defined by a minimal yet human-centered philosophy. Guided by decades of collective expertise, our team approaches every project with rigor, precision, and creativity. We believe architecture should not chase trends but instead embody clarity, restraint, and long-lasting value.",
+        "Antes de realizar el blanqueamiento dental, evaluamos el estado de tus dientes y encías para asegurarnos de que el tratamiento sea adecuado para ti y se realice de forma segura.",
     },
     {
       icon: "book-open",
-      title: "Examen dental",
+      title: "Limpieza dental profesional con EMS Airflow",
       description:
-        "Durante el examen dental realizamos una evaluación completa de tu salud bucal, identificando cualquier problema potencial antes de que se convierta en algo más serio.",
+        "Limpieza dental profesional con EMS Airflow: elimina placa, biofilm y manchas por café o tabaco con aire+agua, sin dolor y rápida. Deja dientes más lisos, frescos, encías sanas y dejan lista la superficie para tu blanqueamiento dental.",
     },
     {
       icon: "search",
-      title: "Revisión de la salud de las encías",
+      title: "Protocolo de confort",
       description:
-        "Evaluamos cuidadosamente el estado de tus encías para detectar signos tempranos de enfermedad periodontal y asegurar la salud integral de tu boca.",
+        "Preparamos unos detalles extra para que disfrutes: ondas binaurales, goggles inteligentes con masaje y Theraboots. Relájate, respira y disfruta una experiencia confortable Durante el blanqueamiento.",
     },
     {
       icon: "droplet",
-      title: "Tratamiento con flúor (sólo si es necesario)",
+      title: "Blanqueamiento dental profesional",
       description:
-        "Aplicamos tratamiento de flúor cuando es necesario para fortalecer el esmalte dental y prevenir la formación de caries.",
+        "Aplicamos un gel blanqueador profesional que se activa con tecnología Philips Zoom, diseñado para aclarar el tono de tus dientes, siguiendo el protocolo, siempre en consultorio y bajo supervisión especializada.",
     },
   ]
 
@@ -109,27 +116,27 @@ export default function BlanqueamientoDentalPage() {
 
   const technologies = [
     {
-      title: "Previene y repara caries en etapa temprana ",
+      title: "Aclara de 5 a 8 tonos desde la primera sesión",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        " El blanqueamiento dental profesional permite aclarar el tono de tus dientes hasta 8 tonos en la escala VITA en una sola cita. Es una opción eficaz para tratar manchas profundas y recuperar una sonrisa más luminosa sin dañar tus dientes o causar sensibilidad dental.",
       stat: "20%",
       logo: "/images/global/ems_logo.svg",
       logoAlt: "EMS AirFlow Logo",
       icon: "gleam_black.svg",
     },
     {
-      title: "Elimina manchas superficiales",
+      title: "Sonrisa más saludable (no solo más blanca)",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Antes del blanqueamiento trabajamos la base: retiramos biofilm, placa y manchas superficiales para mejorar la apariencia y la salud de la sonrisa. Dientes más lisos, sensación de limpieza real y encías más tranquilas.",
       stat: "5X",
       logo: "/images/global/philips_zoom_logo.svg",
       logoAlt: "Philips Zoom Logo",
       icon: "gleam_black.svg",
     },
     {
-      title: "Preserva y repara el esmalte",
+      title: "Confianza visible en tu día a día",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Una sonrisa más blanca y cuidada se nota en fotos, reuniones y momentos cotidianos. Sin cambiar la forma natural de tus dientes, el blanqueamiento mejora la luminosidad y te ayuda a sonreír con más seguridad sin dañar o desgastar tus dientes",
       stat: "5X",
       logo: "/images/global/therabody_logo.svg",
       logoAlt: "Therabody Logo",
@@ -140,7 +147,7 @@ export default function BlanqueamientoDentalPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Nav */}
-      <section className="relative min-h-screen bg-primary-dark text-white overflow-hidden">
+      <section className="relative bg-primary-dark text-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -157,7 +164,7 @@ export default function BlanqueamientoDentalPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-44 pb-40 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -166,7 +173,7 @@ export default function BlanqueamientoDentalPage() {
             className="relative aspect-square rounded-3xl overflow-hidden"
           >
             <Image
-              src="/images/treatments/main_image.webp"
+              src="/images/about/about_history.webp"
               alt="Blanqueamiento dental"
               fill
               className="object-cover"
@@ -179,23 +186,25 @@ export default function BlanqueamientoDentalPage() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="mt-6"
           >
             <p className="text-accent text-sm font-medium">[Tratamientos]</p>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">Limpieza dental profesional</h1>
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">Blanqueamiento dental profesional</h1>
             <p className="text-lg text-secondary-light leading-relaxed max-w-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam
+             Transforma tu sonrisa con un blanqueamiento dental profesional en consultorio. 
+             Aclaramos tus dientes  de forma segura y efectiva en una sola cita. 
+             Eliminando manchas profundas  Causadas por alimentos y hábitos. 
+             Una sonrisa luminosa y dientes más blancos en una sesión. 
             </p>
             <div className="flex flex-wrap items-center gap-6 py-4">
               <div className="flex items-baseline gap-3">
-                <span className="text-sm text-secondary-light line-through">$2,500mxn</span>
-                <span className="text-3xl font-medium text-accent">$1,900mxn</span>
+                <span className="text-sm text-secondary-light line-through">$ 6,200mxn</span>
+                <span className="text-3xl font-medium text-accent">$5,499</span>
               </div>
               <div className="h-10 w-px bg-white/20" />
               <div className="text-sm">
                 <p className="text-secondary-light">Duración de la cita:</p>
-                <p className="font-medium">45 - 60 minutos</p>
+                <p className="font-medium">60 - 90 minutos</p>
               </div>
             </div>
             <Link
@@ -215,13 +224,13 @@ export default function BlanqueamientoDentalPage() {
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <Image src="/images/led-icons/health.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">Atención y protocolos personalizados</p>
+                  <p className="font-medium">De 5 a 8 tonos Garantizados</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <Image src="/images/led-icons/gleam_black.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">Experiencia única y relajante tipo SPA</p>
+                  <p className="font-medium">Protegemos y cuidamos tu esmalte</p>
                 </div>
               </div>
             </div>
@@ -236,7 +245,7 @@ export default function BlanqueamientoDentalPage() {
             <motion.div {...fadeInUp} className="space-y-6">
               <p className="text-sm font-medium text-primary opacity-70">[Acerca de]</p>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-                Un tratamiento ideal para renovar tu sonrisa
+                Una forma segura y profesional de aclarar tu sonrisa
               </h2>
             </motion.div>
 
@@ -248,15 +257,16 @@ export default function BlanqueamientoDentalPage() {
               className="space-y-6"
             >
               <p className="text-gray-600 leading-relaxed">
-                Fieldwork is an architecture firm defined by a minimal yet human-centered philosophy. Guided by decades
-                of collective expertise, our team approaches every project with rigor, precision, and creativity. We
-                believe architecture should not chase trends but instead embody clarity, restraint, and long-lasting
-                value.
+                 El blanqueamiento dental profesional en Velvence está diseñado para aclarar el 
+                 tono de tus dientes de manera controlada, segura y efectiva. 
+                 Este tratamiento ayuda a reducir manchas profundas cuando sientes tus dientes amarillos y opacos,
+                 mejorando la apariencia de tu sonrisa sin comprometer la salud del esmalte. 
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Our practice spans across scales and disciplines. From residential and commercial architecture to
-                cultural institutions and urban design. By blending technical expertise with cultural awareness, we
-                create environments that respect context, enhance functionality, and inspire those who experience them.
+                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental 
+                en consultorio que permite obtener resultados notables desde la primera sesión. 
+                Cada tratamiento se adapta de forma personalizada, priorizando tu comodidad, el cuidado de 
+                tus dientes y un resultado natural que se integra de forma armónica con tu sonrisa.
               </p>
               <Link
                 href="/acerca-de-nosotros"
@@ -286,26 +296,26 @@ export default function BlanqueamientoDentalPage() {
             {/* Overlay Content */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex items-center">
               <div className="relative z-10 max-w-2xl p-12 text-white space-y-8">
-                <Image src="/images/global/ems-white.svg" alt="EMS Logo" width={120} height={60} className="mb-6" />
+                <Image src="/images/global/philips_zoom_logo.svg" alt="Philips Zoom! Logo" width={120} height={60} className="mb-6" />
                 <p className="text-xl font-medium mb-6">
-                  Tu limpieza dental
+                  Tu blanqueamiento dental
                   <br />
                   se trabaja con tecnología
                   <br />
-                  EMS AirFlow
+                  Philips Zoom + EMS Airflow
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">Eliminación efectiva del Biofilm</span>
+                    <span className="text-sm">De 5 a 8 tonos garantizados</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">Método mucho más suave y menos abrasivo</span>
+                    <span className="text-sm">Método seguro, eficaz y sin dolor</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">Mejora de la salud de encías</span>
+                    <span className="text-sm">En una sóla cita de 45 minutos</span>
                   </div>
                 </div>
               </div>
@@ -326,7 +336,7 @@ export default function BlanqueamientoDentalPage() {
               <div>
                 <p className="text-sm font-medium mb-4 text-primary opacity-75">[Beneficios]</p>
                 <h3 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark mb-8">
-                  Una limpieza dental con nosotros incluye:
+                   Un blanqueamiento dental con nosotros incluye
                 </h3>
               </div>
 
@@ -457,7 +467,7 @@ export default function BlanqueamientoDentalPage() {
           <div className="w-full border-t-2 border-dashed border-gray-400 my-16" />
 
           <div className="mb-12">
-            <p className="text-sm md:text-base text-primary-dark mb-4 text-center">[Beneficios]</p>
+            <h2 className="text-sm md:text-base text-primary-dark mb-4 text-center">[Beneficios del blanqueamiento dental profesional]</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -478,7 +488,7 @@ export default function BlanqueamientoDentalPage() {
                     height={80}
                     className="object-contain"
                   />
-                  <h3 className="text-xl md:text-2xl font-normal text-primary-dark mb-4 leading-tight">{tech.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-normal text-primary-dark mb-4 mt-8 leading-tight">{tech.title}</h3>
                   <p className="text-sm md:text-base text-primary-dark/70 leading-relaxed mb-8">{tech.description}</p>
                 </div>
               </motion.div>
