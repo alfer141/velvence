@@ -90,7 +90,7 @@ export function Header({ variant = "static" }: HeaderProps) {
                         Blanqueamiento dental
                       </Link>
                       <Link
-                        href="/proximamente"
+                        href="/tratamientos/limpieza-dental"
                         className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
                       >
                         Limpieza / Profilaxis dental
@@ -100,6 +100,12 @@ export function Header({ variant = "static" }: HeaderProps) {
                         className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
                       >
                         Blanqueamiento y limpieza dental
+                      </Link>
+                      <Link
+                        href="/proximamente"
+                        className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
+                      >
+                        Tratamiento de flourosis dental
                       </Link>
                     </motion.div>
                   )}
