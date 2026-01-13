@@ -4,11 +4,11 @@ import { createPageMetadata } from "@/lib/metadata"
 export const metadata = createPageMetadata({
   title: "Tratamiento de Flourosis Dental | Velvence®",
   description:
-    "Limpieza dental profunda con EMS Airflow: suave, sin dolor y altamente efectiva para eliminar biofilm y manchas. Sonrisa fresca. Agenda hoy.",
+    "Dile adios a las manchas blancas en los dientes con nuestro tratamiento de resina infiltrativa en Velvence  la solución definitiva para recuperar un tono uniforme en tus dientes. ",
   openGraph: {
     title: "Tratamiento de Flourosis Dental | Velvence®",
     description:
-      "Limpieza dental profunda con EMS Airflow: suave, sin dolor y altamente efectiva para eliminar biofilm y manchas. Sonrisa fresca. Agenda hoy.",
+      "Dile adios a las manchas blancas en los dientes con nuestro tratamiento de resina infiltrativa en Velvence  la solución definitiva para recuperar un tono uniforme en tus dientes. ",
   },
 })
 
