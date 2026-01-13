@@ -527,13 +527,12 @@ export default function BlanqueamientoDentalPage() {
       <section className="py-20 lg:py-32 bg-arena">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
           <motion.div {...fadeInUp} className="space-y-6">
-            <p className="text-sm font-medium text-primary opacity-75">[Ask us about]</p>
+            <p className="text-sm font-medium text-primary opacity-75">[Preguntas frecuentes]</p>
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-              Frequently Asked Questions
+              Lo que nuestros pacientes preguntan antes de un blanqueamiento dental
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              If you don't see your question here send a message directly to our team. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+              Si nuestras preguntas frecuentes no resuelven tu duda, envíanos un mensaje para brindarte atención personalizada.
             </p>
           </motion.div>
 
