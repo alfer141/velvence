@@ -256,6 +256,13 @@ export function PreciosClientPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
+            <motion.h1 className="text-4xl font-bold text-center text-primary-dark mt-12 mb-2">
+              Protocolos y precios
+            </motion.h1>
+            <p className="text-center text-gray-600 max-w-2xl mx-auto">
+              Descubre los distintos servicios que ofrecemos en Velvence para fomentar tu salud
+             bucal e impulsar  tu confianza con una nueva experiencia. 
+            </p>
           <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 mt-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
