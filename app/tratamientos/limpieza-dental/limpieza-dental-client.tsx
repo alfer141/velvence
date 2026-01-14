@@ -10,24 +10,24 @@ import { useState } from "react"
 
 const faqs = [
   {
-    question: "¿Duele el blanqueamiento dental?",
+    question: "¿Cuál es el precio de una limpieza dental profesional?",
     answer:
-      'En la mayoría de los casos, el blanqueamiento dental profesional no duele. Lo que algunas personas sienten es una sensación temporal (como "cosquilleo" o leve sensibilidad), especialmente si ya tenían sensibilidad previa. En Velvence hacemos una valoración previa de encías y esmalte, y ajustamos el protocolo para que el tratamiento sea cómodo y seguro.',
+      'El precio de la limpieza dental profesional en Velvence, centro de blanqueamiento y limpieza dental profesional, es de $1,900 pesos mexicanos. Este costo incluye una limpieza completa realizada en consultorio con tecnología avanzada y valoración profesional.',
   },
   {
-    question: "¿Me va a dar sensibilidad después? ¿Cuánto dura?",
+    question: "¿La limpieza dental desgasta o daña los dientes?",
     answer:
-      "Puede haber sensibilidad dental leve y temporal, pero no le ocurre a todos. Cuando aparece, suele durar de unas horas hasta 24–48 horas. Factores como dientes sensibles, recesión de encías o desgaste del esmalte pueden influir. Por eso la clave es hacerlo de forma profesional: evaluamos tu caso y te damos recomendaciones de cuidado para minimizarla (por ejemplo, evitar extremos de temperatura el mismo día).",
+      "No. Cuando se realiza de forma profesional, la limpieza dental no desgasta el esmalte. Al contrario, elimina placa y sarro sin afectar la estructura del diente, ayudando a preservar tu salud dental a largo plazo.",
   },
   {
-    question: "¿En cuánto tiempo veo resultados y cuántos tonos aclara?",
+    question: "¿La limpieza dental duele?",
     answer:
-      "Los resultados son inmediatos: sales de tu cita con una sonrisa visiblemente más blanca. En un blanqueamiento dental profesional, lo común es aclarar varios tonos desde la primera sesión, y en Velvence el objetivo del protocolo es lograr de 5 a 8 tonos en una sola cita según diagnóstico y tipo de mancha. También te explicamos qué resultado es realista para ti antes de comenzar.",
+      "Una limpieza dental profesional no debería ser dolorosa. Aun así, en una limpieza convencional algunas personas pueden sentir molestia por la fricción del instrumental y porque suele tomar más tiempo, sobre todo si hay placa acumulada o encías sensibles. En Velvence realizamos limpieza dental con EMS Airflow (GBT), un método suave y sin dolor que elimina biofilm y placa con mayor comodidad y en menos tiempo, ideal incluso para pacientes con sensibilidad.,
   },
   {
-    question: " ¿Cuánto duran los resultados del aclarado dental?",
+    question: "¿Cada cuánto tiempo se recomienda hacer una limpieza dental?",
     answer:
-      "La duración depende de hábitos y del tipo de mancha, pero en promedio el resultado puede mantenerse meses e incluso más tiempo con buenos cuidados. Café, té, vino tinto y tabaco pueden acelerar el re-manchar. La mejor forma de prolongarlo es mantener una buena higiene, realizar limpiezas profesionales periódicas y seguir las recomendaciones posteriores a tu sesión.",
+      "De forma general, se recomienda realizar una limpieza dental profesional cada 6 meses. Sin embargo, la frecuencia puede variar según tus hábitos, tu salud de encías y la evaluación clínica. Si tienes tendencia a acumular placa o manchas, podrías necesitarla con mayor regularidad.",
   },
 
   {
@@ -78,13 +78,13 @@ export default function LimpiezaDentalPage() {
       icon: "shield-check",
       title: "Examen dental previo",
       description:
-        "Antes de realizar el blanqueamiento dental, evaluamos el estado de tus dientes y encías para asegurarnos de que el tratamiento sea adecuado para ti y se realice de forma segura.",
+        "Antes de realizar la limpieza dental, evaluamos el estado de tus dientes y encías para asegurarnos de que el tratamiento sea adecuado para ti y se realice de forma segura.",
     },
     {
       icon: "book-open",
-      title: "Limpieza dental profesional con EMS Airflow",
+      title: "Eliminación de placa y sarro (GBT protocol)",
       description:
-        "Limpieza dental profesional con EMS Airflow: elimina placa, biofilm y manchas por café o tabaco con aire+agua, sin dolor y rápida. Deja dientes más lisos, frescos, encías sanas y dejan lista la superficie para tu blanqueamiento dental.",
+        "La limpieza dental en Velvence se realiza bajo el protocolo GBT, un enfoque clínico moderno que permite eliminar placa, sarro y biofilm de forma precisa y sin dolor. Este método ayuda a reducir la carga bacteriana responsable de inflamación, sangrado y otros problemas bucales, cuidando al mismo tiempo tu esmalte. ",
     },
     {
       icon: "search",
@@ -94,9 +94,9 @@ export default function LimpiezaDentalPage() {
     },
     {
       icon: "droplet",
-      title: "Blanqueamiento dental profesional",
+      title: "Tratamiento con flúor (sólo si es necesario)",
       description:
-        "Aplicamos un gel blanqueador profesional que se activa con tecnología Philips Zoom, diseñado para aclarar el tono de tus dientes, siguiendo el protocolo, siempre en consultorio y bajo supervisión especializada.",
+        "El tratamiento con flúor se indica únicamente cuando es necesario, como una medida preventiva para fortalecer el esmalte y reducir el riesgo de caries. Su aplicación se valora de forma individual, siempre priorizando la salud dental y evitando procedimientos innecesarios.",
     },
   ]
 
@@ -115,27 +115,27 @@ export default function LimpiezaDentalPage() {
 
   const technologies = [
     {
-      title: "Aclara de 5 a 8 tonos desde la primera sesión",
+      title: "Previene y repara caries en etapa temprana",
       description:
-        " El blanqueamiento dental profesional permite aclarar el tono de tus dientes hasta 8 tonos en la escala VITA en una sola cita. Es una opción eficaz para tratar manchas profundas y recuperar una sonrisa más luminosa sin dañar tus dientes o causar sensibilidad dental.",
+        "La limpieza dental profesional ayuda a eliminar placa bacteriana antes de que se convierta en caries. Al retirar estos depósitos a tiempo, se pueden frenar lesiones iniciales y prevenir tratamientos más fuertes en el futuro.",
       stat: "20%",
       logo: "/images/global/ems_logo.svg",
       logoAlt: "EMS AirFlow Logo",
       icon: "gleam_black.svg",
     },
     {
-      title: "Sonrisa más saludable (no solo más blanca)",
+      title: "Elimina manchas superficiales",
       description:
-        "Antes del blanqueamiento trabajamos la base: retiramos biofilm, placa y manchas superficiales para mejorar la apariencia y la salud de la sonrisa. Dientes más lisos, sensación de limpieza real y encías más tranquilas.",
+        "Durante la limpieza dental se eliminan manchas que se adhieren a la superficie del esmalte. Esto permite que los dientes recuperen una textura más lisa y un tono más limpio y uniforme.",
       stat: "5X",
       logo: "/images/global/philips_zoom_logo.svg",
       logoAlt: "Philips Zoom Logo",
       icon: "gleam_black.svg",
     },
     {
-      title: "Confianza visible en tu día a día",
+      title: "Preserva y repara el esmalte",
       description:
-        "Una sonrisa más blanca y cuidada se nota en fotos, reuniones y momentos cotidianos. Sin cambiar la forma natural de tus dientes, el blanqueamiento mejora la luminosidad y te ayuda a sonreír con más seguridad sin dañar o desgastar tus dientes",
+        "Una limpieza dental profesional elimina residuos sin desgastar el esmalte, ayudando a mantenerlo fuerte y saludable. Al reducir bacterias y acumulaciones dañinas, se protege la supeficie del diente y se favorece su resistencia.",
       stat: "5X",
       logo: "/images/global/therabody_logo.svg",
       logoAlt: "Therabody Logo",
@@ -192,7 +192,7 @@ export default function LimpiezaDentalPage() {
               Limpieza dental Profunda (Profilaxis) con EMS Airflow
             </h1>
             <p className="text-lg text-secondary-light leading-relaxed max-w-xl">
-              Renueva tu sonrisa con una limpieza dental profunda con EMS Airflow. Eliminamos biofilm, placa y manchas por café o tabaco de
+              Renueva tu sonrisa con una limpieza dental profunda con EMS Airflow suave y sin dolor. Eliminamos biofilm, placa y manchas por café o tabaco de
               forma suave, sin dolor y en una sola cita. Dientes más lisos, frescos y encías más sanas desde el primer día.
             </p>
             <div className="flex flex-wrap items-center gap-6 py-4">
@@ -217,19 +217,19 @@ export default function LimpiezaDentalPage() {
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <Image src="/images/led-icons/gleam_acent.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">Limpieza suave y sin dolor</p>
+                  <p className="font-medium">Limpieza suave, sin dolor y efectiva</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <Image src="/images/led-icons/health.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">De 5 a 8 tonos Garantizados</p>
+                  <p className="font-medium">El método preferido por el 94% de los pacientes</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <Image src="/images/led-icons/gleam_black.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">Protegemos y cuidamos tu esmalte</p>
+                  <p className="font-medium">Reduce el riesgo de caries y enfermedades en encías</p>
                 </div>
               </div>
             </div>
@@ -244,7 +244,7 @@ export default function LimpiezaDentalPage() {
             <motion.div {...fadeInUp} className="space-y-6">
               <p className="text-sm font-medium text-primary opacity-70">[Acerca de]</p>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-                Una forma segura y profesional de aclarar tu sonrisa
+                Dale un refresh a tu sonrisa
               </h2>
             </motion.div>
 
@@ -256,16 +256,20 @@ export default function LimpiezaDentalPage() {
               className="space-y-6"
             >
               <p className="text-gray-600 leading-relaxed">
-                El blanqueamiento dental profesional en Velvence está diseñado para aclarar el tono de tus dientes de
-                manera controlada, segura y efectiva. Este tratamiento ayuda a reducir manchas profundas cuando sientes
-                tus dientes amarillos y opacos, mejorando la apariencia de tu sonrisa sin comprometer la salud del
-                esmalte.
+                La limpieza dental profesional en Velvence está pensada 
+                para eliminar de forma profunda el sarro, la placa bacteriana 
+                y el biofilm que se acumulan con el tiempo y que no pueden retirarse 
+                facilmente. Este tratamiento ayuda a mejorar la apariencia de los dientes, 
+                mantener encías saludables y prevenir problemas dentales que pueden avanzar 
+                si no se atienden a tiempo.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental en consultorio que permite
-                obtener resultados notables desde la primera sesión. Cada tratamiento se adapta de forma personalizada,
-                priorizando tu comodidad, el cuidado de tus dientes y un resultado natural que se integra de forma
-                armónica con tu sonrisa.
+                Trabajamos con tecnología AirFlow, un sistema avanzado que permite realizar una 
+                limpieza dental más precisa, cómoda y cero. invasiva con tus dientes. Al eliminar 
+                bacterias y residuos de manera efectiva y cómoda,  mejoramos la experiencia de una 
+                limpieza dental mientras contribuimos a la salud bucal a largo plazo, manteniendo tus 
+                dientes limpios, tus encías sanas y una sonrisa que se ve bien y se siente mejor en una 
+                sesión.
               </p>
               <Link
                 href="/acerca-de-nosotros"
@@ -303,24 +307,24 @@ export default function LimpiezaDentalPage() {
                   className="mb-6"
                 />
                 <p className="text-xl font-medium mb-6">
-                  Tu blanqueamiento dental
+                  Tu profilaxis dental
                   <br />
                   se trabaja con tecnología
                   <br />
-                  Philips Zoom + EMS Airflow
+                  EMS Airflow + GBT Protocol
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">De 5 a 8 tonos garantizados</span>
+                    <span className="text-sm">Elimina el sarro y manchas superficiales</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">Método seguro, eficaz y sin dolor</span>
+                    <span className="text-sm">Método suave, eficaz y sin dolor</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">En una sóla cita de 45 minutos</span>
+                    <span className="text-sm">Reduce, previene Caries y elimina el biofilm</span>
                   </div>
                 </div>
               </div>
@@ -341,7 +345,7 @@ export default function LimpiezaDentalPage() {
               <div>
                 <p className="text-sm font-medium mb-4 text-primary opacity-75">[Beneficios]</p>
                 <h3 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark mb-8">
-                  Un blanqueamiento dental con nosotros incluye
+                  Una limpieza dental con nosotros incluye
                 </h3>
               </div>
 
@@ -473,7 +477,7 @@ export default function LimpiezaDentalPage() {
 
           <div className="mb-12">
             <h2 className="text-sm md:text-base text-primary-dark mb-4 text-center">
-              [Beneficios del blanqueamiento dental profesional]
+              [Estos son algunos de los principales beneficios de una limpieza dental profesional y cómo pueden ayudarte a cuidar tu salud bucal mejorar tu sonrisa.]
             </h2>
           </div>
 
@@ -538,7 +542,7 @@ export default function LimpiezaDentalPage() {
           <motion.div {...fadeInUp} className="space-y-6">
             <p className="text-sm font-medium text-primary opacity-75">[Preguntas frecuentes]</p>
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-              Lo que nuestros pacientes preguntan antes de un blanqueamiento dental
+              Lo que nuestros pacientes preguntan antes de una limpieza dental
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Si nuestras preguntas frecuentes no resuelven tu duda, envíanos un mensaje para brindarte atención
