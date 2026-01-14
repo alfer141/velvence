@@ -21,13 +21,12 @@ const faqs = [
   },
   {
     question: "¿La limpieza dental duele?",
-    answer:
-      "Una limpieza dental profesional no debería ser dolorosa. Aun así, en una limpieza convencional algunas personas pueden sentir molestia por la fricción del instrumental y porque suele tomar más tiempo, sobre todo si hay placa acumulada o encías sensibles. En Velvence realizamos limpieza dental con EMS Airflow (GBT), un método suave y sin dolor que elimina biofilm y placa con mayor comodidad y en menos tiempo, ideal incluso para pacientes con sensibilidad.,
+    answer: "Una limpieza dental profesional no debería ser dolorosa. Aun así, en una limpieza convencional algunas personas pueden sentir molestia por la fricción del instrumental y porque suele tomar más tiempo, sobre todo si hay placa acumulada o encías sensibles. En Velvence realizamos limpieza dental con EMS Airflow (GBT), un método suave y sin dolor que elimina biofilm y placa con mayor comodidad y en menos tiempo, ideal incluso para pacientes con sensibilidad.",
   },
+
   {
     question: "¿Cada cuánto tiempo se recomienda hacer una limpieza dental?",
-    answer:
-      "De forma general, se recomienda realizar una limpieza dental profesional cada 6 meses. Sin embargo, la frecuencia puede variar según tus hábitos, tu salud de encías y la evaluación clínica. Si tienes tendencia a acumular placa o manchas, podrías necesitarla con mayor regularidad.",
+    answer: "De forma general, se recomienda realizar una limpieza dental profesional cada 6 meses. Sin embargo, la frecuencia puede variar según tus hábitos, tu salud de encías y la evaluación clínica. Si tienes tendencia a acumular placa o manchas, podrías necesitarla con mayor regularidad.",
   },
 
   {
@@ -35,11 +34,7 @@ const faqs = [
     answer:
       "El blanqueamiento dental funciona muy bien para manchas externas (por café, té, vino, tabaco y pigmentos) y para el amarillamiento natural con el tiempo. Hay manchas más complejas que pueden responder menos, como algunas manchas internas (por ciertos medicamentos, traumatismos o dientes con endodoncia). Por eso hacemos una valoración: te decimos qué tan buen candidato eres y qué resultado esperar para evitar falsas expectativas.",
   },
-  {
-    question: "¿Necesito limpieza dental antes del blanqueamiento?",
-    answer:
-      "Sí, en la mayoría de los casos se recomienda una limpieza dental profesional antes del blanqueamiento. ¿Por qué? Porque remover placa, biofilm y manchas superficiales ayuda a que el gel actúe de forma más uniforme y los resultados sean mejores. Además, mejora la salud de encías y reduce el riesgo de molestias durante el tratamiento.",
-  },
+  
 ]
 
 export default function LimpiezaDentalPage() {
