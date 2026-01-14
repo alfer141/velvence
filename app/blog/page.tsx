@@ -7,6 +7,8 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Calendar } from "lucide-react"
 
+export const revalidate = 60 // Revalida cada 60 segundos como fallback
+
 export const metadata = createPageMetadata({
   title: "Velvence® | Blog",
   description:

@@ -35,6 +35,8 @@ const components = {
   },
 }
 
+export const revalidate = 60 // Revalida cada 60 segundos como fallback
+
 export async function generateMetadata({
   params,
 }: {
