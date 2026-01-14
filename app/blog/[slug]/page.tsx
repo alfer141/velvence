@@ -33,6 +33,23 @@ const components = {
       </a>
     ),
   },
+  types: {
+    image: ({ value }: any) => {
+      if (!value?.asset?._ref) {
+        return null
+      }
+      return (
+        <figure className="my-8">
+          <img
+            src={urlFor(value).width(800).url() || "/placeholder.svg"}
+            alt={value.alt || "Imagen del artículo"}
+            className="w-full rounded-lg"
+          />
+          {value.alt && <figcaption className="text-sm text-gray-600 text-center mt-2 italic">{value.alt}</figcaption>}
+        </figure>
+      )
+    },
+  },
 }
 
 export const revalidate = 60 // Revalida cada 60 segundos como fallback
