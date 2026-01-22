@@ -76,27 +76,33 @@ export default function LimpiezaDentalPage() {
   const tabItems = [
     {
       icon: "shield-check",
-      title: "Examen dental previo",
+      title: "Desmineralización dental",
       description:
-        "Antes de realizar el blanqueamiento dental, evaluamos el estado de tus dientes y encías para asegurarnos de que el tratamiento sea adecuado para ti y se realice de forma segura.",
+        "La resina ICON no remineraliza el esmalte, pero sí puede ser una excelente opción para sellar la micro porosidad  causada por la desmineralización. Al infiltrarse en esos micro-poros, ayuda a disimular las manchas blancas y a lograr un aspecto más uniforme.",
     },
     {
       icon: "book-open",
-      title: "Limpieza dental profesional con EMS Airflow",
+      title: "Manchas por Fluorosis",
       description:
-        "Limpieza dental profesional con EMS Airflow: elimina placa, biofilm y manchas por café o tabaco con aire+agua, sin dolor y rápida. Deja dientes más lisos, frescos, encías sanas y dejan lista la superficie para tu blanqueamiento dental.",
+        "La fluorosis dental leve a moderada puede generar porosidad en el esmalte, lo que provoca manchas blancas (y a veces tonos irregulares). Con resina infiltrativa ICON, rellenamos esos microespacios para que el esmalte refleje la luz de forma más uniforme y la mancha se note mucho menos en casos seleccionados.",
     },
     {
       icon: "search",
-      title: "Protocolo de confort",
+      title: "Manchas por Brackets (Ortodoncia)",
       description:
-        "Preparamos unos detalles extra para que disfrutes: ondas binaurales, goggles inteligentes con masaje y Theraboots. Relájate, respira y disfruta una experiencia confortable Durante el blanqueamiento.",
+        "Las manchas blancas post brackets son muy comunes y suelen deberse a desmineralización del esmalte. La resina ICON es una alternativa mínimamente invasiva para mejorar la apariencia del esmalte y recuperar una sonrisa más uniforme.",
     },
     {
       icon: "droplet",
-      title: "Blanqueamiento dental profesional",
+      title: "Caries blancas",
       description:
-        "Aplicamos un gel blanqueador profesional que se activa con tecnología Philips Zoom, diseñado para aclarar el tono de tus dientes, siguiendo el protocolo, siempre en consultorio y bajo supervisión especializada.",
+        "La “caries blanca” es una lesión inicial relacionada con desmineralización dental, que crea micro-poros y hace que el esmalte se vea blanco y opaco al reflejar la luz de forma distinta. En casos seleccionados (sin cavidad), la resina infiltrativa ICON puede infiltrarse y sellar esa porosidad, ayudando a disimular la mancha y estabilizar la lesión.",
+    },
+    {
+      icon: "droplet",
+      title: "Manchas por traumatismo",
+      description:
+        "ICON es una resina muy fluida que entra en esos microespacios y, al fotocurarse, hace que el esmalte refleje la luz de forma más uniforme. Como resultado las manchas suelen disimularse o incluso desaparecer",
     },
   ]
 
@@ -115,27 +121,27 @@ export default function LimpiezaDentalPage() {
 
   const technologies = [
     {
-      title: "Aclara de 5 a 8 tonos desde la primera sesión",
+      title: "Preparamos la zona",
       description:
-        " El blanqueamiento dental profesional permite aclarar el tono de tus dientes hasta 8 tonos en la escala VITA en una sola cita. Es una opción eficaz para tratar manchas profundas y recuperar una sonrisa más luminosa sin dañar tus dientes o causar sensibilidad dental.",
+        "Aislamos el diente y “abrimos” suavemente la superficie para que el tratamiento pueda actuar donde realmente está la mancha.",
       stat: "20%",
       logo: "/images/global/ems_logo.svg",
       logoAlt: "EMS AirFlow Logo",
       icon: "gleam_black.svg",
     },
     {
-      title: "Sonrisa más saludable (no solo más blanca)",
+      title: "Infiltramos la resina ICON",
       description:
-        "Antes del blanqueamiento trabajamos la base: retiramos biofilm, placa y manchas superficiales para mejorar la apariencia y la salud de la sonrisa. Dientes más lisos, sensación de limpieza real y encías más tranquilas.",
+        "Aplicamos una resina ultra fluida que se absorbe dentro de la mancha (como una esponja), rellenando los microespacios responsables del tono blanco.",
       stat: "5X",
       logo: "/images/global/philips_zoom_logo.svg",
       logoAlt: "Philips Zoom Logo",
       icon: "gleam_black.svg",
     },
     {
-      title: "Confianza visible en tu día a día",
+      title: "Sellamos y pulimos",
       description:
-        "Una sonrisa más blanca y cuidada se nota en fotos, reuniones y momentos cotidianos. Sin cambiar la forma natural de tus dientes, el blanqueamiento mejora la luminosidad y te ayuda a sonreír con más seguridad sin dañar o desgastar tus dientes",
+        "Fotocuramos para fijar el resultado y pulimos para que el esmalte quede liso, brillante y con un acabado natural.",
       stat: "5X",
       logo: "/images/global/therabody_logo.svg",
       logoAlt: "Therabody Logo",
@@ -172,7 +178,7 @@ export default function LimpiezaDentalPage() {
             className="relative aspect-square rounded-3xl overflow-hidden"
           >
             <Image
-              src="/images/treatments/limpieza_main.webp"
+              src="/images/treatments/manchas_blancas_main.webp"
               alt="Limpieza dental"
               fill
               className="object-cover"
@@ -189,21 +195,23 @@ export default function LimpiezaDentalPage() {
           >
             <p className="text-accent text-sm font-medium">[Tratamientos]</p>
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
-              Limpieza dental Profunda (Profilaxis) con EMS Airflow
+              Resina Infiltrativa ICON
             </h1>
+            <h2 className="text-xl">Elimina o desvanece manchas blancas de tus dientes.</h2>
             <p className="text-lg text-secondary-light leading-relaxed max-w-xl">
-              Renueva tu sonrisa con una limpieza dental profunda con EMS Airflow. Eliminamos biofilm, placa y manchas por café o tabaco de
-              forma suave, sin dolor y en una sola cita. Dientes más lisos, frescos y encías más sanas desde el primer día.
+              Las manchas blancas en los dientes pueden aparecer por distintas razones, 
+              y muchas de ellas tienen solución. La aplicación de resina infiltrante es un tratamiento 
+              mínimamente invasivo que ayuda a mejorar la apariencia del esmalte y dejar atrás esas molestas manchas blancas.
             </p>
             <div className="flex flex-wrap items-center gap-6 py-4">
               <div className="flex items-baseline gap-3">
-                <span className="text-sm text-secondary-light line-through">$ 1,950mxn</span>
-                <span className="text-3xl font-medium text-accent">$1,599</span>
+                <span className="text-sm text-secondary-light line-through">$5,200mxn</span>
+                <span className="text-3xl font-medium text-accent">$4,800 mxn</span>
               </div>
               <div className="h-10 w-px bg-white/20" />
               <div className="text-sm">
                 <p className="text-secondary-light">Duración de la cita:</p>
-                <p className="font-medium">30 - 45 minutos</p>
+                <p className="font-medium">60 - 80 minutos</p>
               </div>
             </div>
             <Link
@@ -217,19 +225,19 @@ export default function LimpiezaDentalPage() {
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <Image src="/images/led-icons/gleam_acent.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">Limpieza suave y sin dolor</p>
+                  <p className="font-medium">Mínimamente invasivo</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <Image src="/images/led-icons/health.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">De 5 a 8 tonos Garantizados</p>
+                  <p className="font-medium">Resultados en una sola sesión</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <Image src="/images/led-icons/gleam_black.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">Protegemos y cuidamos tu esmalte</p>
+                  <p className="font-medium">Valoración  y tratamiento personalizado.</p>
                 </div>
               </div>
             </div>
@@ -244,7 +252,7 @@ export default function LimpiezaDentalPage() {
             <motion.div {...fadeInUp} className="space-y-6">
               <p className="text-sm font-medium text-primary opacity-70">[Acerca de]</p>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-                Una forma segura y profesional de aclarar tu sonrisa
+                Qué es y cómo funcionan las resinas infiltrativas. 
               </h2>
             </motion.div>
 
@@ -256,16 +264,17 @@ export default function LimpiezaDentalPage() {
               className="space-y-6"
             >
               <p className="text-gray-600 leading-relaxed">
-                El blanqueamiento dental profesional en Velvence está diseñado para aclarar el tono de tus dientes de
-                manera controlada, segura y efectiva. Este tratamiento ayuda a reducir manchas profundas cuando sientes
-                tus dientes amarillos y opacos, mejorando la apariencia de tu sonrisa sin comprometer la salud del
-                esmalte.
+                La resina infiltrante es un tratamiento mínimamente invasivo y altamente eficaz para tratar las 
+                manchas blancas en los dientes ocasionadas por desmineralización en el esmalte, manchas blancas por 
+                caries, fluorosis leve a moderada y manchas post brackets (Ortodoncia). Además, 
+                en algunos casos suele dar buenos resultados en la disminución de la hipersensibilidad.
               </p>
+              <h3>¿Cómo funciona?</h3>
               <p className="text-gray-600 leading-relaxed">
-                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental en consultorio que permite
-                obtener resultados notables desde la primera sesión. Cada tratamiento se adapta de forma personalizada,
-                priorizando tu comodidad, el cuidado de tus dientes y un resultado natural que se integra de forma
-                armónica con tu sonrisa.
+                La resina ICON es un material muy fluido (de baja densidad). Una vez aplicada, puede ser “absorbida” 
+                por el diente al infiltrarse en las microzonas porosas del esmalte. Después, se seca y se fotocura con 
+                una lámpara de curación. Al fijarse, ayuda a que el esmalte refleje la luz de forma más uniforme, lo que 
+                disimula y, en algunos casos, puede hacer que la mancha blanca sea mucho menos visible.
               </p>
               <Link
                 href="/acerca-de-nosotros"
@@ -303,24 +312,24 @@ export default function LimpiezaDentalPage() {
                   className="mb-6"
                 />
                 <p className="text-xl font-medium mb-6">
-                  Tu blanqueamiento dental
+                  Desvanece las manchas blancas  
                   <br />
-                  se trabaja con tecnología
+                  en tus dientes con tecnología
                   <br />
-                  Philips Zoom + EMS Airflow
+                  de DMG Dental ICON
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">De 5 a 8 tonos garantizados</span>
+                    <span className="text-sm">Un tratamiento conservador y sin desgaste ni dolor</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">Método seguro, eficaz y sin dolor</span>
+                    <span className="text-sm">Clínicamente provado</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CircleCheckBig className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                    <span className="text-sm">En una sóla cita de 45 minutos</span>
+                    <span className="text-sm">Combina con Blanqueamiento Dental</span>
                   </div>
                 </div>
               </div>
@@ -339,10 +348,10 @@ export default function LimpiezaDentalPage() {
             {/* Left: Tab Interface */}
             <motion.div {...fadeInUp} className="space-y-8">
               <div>
-                <p className="text-sm font-medium mb-4 text-primary opacity-75">[Beneficios]</p>
-                <h3 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark mb-8">
-                  Un blanqueamiento dental con nosotros incluye
-                </h3>
+                <p className="text-sm font-medium mb-4 text-primary opacity-75">[Casos de Uso]</p>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark mb-8">
+                  El tratamiento de la resina ICON es efectiva para:
+                </h2>
               </div>
 
               {/* Tab Items with Dashed Borders */}

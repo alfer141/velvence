@@ -96,17 +96,12 @@ export function Header({ variant = "static" }: HeaderProps) {
                         Limpieza / Profilaxis dental
                       </Link>
                       <Link
-                        href="/proximamente"
+                        href="/tratamientos/resina-infiltrativa"
                         className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
                       >
-                        Blanqueamiento y limpieza dental
+                        Resina infiltrativa ICON
                       </Link>
-                      <Link
-                        href="/proximamente"
-                        className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
-                      >
-                        Tratamiento de flourosis dental
-                      </Link>
+                      
                     </motion.div>
                   )}
                 </AnimatePresence>
