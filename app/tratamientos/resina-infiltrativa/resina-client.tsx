@@ -1,12 +1,14 @@
 "use client"
 
+import React from "react"
+
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { CircleCheckBig } from "lucide-react"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { useState } from "react"
+import { useState, useRef, useCallback } from "react"
 
 const faqs = [
   {
@@ -44,6 +46,36 @@ const faqs = [
 
 export default function LimpiezaDentalPage() {
   const [activeTab, setActiveTab] = useState(0)
+  const [sliderPosition, setSliderPosition] = useState(50)
+  const [isDragging, setIsDragging] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const handleMove = useCallback(
+    (clientX: number) => {
+      if (!containerRef.current) return
+      const rect = containerRef.current.getBoundingClientRect()
+      const x = Math.max(0, Math.min(clientX - rect.left, rect.width))
+      const percent = Math.max(0, Math.min((x / rect.width) * 100, 100))
+      setSliderPosition(percent)
+    },
+    []
+  )
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent) => {
+      if (!isDragging) return
+      handleMove(e.clientX)
+    },
+    [isDragging, handleMove]
+  )
+
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent) => {
+      if (!isDragging) return
+      handleMove(e.touches[0].clientX)
+    },
+    [isDragging, handleMove]
+  )
 
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -170,26 +202,81 @@ export default function LimpiezaDentalPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-44 pb-40 grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Image */}
+          {/* Left: Comparison Slider */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative aspect-square rounded-3xl overflow-hidden"
+            className="relative aspect-square rounded-3xl overflow-hidden select-none"
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={() => setIsDragging(false)}
+            onMouseUp={() => setIsDragging(false)}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={() => setIsDragging(false)}
           >
+            {/* After Image (Background) */}
             <Image
-              src="/images/treatments/manchas_blancas_main.webp"
-              alt="Limpieza dental"
+              src="/images/treatments/sonrisa_manchas_blancas_despues.webp"
+              alt="Después del tratamiento"
               fill
-              className="object-cover"
+              className="object-cover pointer-events-none"
               priority
+              draggable={false}
             />
+            
+            {/* Before Image (Clipped) */}
+            <div
+              className="absolute inset-0 overflow-hidden"
+              style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+            >
+              <Image
+                src="/images/treatments/manchas_blancas_main.webp"
+                alt="Antes del tratamiento"
+                fill
+                className="object-cover pointer-events-none"
+                priority
+                draggable={false}
+              />
+            </div>
+
+            {/* Slider Handle */}
+            <div
+              className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20"
+              style={{ left: `calc(${sliderPosition}% - 2px)` }}
+              onMouseDown={() => setIsDragging(true)}
+              onTouchStart={() => setIsDragging(true)}
+            >
+              {/* Handle Circle */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200">
+                <div className="flex items-center gap-1">
+                  <svg className="w-3 h-3 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <svg className="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Labels */}
+            <div className="absolute bottom-6 left-6 z-10">
+              <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-primary-dark text-sm font-medium rounded-full shadow-sm">
+                Antes
+              </span>
+            </div>
+            <div className="absolute bottom-6 right-6 z-10">
+              <span className="px-4 py-2 bg-accent text-primary-dark text-sm font-medium rounded-full shadow-sm">
+                Después
+              </span>
+            </div>
           </motion.div>
 
           {/* Right: Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-6"
           >
@@ -457,8 +544,8 @@ export default function LimpiezaDentalPage() {
 
             {/* Right: Static Image with Backdrop Blur Overlay */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="relative rounded-2xl overflow-hidden"
