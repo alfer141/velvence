@@ -9,6 +9,7 @@ import { CTABanner } from "@/components/sections/home/cta-banner"
 import { Footer } from "@/components/layout/footer"
 
 export const metadata = createPageMetadata({
+  path: "/",
   title: "Velvence® | Blanqueamiento Dental Profesional",
   description:
     "Descubre la experiencia de blanqueamiento dental más avanzada. Resultados visibles desde la primera sesión con tecnología EMS Airflow.",

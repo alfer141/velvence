@@ -2,6 +2,7 @@ import ContactoClientPage from "./contacto-client"
 import { createPageMetadata } from "@/lib/metadata"
 
 export const metadata = createPageMetadata({
+  path: "/contacto",
   title: "Velvence® | Contacto",
   description:
     "Contacta con Velvence. Teléfono, email, ubicaciones en Querétaro y formulario de contacto. ¡Estamos listos para atenderte!",

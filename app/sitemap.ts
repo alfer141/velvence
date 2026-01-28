@@ -1,10 +1,9 @@
 import type { MetadataRoute } from "next"
 import { client } from "@/lib/sanity.client"
+import { baseUrl } from "@/lib/metadata"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://velvence.mx"
-
-  // Rutas estáticas públicas del sitio
+  // Rutas estáticas públicas del sitio (no incluir páginas noindex como /proximamente o /registro-recibido)
   const staticRoutes = [
     "",
     "/acerca-de-nosotros",
@@ -13,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/precios",
     "/tratamientos/blanqueamiento-dental",
     "/tratamientos/limpieza-dental",
-    "/tratamientos/flourosis-dental",
+    "/tratamientos/resina-infiltrativa",
   ]
 
   const staticSitemap = staticRoutes.map((route) => ({

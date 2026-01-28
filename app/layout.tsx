@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     "Clínica líder en blanqueamiento y aclaramiento dental en México. Limpieza dental profesional con tecnología avanzada. Resultados visibles desde la primera sesión",
   generator: "v0.app",
   metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: baseUrl,
+  },
   openGraph: {
     title: "Velvence® | Clínica de Blanqueamiento Dental",
     description:
