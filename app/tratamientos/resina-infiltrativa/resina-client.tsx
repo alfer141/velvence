@@ -164,7 +164,7 @@ export default function LimpiezaDentalPage() {
       stat: "20%",
       logo: "/images/global/ems_logo.svg",
       logoAlt: "EMS AirFlow Logo",
-      icon: "gleam_black.svg",
+      icon: "/images/treatments/icon/icon_preparamos.svg",
     },
     {
       title: "Infiltramos la resina ICON",
@@ -173,7 +173,7 @@ export default function LimpiezaDentalPage() {
       stat: "5X",
       logo: "/images/global/philips_zoom_logo.svg",
       logoAlt: "Philips Zoom Logo",
-      icon: "gleam_black.svg",
+      icon: "/images/treatments/icon/icon_infiltracion.svg",
     },
     {
       title: "Sellamos y pulimos",
@@ -182,7 +182,7 @@ export default function LimpiezaDentalPage() {
       stat: "5X",
       logo: "/images/global/therabody_logo.svg",
       logoAlt: "Therabody Logo",
-      icon: "gleam_black.svg",
+      icon: "/images/treatments/icon/icon_pulido.svg",
     },
   ]
 
@@ -315,19 +315,19 @@ export default function LimpiezaDentalPage() {
             {/* Features with LED Icons */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8">
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                <Image src="/images/led-icons/gleam_acent.svg" alt="Icon" width={24} height={24} />
+                <Image src="/images/treatments/icon/no_invasive.svg" alt="Icon" width={30} height={30} />
                 <div className="text-sm">
                   <p className="font-medium">Mínimamente invasivo</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                <Image src="/images/led-icons/health.svg" alt="Icon" width={24} height={24} />
+                <Image src="/images/treatments/icon/one_sesion.svg" alt="Icon" width={30} height={30} />
                 <div className="text-sm">
                   <p className="font-medium">Resultados en una sola sesión</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                <Image src="/images/led-icons/gleam_black.svg" alt="Icon" width={24} height={24} />
+                <Image src="/images/treatments/icon/custom_treatment.svg" alt="Tratamiento personalizado" width={30} height={30} />
                 <div className="text-sm">
                   <p className="font-medium">Valoración  y tratamiento personalizado.</p>
                 </div>
@@ -590,7 +590,7 @@ export default function LimpiezaDentalPage() {
               >
                 <div>
                   <Image
-                    src={`/images/led-icons/${tech.icon}`}
+                    src={`${tech.icon}`}
                     alt={tech.title}
                     width={80}
                     height={80}

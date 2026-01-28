@@ -122,7 +122,7 @@ export default function BlanqueamientoDentalPage() {
       stat: "20%",
       logo: "/images/global/ems_logo.svg",
       logoAlt: "EMS AirFlow Logo",
-      icon: "gleam_black.svg",
+      icon: "whitening_tones.svg",
     },
     {
       title: "Sonrisa más saludable (no solo más blanca)",
@@ -131,7 +131,7 @@ export default function BlanqueamientoDentalPage() {
       stat: "5X",
       logo: "/images/global/philips_zoom_logo.svg",
       logoAlt: "Philips Zoom Logo",
-      icon: "gleam_black.svg",
+      icon: "whitening_healthy.svg",
     },
     {
       title: "Confianza visible en tu día a día",
@@ -140,7 +140,7 @@ export default function BlanqueamientoDentalPage() {
       stat: "5X",
       logo: "/images/global/therabody_logo.svg",
       logoAlt: "Therabody Logo",
-      icon: "gleam_black.svg",
+      icon: "whitening_confidence.svg",
     },
   ]
 
@@ -216,9 +216,9 @@ export default function BlanqueamientoDentalPage() {
             {/* Features with LED Icons */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8">
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                <Image src="/images/led-icons/gleam_acent.svg" alt="Icon" width={24} height={24} />
+                <Image src="/images/treatments/icon/one_sesion.svg" alt="Aclarado dental en una sesión" width={24} height={24} />
                 <div className="text-sm">
-                  <p className="font-medium">Limpieza suave y sin dolor</p>
+                  <p className="font-medium">Sólo se necesita una visita</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
@@ -228,7 +228,7 @@ export default function BlanqueamientoDentalPage() {
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                <Image src="/images/led-icons/gleam_black.svg" alt="Icon" width={24} height={24} />
+                <Image src="/images/led-icons/gleam_acent.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
                   <p className="font-medium">Protegemos y cuidamos tu esmalte</p>
                 </div>
@@ -296,7 +296,7 @@ export default function BlanqueamientoDentalPage() {
             {/* Overlay Content */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex items-center">
               <div className="relative z-10 max-w-2xl p-12 text-white space-y-8">
-                <Image src="/images/global/philips_zoom_logo.svg" alt="Philips Zoom! Logo" width={120} height={60} className="mb-6" />
+                <Image src="/images/global/philips_zoom_logo_white.svg" alt="Philips Zoom! Logo" width={120} height={60} className="mb-6" />
                 <p className="text-xl font-medium mb-6">
                   Tu blanqueamiento dental
                   <br />
@@ -467,7 +467,7 @@ export default function BlanqueamientoDentalPage() {
           <div className="w-full border-t-2 border-dashed border-gray-400 my-16" />
 
           <div className="mb-12">
-            <h2 className="text-sm md:text-base text-primary-dark mb-4 text-center">[Beneficios del blanqueamiento dental profesional]</h2>
+            <h2 className="text-2xl text-primary-dark mb-4 text-center">[Beneficios del blanqueamiento dental profesional]</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">

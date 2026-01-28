@@ -116,7 +116,7 @@ export default function LimpiezaDentalPage() {
       stat: "20%",
       logo: "/images/global/ems_logo.svg",
       logoAlt: "EMS AirFlow Logo",
-      icon: "gleam_black.svg",
+      icon: "/images/led-icons/cleaning_prevent.svg",
     },
     {
       title: "Elimina manchas superficiales",
@@ -125,7 +125,7 @@ export default function LimpiezaDentalPage() {
       stat: "5X",
       logo: "/images/global/philips_zoom_logo.svg",
       logoAlt: "Philips Zoom Logo",
-      icon: "gleam_black.svg",
+      icon: "/images/led-icons/cleaning_erase.svg",
     },
     {
       title: "Preserva y repara el esmalte",
@@ -134,7 +134,7 @@ export default function LimpiezaDentalPage() {
       stat: "5X",
       logo: "/images/global/therabody_logo.svg",
       logoAlt: "Therabody Logo",
-      icon: "gleam_black.svg",
+      icon: "/images/led-icons/cleaning_protect.svg",
     },
   ]
 
@@ -222,7 +222,7 @@ export default function LimpiezaDentalPage() {
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                <Image src="/images/led-icons/gleam_black.svg" alt="Icon" width={24} height={24} />
+                <Image src="/images/led-icons/icon_cracked.svg" alt="Icon" width={24} height={24} />
                 <div className="text-sm">
                   <p className="font-medium">Reduce el riesgo de caries y enfermedades en encías</p>
                 </div>
@@ -295,7 +295,7 @@ export default function LimpiezaDentalPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex items-center">
               <div className="relative z-10 max-w-2xl p-12 text-white space-y-8">
                 <Image
-                  src="/images/global/philips_zoom_logo.svg"
+                  src="/images/global/ems-white.svg"
                   alt="Philips Zoom! Logo"
                   width={120}
                   height={60}
@@ -471,7 +471,7 @@ export default function LimpiezaDentalPage() {
           <div className="w-full border-t-2 border-dashed border-gray-400 my-16" />
 
           <div className="mb-12">
-            <h2 className="text-sm md:text-base text-primary-dark mb-4 text-center">
+            <h2 className="text-2xl text-primary-dark mb-4 text-center">
               [Estos son algunos de los principales beneficios de una limpieza dental profesional y cómo pueden ayudarte a cuidar tu salud bucal mejorar tu sonrisa.]
             </h2>
           </div>
@@ -488,7 +488,7 @@ export default function LimpiezaDentalPage() {
               >
                 <div>
                   <Image
-                    src={`/images/led-icons/${tech.icon}`}
+                    src={`${tech.icon}`}
                     alt={tech.title}
                     width={80}
                     height={80}
