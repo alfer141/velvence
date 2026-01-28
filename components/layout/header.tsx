@@ -13,6 +13,7 @@ interface HeaderProps {
 export function Header({ variant = "static" }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isTratamientosOpen, setIsTratamientosOpen] = useState(false)
+  const [isNosotrosOpen, setIsNosotrosOpen] = useState(false)
 
   const containerClasses =
     variant === "floating"
@@ -106,12 +107,41 @@ export function Header({ variant = "static" }: HeaderProps) {
                   )}
                 </AnimatePresence>
               </div>
-              <Link
-                href="/acerca-de-nosotros"
-                className="text-xs text-primary-dark hover:bg-gray-100 transition font-medium whitespace-nowrap px-3 py-2 rounded-full"
+              <div
+                className="relative"
+                onMouseEnter={() => setIsNosotrosOpen(true)}
+                onMouseLeave={() => setIsNosotrosOpen(false)}
               >
-                Nosotros
-              </Link>
+                <button className="text-xs text-primary-dark hover:bg-gray-100 transition font-medium whitespace-nowrap flex items-center gap-1 px-3 py-2 rounded-full">
+                  Nosotros
+                  <ChevronDown className={`w-3 h-3 transition-transform ${isNosotrosOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {isNosotrosOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-3 w-48 bg-white rounded-xl shadow-xl py-2 z-50 border border-gray-100"
+                    >
+                      <Link
+                        href="/acerca-de-nosotros"
+                        className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
+                      >
+                        Conócenos
+                      </Link>
+                      <Link
+                        href="/blog"
+                        className="block px-4 py-2.5 text-sm text-primary-dark hover:bg-gray-100 transition rounded-lg mx-2"
+                      >
+                        Blog
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </nav>
 
             {/* CTA Button */}
@@ -212,13 +242,40 @@ export function Header({ variant = "static" }: HeaderProps) {
                   )}
                 </AnimatePresence>
               </div>
-              <Link
-                href="/acerca-de-nosotros"
-                className="text-sm text-primary-dark hover:bg-gray-100 transition font-medium py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                Nosotros
-              </Link>
+              <div className="flex flex-col">
+                <button
+                  onClick={() => setIsNosotrosOpen(!isNosotrosOpen)}
+                  className="text-sm text-primary-dark hover:bg-gray-100 transition font-medium py-2 flex items-center justify-between"
+                >
+                  Nosotros
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isNosotrosOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {isNosotrosOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="pl-4 flex flex-col gap-1"
+                    >
+                      <Link
+                        href="/acerca-de-nosotros"
+                        className="text-sm text-primary-dark/70 hover:bg-gray-100 transition py-2"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Conócenos
+                      </Link>
+                      <Link
+                        href="/blog"
+                        className="text-sm text-primary-dark/70 hover:bg-gray-100 transition py-2"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Blog
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <Link href="/agendar-cita">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
