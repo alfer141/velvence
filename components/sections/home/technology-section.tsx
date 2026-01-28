@@ -99,6 +99,29 @@ export function TechnologySection() {
             </motion.div>
           ))}
         </div>
+        
+          {/* Video Comparison Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 md:mt-16"
+        >
+          <h3 className="text-2xl md:text-3xl font-light text-primary-dark text-center mb-8">
+            Limpieza dental profunda con tecnología EMS Airflow VS Limpieza tradicional
+          </h3>
+          <div className="relative w-full overflow-hidden rounded-2xl" style={{ paddingTop: "56.25%" }}>
+            <iframe
+              src="https://customer-o3u27h8xl72n98rq.cloudflarestream.com/70fb4ea16794b54aa85508e5ac3de73d/iframe?muted=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-o3u27h8xl72n98rq.cloudflarestream.com%2F70fb4ea16794b54aa85508e5ac3de73d%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+              loading="lazy"
+              className="absolute top-0 left-0 w-full h-full border-none rounded-2xl"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </motion.div>
+
       </div>
     </section>
   )
