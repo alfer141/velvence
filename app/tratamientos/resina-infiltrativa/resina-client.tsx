@@ -12,36 +12,41 @@ import { useState, useRef, useCallback } from "react"
 
 const faqs = [
   {
-    question: "¿Duele el blanqueamiento dental?",
+    question: "¿Cuánto tiempo duran los resultados de la Resina infiltrativa ICON?",
     answer:
-      'En la mayoría de los casos, el blanqueamiento dental profesional no duele. Lo que algunas personas sienten es una sensación temporal (como "cosquilleo" o leve sensibilidad), especialmente si ya tenían sensibilidad previa. En Velvence hacemos una valoración previa de encías y esmalte, y ajustamos el protocolo para que el tratamiento sea cómodo y seguro.',
+      'Se ha demostrado que los resultados estéticos de la resina infiltrativa ICON pueden durar sin cambios significativos hasta 24 meses. Pasado este tiempo, es recomendable realizar un mantenimiento periódico. Además, ayuda muchísimo acompañarlo con limpiezas dentales cada 6 meses y una buena higiene diaria.',
   },
   {
-    question: "¿Me va a dar sensibilidad después? ¿Cuánto dura?",
+    question: "¿Puedo combinarlo con un blanqueamiento dental para aclarar mis dientes?",
     answer:
-      "Puede haber sensibilidad dental leve y temporal, pero no le ocurre a todos. Cuando aparece, suele durar de unas horas hasta 24–48 horas. Factores como dientes sensibles, recesión de encías o desgaste del esmalte pueden influir. Por eso la clave es hacerlo de forma profesional: evaluamos tu caso y te damos recomendaciones de cuidado para minimizarla (por ejemplo, evitar extremos de temperatura el mismo día).",
+      "Sí, de hecho, el tratamiento puede potenciar mucho sus resultados cuando se combina con un blanqueamiento dental en consultorio (según tu caso). Te recomendamos contactarnos para explicarte el protocolo completo. Eso sí: es importante esperar al menos 2 semanas entre cada tratamiento.",
   },
   {
-    question: "¿En cuánto tiempo veo resultados y cuántos tonos aclara?",
+    question: "¿Aseguran eliminar al 100% las manchas blancas de mis dientes?",
     answer:
-      "Los resultados son inmediatos: sales de tu cita con una sonrisa visiblemente más blanca. En un blanqueamiento dental profesional, lo común es aclarar varios tonos desde la primera sesión, y en Velvence el objetivo del protocolo es lograr de 5 a 8 tonos en una sola cita según diagnóstico y tipo de mancha. También te explicamos qué resultado es realista para ti antes de comenzar.",
+      "La aplicación de resina ICON puede ser muy efectiva y disimular notablemente las manchas blancas en los dientes, pero el resultado depende de factores como la condición (desmineralización, fluorosis dental, caries blanca, etc.) y el grado de la misma para saber qué tanto puede mejorar. Durante la valoración podemos darte una expectativa mucho más realista para tu caso en particular.",
   },
   {
-    question: " ¿Cuánto duran los resultados del aclarado dental?",
+    question: "¿La resina infiltrante sirve para todos los tipos de manchas blancas?",
     answer:
-      "La duración depende de hábitos y del tipo de mancha, pero en promedio el resultado puede mantenerse meses e incluso más tiempo con buenos cuidados. Café, té, vino tinto y tabaco pueden acelerar el re-manchar. La mejor forma de prolongarlo es mantener una buena higiene, realizar limpiezas profesionales periódicas y seguir las recomendaciones posteriores a tu sesión.",
+      "La resina infiltrativa sirve principalmente para tratar manchas blancas ocasionadas por fluorosis, desmineralización, manchas posteriores al uso de ortodoncia o brackets y algunas lesiones. Aunque no todas tienen el mismo origen, muchas comparten porosidad en el esmalte, por eso ICON puede ser efectiva en casos seleccionados.",
   },
 
   {
-    question: "¿Qué manchas sí se quitan y cuáles no?",
+    question: "¿Cuáles son los cuidados posteriores a la aplicación de Resina infiltrativa?",
     answer:
-      "El blanqueamiento dental funciona muy bien para manchas externas (por café, té, vino, tabaco y pigmentos) y para el amarillamiento natural con el tiempo. Hay manchas más complejas que pueden responder menos, como algunas manchas internas (por ciertos medicamentos, traumatismos o dientes con endodoncia). Por eso hacemos una valoración: te decimos qué tan buen candidato eres y qué resultado esperar para evitar falsas expectativas.",
+      "Los cuidados posteriores incluyen mantener una buena higiene regular y acudir a tus limpiezas o profilaxis periódicas (cada 6 meses). Durante tu visita en Velvence te asesoramos sobre cómo mantener un buen cepillado diario y hábitos que ayuden a conservar los resultados",
   },
   {
-    question: "¿Necesito limpieza dental antes del blanqueamiento?",
+    question: "¿El tratamiento de aplicación de resina infiltrativa ICON duele o requiere anestesia?",
     answer:
-      "Sí, en la mayoría de los casos se recomienda una limpieza dental profesional antes del blanqueamiento. ¿Por qué? Porque remover placa, biofilm y manchas superficiales ayuda a que el gel actúe de forma más uniforme y los resultados sean mejores. Además, mejora la salud de encías y reduce el riesgo de molestias durante el tratamiento.",
+      "Generalmente es un tratamiento cómodo y mínimamente invasivo, y en la mayoría de los casos no requiere anestesia. Si presentas sensibilidad previa, lo consideramos en tu plan para que la experiencia sea tranquila.",
   },
+   {
+    question: " ¿ICON sirve para fluorosis dental?",
+    answer:
+      "Puede ayudar en fluorosis dental leve a moderada, cuando la mancha está relacionada con porosidad del esmalte y el caso es adecuado para infiltración. En fluorosis más severa o con defectos marcados, es posible que se recomienden otras alternativas o combinaciones.",
+  }
 ]
 
 export default function LimpiezaDentalPage() {
@@ -372,7 +377,7 @@ export default function LimpiezaDentalPage() {
             </motion.div>
           </div>
 
-          {/* Full-Width Image with EMS Logo Overlay and Benefits */}
+          {/* Full-Width Image with Tech Logo Overlay and Benefits */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -383,7 +388,7 @@ export default function LimpiezaDentalPage() {
           >
             <Image
               src="/images/home/velvence_main_bg.webp"
-              alt="Dental treatment"
+              alt="Tratamiento Dental En consultorio"
               fill
               className="object-cover"
               priority
@@ -392,7 +397,7 @@ export default function LimpiezaDentalPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex items-center">
               <div className="relative z-10 max-w-2xl p-12 text-white space-y-8">
                 <Image
-                  src="/images/global/philips_zoom_logo.svg"
+                  src="/images/treatments/dmg_dental_logo_white.png"
                   alt="Philips Zoom! Logo"
                   width={120}
                   height={60}
@@ -551,15 +556,15 @@ export default function LimpiezaDentalPage() {
               className="relative rounded-2xl overflow-hidden"
             >
               <div className="relative aspect-square">
-                <Image src="/images/treatments/main_image.webp" alt="Treatment product" fill className="object-cover" />
+                <Image src="/images/treatments/dmg_icon_poster.webp" alt="Treatment product" fill className="object-cover" />
               </div>
               {/* Backdrop Blur Overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-white/20 backdrop-blur-xl p-8 border-t border-white/30">
-                <Image src="/images/global/ems-white.svg" alt="EMS Logo" width={100} height={50} className="mb-3" />
+                <Image src="/images/treatments/dmg_dental_logo_white.png" alt="DMG Dental Resina ICON" width={100} height={50} className="mb-3" />
                 <p className="text-white font-medium text-lg">
-                  Tu limpieza dental
+                  Tratamos las manchas blancas
                   <br />
-                  se trabaja con tecnología EMS Airflow
+                  de tus dientes con tecnología DMG.
                 </p>
               </div>
             </motion.div>
@@ -569,7 +574,7 @@ export default function LimpiezaDentalPage() {
 
           <div className="mb-12">
             <h2 className="text-sm md:text-base text-primary-dark mb-4 text-center">
-              [Beneficios del blanqueamiento dental profesional]
+              [Proceos y protocolo de la Resina Infiltrativa ICON]
             </h2>
           </div>
 
