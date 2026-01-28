@@ -8,20 +8,23 @@ import "./globals.css"
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://velvence.com"
+
 export const metadata: Metadata = {
   title: "Velvence® | Clínica de Blanqueamiento Dental",
   description:
     "Clínica líder en blanqueamiento y aclaramiento dental en México. Limpieza dental profesional con tecnología avanzada. Resultados visibles desde la primera sesión",
   generator: "v0.app",
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title: "Velvence® | Clínica de Blanqueamiento Dental",
     description:
       "Clínica líder en blanqueamiento y aclaramiento dental en México. Limpieza dental profesional con tecnología avanzada.",
-    url: "https://velvence.com",
+    url: baseUrl,
     siteName: "Velvence",
     images: [
       {
-        url: "/og-image.png",
+        url: `${baseUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Velvence - Clínica de Blanqueamiento Dental",
