@@ -2,6 +2,7 @@ import { createPageMetadata } from "@/lib/metadata"
 import { AboutUsClientPage } from "./page.client"
 
 export const metadata = createPageMetadata({
+  path: "/acerca-de-nosotros",
   title: "Velvence® | Acerca de Nosotros",
   description:
     "Conoce la historia de Velvence, una clínica especializada en blanqueamiento dental con tecnología de vanguardia. Ubicaciones en Querétaro.",

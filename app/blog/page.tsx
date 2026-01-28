@@ -10,6 +10,7 @@ import { Calendar } from "lucide-react"
 export const revalidate = 60 // Revalida cada 60 segundos como fallback
 
 export const metadata = createPageMetadata({
+  path: "/blog",
   title: "Velvence® | Blog",
   description:
     "Lee nuestro blog sobre salud bucal, blanqueamiento dental, tips de higiene y novedades en tecnología dental.",

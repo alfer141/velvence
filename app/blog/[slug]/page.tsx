@@ -1,4 +1,4 @@
-import { createPageMetadata } from "@/lib/metadata"
+import { createPageMetadata, baseUrl } from "@/lib/metadata"
 import { client } from "@/lib/sanity.client"
 import { groq } from "next-sanity"
 import { PortableText } from "@portabletext/react"
@@ -81,11 +81,16 @@ export async function generateMetadata({
   const ogImage = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined
 
   return createPageMetadata({
+    path: `/blog/${slug}`,
     title: `${post.title} | Velvence® Blog`,
     description: post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+    alternates: {
+      canonical: `${baseUrl}/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+      url: `${baseUrl}/blog/${slug}`,
       images: ogImage
         ? [
             {
