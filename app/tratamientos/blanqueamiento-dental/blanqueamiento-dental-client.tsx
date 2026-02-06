@@ -189,12 +189,13 @@ export default function BlanqueamientoDentalPage() {
             className="mt-6"
           >
             <p className="text-accent text-sm font-medium">[Tratamientos]</p>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">Blanqueamiento dental profesional</h1>
-            <p className="text-lg text-secondary-light leading-relaxed max-w-xl">
-             Transforma tu sonrisa con un blanqueamiento dental profesional en consultorio. 
-             Aclaramos tus dientes  de forma segura y efectiva en una sola cita. 
-             Eliminando manchas profundas  Causadas por alimentos y hábitos. 
-             Una sonrisa luminosa y dientes más blancos en una sesión. 
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">Blanqueamiento dental</h1>
+            <h2 className="text-xl mb-4">Una sonrisa luminosa con un aclarado dental de nueva generación</h2>
+            <p className="text-lg text-secondary-light leading-relaxed max-w-xl opacity-70">
+              Transforma tu sonrisa con un blanqueamiento dental profesional en consultorio.
+              Aclaramos tus dientes  de forma segura y efectiva en una sola cita.
+              Eliminando manchas profundas  Causadas por alimentos y hábitos.
+              Una sonrisa luminosa y dientes más blancos en una sesión.
             </p>
             <div className="flex flex-wrap items-center gap-6 py-4">
               <div className="flex items-baseline gap-3">
@@ -246,6 +247,7 @@ export default function BlanqueamientoDentalPage() {
               <p className="text-sm font-medium text-primary opacity-70">[Acerca de]</p>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
                 Una forma segura y profesional de aclarar tu sonrisa
+                <span className="text-sm opacity-45 block">(Hasta 8 tonos en una sesión de 45 min)</span>
               </h2>
             </motion.div>
 
@@ -257,22 +259,22 @@ export default function BlanqueamientoDentalPage() {
               className="space-y-6"
             >
               <p className="text-gray-600 leading-relaxed">
-                 El blanqueamiento dental profesional en Velvence está diseñado para aclarar el 
-                 tono de tus dientes de manera controlada, segura y efectiva. 
-                 Este tratamiento ayuda a reducir manchas profundas cuando sientes tus dientes amarillos y opacos,
-                 mejorando la apariencia de tu sonrisa sin comprometer la salud del esmalte. 
+                El blanqueamiento dental profesional en Velvence está diseñado para aclarar el
+                tono de tus dientes de manera controlada, segura y efectiva.
+                Este tratamiento ayuda a reducir manchas profundas cuando sientes tus dientes amarillos y opacos,
+                mejorando la apariencia de tu sonrisa sin comprometer la salud del esmalte.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental 
-                en consultorio que permite obtener resultados notables desde la primera sesión. 
-                Cada tratamiento se adapta de forma personalizada, priorizando tu comodidad, el cuidado de 
+                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental
+                en consultorio que permite obtener resultados notables desde la primera sesión.
+                Cada tratamiento se adapta de forma personalizada, priorizando tu comodidad, el cuidado de
                 tus dientes y un resultado natural que se integra de forma armónica con tu sonrisa.
               </p>
               <Link
                 href="/acerca-de-nosotros"
                 className="inline-block text-primary-dark font-medium hover:text-accent transition-colors"
               >
-                Conocenos →
+                Conócenos →
               </Link>
             </motion.div>
           </div>
@@ -336,7 +338,7 @@ export default function BlanqueamientoDentalPage() {
               <div>
                 <p className="text-sm font-medium mb-4 text-primary opacity-75">[Beneficios]</p>
                 <h3 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark mb-8">
-                   Un blanqueamiento dental con nosotros incluye
+                  El tratamiento de blanqueamiento de dientes con nosotros es un protocolo completo
                 </h3>
               </div>
 
@@ -346,15 +348,13 @@ export default function BlanqueamientoDentalPage() {
                   <button
                     key={index}
                     onClick={() => setActiveTab(index)}
-                    className={`w-full text-left py-6 border-b border-dashed border-gray-300 transition-colors ${
-                      activeTab === index ? "bg-white/50" : "hover:bg-white/30"
-                    }`}
+                    className={`w-full text-left py-6 border-b border-dashed border-gray-300 transition-colors ${activeTab === index ? "bg-white/50" : "hover:bg-white/30"
+                      }`}
                   >
                     <div className="flex items-center gap-4">
                       <div
-                        className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                          activeTab === index ? "bg-accent" : "bg-gray-200"
-                        }`}
+                        className={`w-10 h-10 rounded-full flex items-center justify-center ${activeTab === index ? "bg-accent" : "bg-gray-200"
+                          }`}
                       >
                         {item.icon === "shield-check" && (
                           <svg
@@ -558,15 +558,13 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className={`rounded-lg overflow-hidden border transition-all duration-300 ${
-        isOpen ? "border-primary-dark bg-primary-dark" : "border-gray-200 bg-white"
-      }`}
+      className={`rounded-lg overflow-hidden border transition-all duration-300 ${isOpen ? "border-primary-dark bg-primary-dark" : "border-gray-200 bg-white"
+        }`}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full flex items-center justify-between p-6 text-left transition-colors duration-300 hover:bg-opacity-90 ${
-          isOpen ? "bg-primary-dark" : "hover:bg-gray-50"
-        }`}
+        className={`w-full flex items-center justify-between p-6 text-left transition-colors duration-300 hover:bg-opacity-90 ${isOpen ? "bg-primary-dark" : "hover:bg-gray-50"
+          }`}
       >
         <span className={`font-medium transition-colors duration-300 ${isOpen ? "text-white" : "text-primary-dark"}`}>
           {faq.question}
@@ -587,9 +585,8 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`overflow-hidden border-t transition-colors duration-300 ${
-              isOpen ? "border-white/20 bg-primary-dark" : ""
-            }`}
+            className={`overflow-hidden border-t transition-colors duration-300 ${isOpen ? "border-white/20 bg-primary-dark" : ""
+              }`}
           >
             <div className={`px-6 py-6 transition-colors duration-300 ${isOpen ? "text-white" : "text-gray-600"}`}>
               {faq.answer}
