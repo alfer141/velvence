@@ -467,7 +467,7 @@ export default function BlanqueamientoDentalPage() {
           <div className="w-full border-t-2 border-dashed border-gray-400 my-16" />
 
           <div className="mb-12">
-            <h2 className="text-2xl text-primary-dark mb-4 text-center">[Beneficios del blanqueamiento dental profesional]</h2>
+            <h2 className="text-3xl text-primary-dark mb-4 text-center">Aclarar tus dientes es: Salud, seguridad y confianza al sonreir</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -529,7 +529,7 @@ export default function BlanqueamientoDentalPage() {
           <motion.div {...fadeInUp} className="space-y-6">
             <p className="text-sm font-medium text-primary opacity-75">[Preguntas frecuentes]</p>
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-              Lo que nuestros pacientes preguntan antes de un blanqueamiento dental
+              Las dudas más comunes de nuestros pacientes sobre el aclarado dental. 
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Si nuestras preguntas frecuentes no resuelven tu duda, envíanos un mensaje para brindarte atención personalizada.
