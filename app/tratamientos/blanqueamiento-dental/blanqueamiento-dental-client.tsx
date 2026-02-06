@@ -6,6 +6,7 @@ import Link from "next/link"
 import { CircleCheckBig } from "lucide-react"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { BeforeAfterGallery } from "./components/before-after-gallery"
 import { useState } from "react"
 
 const faqs = [
@@ -496,6 +497,8 @@ export default function BlanqueamientoDentalPage() {
           </div>
         </div>
       </section>
+      
+      <BeforeAfterGallery />
 
       {/* Features Cards with LED Icons */}
 
