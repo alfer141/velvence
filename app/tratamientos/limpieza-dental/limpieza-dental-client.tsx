@@ -186,6 +186,7 @@ export default function LimpiezaDentalPage() {
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
               Limpieza dental Profunda (Profilaxis) con EMS Airflow
             </h1>
+            <h2 className="my-6">Elimina el sarro, manchas y recupera el brillo y salud de tu sonrisa con una limpieza dental profunda</h2>
             <p className="text-lg text-secondary-light leading-relaxed max-w-xl">
               Renueva tu sonrisa con una limpieza dental profunda con EMS Airflow suave y sin dolor. Eliminamos biofilm, placa y manchas por café o tabaco de
               forma suave, sin dolor y en una sola cita. Dientes más lisos, frescos y encías más sanas desde el primer día.
