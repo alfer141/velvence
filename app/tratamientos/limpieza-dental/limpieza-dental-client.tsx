@@ -188,8 +188,8 @@ export default function LimpiezaDentalPage() {
             </h1>
             <h2 className="my-6">Elimina el sarro, manchas y recupera el brillo y salud de tu sonrisa con una limpieza dental profunda</h2>
             <p className="text-lg text-secondary-light leading-relaxed max-w-xl">
-              Renueva tu sonrisa con una limpieza dental profunda con EMS Airflow suave y sin dolor. Eliminamos biofilm, placa y manchas por café o tabaco de
-              forma suave, sin dolor y en una sola cita. Dientes más lisos, frescos y encías más sanas desde el primer día.
+              Realizamos la profilaxis dental con tecnología Airflow, para una eliminación de bacterias altamente efectiva. Removemos manchas causadas por 
+              café y tabaco, eliminamos la acumulación de sarro, realizamos limpieza bajo la encía y limpieza profunda de la lengua, todo sin dolor ni molestias.
             </p>
             <div className="flex flex-wrap items-center gap-6 py-4">
               <div className="flex items-baseline gap-3">
@@ -252,20 +252,19 @@ export default function LimpiezaDentalPage() {
               className="space-y-6"
             >
               <p className="text-gray-600 leading-relaxed">
-                La limpieza dental profesional en Velvence está pensada 
-                para eliminar de forma profunda el sarro, la placa bacteriana 
-                y el biofilm que se acumulan con el tiempo y que no pueden retirarse 
-                facilmente. Este tratamiento ayuda a mejorar la apariencia de los dientes, 
-                mantener encías saludables y prevenir problemas dentales que pueden avanzar 
-                si no se atienden a tiempo.
+                El protocolo de limpieza dental en Velvence está diseñado para eliminar de forma 
+                profunda el sarro, la placa bacteriana y el biofilm que se acumulan con el tiempo 
+                y que no pueden retirarse fácilmente con el cepillado diario. Este tratamiento no 
+                solo mejora la apariencia de los dientes, sino que también ayuda a mantener encías 
+                saludables y a prevenir problemas dentales que pueden avanzar si no se atienden 
+                a tiempo.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Trabajamos con tecnología AirFlow, un sistema avanzado que permite realizar una 
-                limpieza dental más precisa, cómoda y cero. invasiva con tus dientes. Al eliminar 
-                bacterias y residuos de manera efectiva y cómoda,  mejoramos la experiencia de una 
-                limpieza dental mientras contribuimos a la salud bucal a largo plazo, manteniendo tus 
-                dientes limpios, tus encías sanas y una sonrisa que se ve bien y se siente mejor en una 
-                sesión.
+                Trabajamos con tecnología EMS AirFlow, un sistema avanzado que permite realizar una 
+                limpieza dental más precisa, cómoda y cero invasiva para tus dientes. Al eliminar 
+                bacterias y residuos de manera eficaz y suave, mejoramos la experiencia del tratamiento 
+                y contribuimos a una salud bucal duradera, dejando tus dientes limpios, tus encías sanas 
+                y una sonrisa que se ve bien y se siente mejor, todo en una sola sesión.
               </p>
               <Link
                 href="/acerca-de-nosotros"
@@ -473,7 +472,7 @@ export default function LimpiezaDentalPage() {
 
           <div className="mb-12">
             <h2 className="text-2xl text-primary-dark mb-4 text-center">
-              [Estos son algunos de los principales beneficios de una limpieza dental profesional y cómo pueden ayudarte a cuidar tu salud bucal mejorar tu sonrisa.]
+              [Beneficios de incluir una limpieza dental profunda a tu rutina de cuidado personal]
             </h2>
           </div>
 
