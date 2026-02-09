@@ -240,7 +240,7 @@ export default function LimpiezaDentalPage() {
             <motion.div {...fadeInUp} className="space-y-6">
               <p className="text-sm font-medium text-primary opacity-70">[Acerca de]</p>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-                Dale un refresh a tu sonrisa
+                Vuelve a sentir unos dientes realmente limpios
               </h2>
             </motion.div>
 
