@@ -225,18 +225,18 @@ export function Header({ variant = "static" }: HeaderProps) {
                         Blanqueamiento dental
                       </Link>
                       <Link
-                        href="/proximamente"
+                        href="/tratamientos/limpieza-dental"
                         className="text-sm text-primary-dark/70 hover:bg-gray-100 transition py-2"
                         onClick={() => setIsOpen(false)}
                       >
                         Limpieza / Profilaxis dental
                       </Link>
                       <Link
-                        href="/proximamente"
+                        href="/tratamientos/resina-infiltrativa"
                         className="text-sm text-primary-dark/70 hover:bg-gray-100 transition py-2"
                         onClick={() => setIsOpen(false)}
                       >
-                        Blanqueamiento y limpieza dental
+                        Resina infiltrativa ICON
                       </Link>
                     </motion.div>
                   )}

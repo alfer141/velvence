@@ -97,6 +97,24 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* MailerLite Universal (Next.js optimized) */}
+        <Script
+          id="mailerlite-stub"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Create a queueing function so calls to ml(...) work before the external script finishes loading.
+              window.ml = window.ml || function () {
+                (window.ml.q = window.ml.q || []).push(arguments);
+              };
+              window.ml('account', '2101624');
+            `,
+          }}
+        />
+        <Script
+          src="https://assets.mailerlite.com/js/universal.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={`font-sans antialiased`}>
         {children}
