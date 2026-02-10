@@ -11,12 +11,12 @@ import { useState } from "react"
 
 const faqs = [
   {
-    question: "¿Duele el blanqueamiento dental?",
+    question: "¿El blanqueamiento dental duele?",
     answer:
-      "En la mayoría de los casos, el blanqueamiento dental profesional no duele. Lo que algunas personas sienten es una sensación temporal (como “cosquilleo” o leve sensibilidad), especialmente si ya tenían sensibilidad previa. En Velvence hacemos una valoración previa de encías y esmalte, y ajustamos el protocolo para que el tratamiento sea cómodo y seguro."
+      "En la mayoría de los casos, el blanqueamiento dental con luz no duele. Lo que algunas personas sienten es una sensación temporal (como “cosquilleo” o leve sensibilidad), especialmente si ya tenían sensibilidad previa. En Velvence hacemos una valoración previa de encías y esmalte, y ajustamos el protocolo para que el tratamiento sea cómodo y seguro."
   },
   {
-    question: "¿Me va a dar sensibilidad después? ¿Cuánto dura?",
+    question: "¿El blanqueamiento dental deja los dientes sensibles?",
     answer:
       "Puede haber sensibilidad dental leve y temporal, pero no le ocurre a todos. Cuando aparece, suele durar de unas horas hasta 24–48 horas. Factores como dientes sensibles, recesión de encías o desgaste del esmalte pueden influir. Por eso la clave es hacerlo de forma profesional: evaluamos tu caso y te damos recomendaciones de cuidado para minimizarla (por ejemplo, evitar extremos de temperatura el mismo día)."
   },
@@ -41,7 +41,21 @@ const faqs = [
     answer:
       "Sí, en la mayoría de los casos se recomienda una limpieza dental profesional antes del blanqueamiento. ¿Por qué? Porque remover placa, biofilm y manchas superficiales ayuda a que el gel actúe de forma más uniforme y los resultados sean mejores. Además, mejora la salud de encías y reduce el riesgo de molestias durante el tratamiento.",
   },
-
+  {
+    question: "¿Cuál es la diferencia entre la tecnología de blanqueamiento dental de Velvence y el blanqueamiento tradicional en consultorio?",
+    answer:
+      "La tecnología Philips Zoom utiliza una luz LED avanzada que activa el gel blanqueador de forma más rápida y uniforme, logrando dientes hasta varios tonos más blancos en menos tiempo y con menor sensibilidad. En cambio, el blanqueamiento tradicional no cuenta con esta activación controlada, por lo que los resultados suelen ser más lentos y menos uniformes. Philips Zoom en Velvence ofrece una tecnología más avanzada y personalizada que optimiza los resultados, mejora la experiencia del paciente y minimiza la sensibilidad dental en comparación con los métodos tradicionales en consultorio.",
+  },
+  {
+    question: "¿Qué significa un blanqueamiento dental con láser?",
+    answer:
+      "El llamado “blanqueamiento dental con láser” es un término popular, pero en la práctica no se utiliza un láser para blanquear el diente directamente. Lo que se hace es aplicar un gel blanqueador que se activa con una luz especial (LED o similar) para acelerar el proceso y mejorar los resultados, aunque esta suele confundirse con un láser.",
+  },
+  {
+    question: "¿Cuál es el precio de un blanqueamiento dental?",
+    answer:
+      "En Velvence, el blanqueamiento dental tiene un costo de $5,499 MXN. Este tratamiento se realiza en consultorio con tecnología avanzada, está diseñado para aclarar varios tonos en una sola sesión y se lleva a cabo bajo la supervisión de un especialista para cuidar la salud de tu esmalte.",
+  },
 ]
 
 export default function BlanqueamientoDentalPage() {
@@ -80,7 +94,7 @@ export default function BlanqueamientoDentalPage() {
       icon: "shield-check",
       title: "Examen dental previo",
       description:
-        "Antes de realizar el blanqueamiento dental, evaluamos el estado de tus dientes y encías para asegurarnos de que el tratamiento sea adecuado para ti y se realice de forma segura.",
+        "Antes de realizar tu aclaramiento dental, evaluamos el estado de tus dientes y encías para asegurarnos de que el tratamiento sea adecuado para ti y se realice de forma segura.",
     },
     {
       icon: "book-open",
@@ -117,9 +131,9 @@ export default function BlanqueamientoDentalPage() {
 
   const technologies = [
     {
-      title: "Aclara de 5 a 8 tonos desde la primera sesión",
+      title: "Dientes de 5 a 8 tonos más blancos desde la primera sesión",
       description:
-        " El blanqueamiento dental profesional permite aclarar el tono de tus dientes hasta 8 tonos en la escala VITA en una sola cita. Es una opción eficaz para tratar manchas profundas y recuperar una sonrisa más luminosa sin dañar tus dientes o causar sensibilidad dental.",
+        " El blanqueamiento dental con luz permite aclarar el tono de tus dientes hasta 8 tonos en la escala VITA en una sola cita. Es una opción eficaz para tratar manchas profundas y recuperar una sonrisa más luminosa sin dañar tus dientes o causar sensibilidad dental.",
       stat: "20%",
       logo: "/images/global/ems_logo.svg",
       logoAlt: "EMS AirFlow Logo",
@@ -193,10 +207,11 @@ export default function BlanqueamientoDentalPage() {
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">Blanqueamiento dental</h1>
             <h2 className="text-xl mb-4">Una sonrisa luminosa con un aclarado dental de nueva generación</h2>
             <p className="text-lg text-secondary-light leading-relaxed max-w-xl opacity-70">
-              Transforma tu sonrisa con un blanqueamiento dental profesional en consultorio.
-              Aclaramos tus dientes  de forma segura y efectiva en una sola cita.
-              Eliminando manchas profundas  Causadas por alimentos y hábitos.
-              Una sonrisa luminosa y dientes más blancos en una sesión.
+              Transforma tu sonrisa con un blanqueamiento dental con láser. Nuestra tecnología 
+              es capaz de aclarar el tono de tus dientes de forma segura y efectiva en una sola 
+              sesión, ayudando a eliminar manchas dentales profundas causadas por alimentos y hábitos 
+              del día a día. Cómo resultado podrás lucir una sonrisa más luminosa y dientes 
+              visiblemente más blancos al instante.
             </p>
             <div className="flex flex-wrap items-center gap-6 py-4">
               <div className="flex items-baseline gap-3">
@@ -247,7 +262,7 @@ export default function BlanqueamientoDentalPage() {
             <motion.div {...fadeInUp} className="space-y-6">
               <p className="text-sm font-medium text-primary opacity-70">[Acerca de]</p>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-                Una forma segura y profesional de aclarar tu sonrisa
+                Aclara tu sonrisa con la tecnología más efectiva para blanquear tus dientes
                 <span className="text-sm opacity-45 block">(Hasta 8 tonos en una sesión de 45 min)</span>
               </h2>
             </motion.div>
@@ -260,16 +275,19 @@ export default function BlanqueamientoDentalPage() {
               className="space-y-6"
             >
               <p className="text-gray-600 leading-relaxed">
-                El blanqueamiento dental profesional en Velvence está diseñado para aclarar el
-                tono de tus dientes de manera controlada, segura y efectiva.
-                Este tratamiento ayuda a reducir manchas profundas cuando sientes tus dientes amarillos y opacos,
-                mejorando la apariencia de tu sonrisa sin comprometer la salud del esmalte.
+                El protocolo de blanqueamiento dental en Velvence está diseñado para que tus dientes 
+                se vean de 5 a 8 tonos más blancos en una sesión. 
+                Este tratamiento de aclarado dental actúa sobre las manchas profundas y pigmentos 
+                que hacen lucir tus dientes amarillos u opacos, logrando un desmanchamiento dental 
+                altamente efectivo que mejora la apariencia de tu sonrisa sin comprometer la salud 
+                del esmalte o causar sesibilidad dental.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental
-                en consultorio que permite obtener resultados notables desde la primera sesión.
-                Cada tratamiento se adapta de forma personalizada, priorizando tu comodidad, el cuidado de
-                tus dientes y un resultado natural que se integra de forma armónica con tu sonrisa.
+                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental con 
+                láser, que permite obtener resultados visibles desde la primera sesión. Este 
+                procedimiento se realiza en el consultorio y se adapta de manera personalizada, 
+                priorizando tu comodidad, el cuidado de tus dientes y un resultado natural que 
+                se integre de forma armónica con tu sonrisa.
               </p>
               <Link
                 href="/acerca-de-nosotros"
@@ -339,7 +357,7 @@ export default function BlanqueamientoDentalPage() {
               <div>
                 <p className="text-sm font-medium mb-4 text-primary opacity-75">[Beneficios]</p>
                 <h3 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark mb-8">
-                  El tratamiento de blanqueamiento de dientes con nosotros es un protocolo completo
+                  En Velvence, el tratamiento para un blanqueamiento de dientes efectivo es un protocolo completo ⭐️
                 </h3>
               </div>
 
@@ -535,7 +553,7 @@ export default function BlanqueamientoDentalPage() {
               Las dudas más comunes de nuestros pacientes sobre el aclarado dental. 
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Si nuestras preguntas frecuentes no resuelven tu duda, envíanos un mensaje para brindarte atención personalizada.
+              Si nuestras preguntas frecuentes no resuelven tu duda, envíanos un mensaje y con gusto te brindamos atención personalizada.
             </p>
           </motion.div>
 

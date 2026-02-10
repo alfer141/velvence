@@ -34,6 +34,11 @@ const faqs = [
     answer:
       "El blanqueamiento dental funciona muy bien para manchas externas (por café, té, vino, tabaco y pigmentos) y para el amarillamiento natural con el tiempo. Hay manchas más complejas que pueden responder menos, como algunas manchas internas (por ciertos medicamentos, traumatismos o dientes con endodoncia). Por eso hacemos una valoración: te decimos qué tan buen candidato eres y qué resultado esperar para evitar falsas expectativas.",
   },
+  {
+    question: "¿La limpieza dental puede blanquear los dientes?",
+    answer:
+      "La limpieza dental que hacemos en el consultorio no es un tratamiento de blanqueamiento, pero sí puede hacer que tus dientes se vean más claros y luminosos. Al eliminar placa, biofilm y manchas superficiales causadas por alimentos y bebidas del día a día, los dientes recuperan un poco su color natural, lo que muchas veces se percibe como un aclaramiento inmediato. Si buscas cambiar el tono del diente y lograr un efecto blanqueador más notable, lo ideal es complementar la limpieza con un blanqueamiento dental con luz, también disponible en Velvence.",
+  },
   
 ]
 
