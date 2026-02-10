@@ -12,6 +12,8 @@ import type { Metadata } from "next"
 // Query para obtener un post específico
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
+  metaTitle,
+  metaDescription,
   publishedAt,
   mainImage,
   body,
@@ -80,16 +82,20 @@ export async function generateMetadata({
 
   const ogImage = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined
 
+  // Usar campos SEO de Sanity si existen, si no fallback al título y primer párrafo
+  const seoTitle = post.metaTitle || post.title
+  const seoDescription = post.metaDescription || post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title
+
   return createPageMetadata({
     path: `/blog/${slug}`,
-    title: `${post.title} | Velvence® Blog`,
-    description: post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+    title: `${seoTitle} | Velvence® Blog`,
+    description: seoDescription,
     alternates: {
       canonical: `${baseUrl}/blog/${slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+      title: seoTitle,
+      description: seoDescription,
       url: `${baseUrl}/blog/${slug}`,
       images: ogImage
         ? [
