@@ -13,6 +13,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/tratamientos/blanqueamiento-dental",
     "/tratamientos/limpieza-dental",
     "/tratamientos/resina-infiltrativa",
+    "/terminos-y-condiciones",
+    "/aviso-de-privacidad",
   ]
 
   const staticSitemap = staticRoutes.map((route) => ({
