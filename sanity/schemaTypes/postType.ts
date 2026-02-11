@@ -50,6 +50,34 @@ export const postType = defineType({
       name: 'body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'object',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+      fields: [
+        defineField({
+          name: 'metaTitle',
+          title: 'Meta Title',
+          type: 'string',
+          description:
+            'Título para buscadores (Google). Si se deja vacío, se usará el título del post. Máximo recomendado: 60 caracteres.',
+          validation: (rule) => rule.max(70).warning('El meta title no debe exceder 70 caracteres.'),
+        }),
+        defineField({
+          name: 'metaDescription',
+          title: 'Meta Description',
+          type: 'text',
+          rows: 3,
+          description:
+            'Descripción para buscadores (Google). Si se deja vacío, se usará el inicio del contenido. Máximo recomendado: 160 caracteres.',
+          validation: (rule) => rule.max(170).warning('La meta description no debe exceder 170 caracteres.'),
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {

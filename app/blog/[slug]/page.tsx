@@ -16,6 +16,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   publishedAt,
   mainImage,
   body,
+  seo,
   "author": author->{name, image},
   "categories": categories[]->title
 }`
@@ -81,16 +82,23 @@ export async function generateMetadata({
 
   const ogImage = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined
 
+  // Usar campos SEO de Sanity si existen, con fallback al comportamiento anterior
+  const metaTitle = post.seo?.metaTitle || post.title
+  const metaDescription =
+    post.seo?.metaDescription ||
+    post.body?.[0]?.children?.[0]?.text?.substring(0, 160) ||
+    post.title
+
   return createPageMetadata({
     path: `/blog/${slug}`,
-    title: `${post.title} | Velvence® Blog`,
-    description: post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+    title: `${metaTitle} | Velvence® Blog`,
+    description: metaDescription,
     alternates: {
       canonical: `${baseUrl}/blog/${slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+      title: metaTitle,
+      description: metaDescription,
       url: `${baseUrl}/blog/${slug}`,
       images: ogImage
         ? [
@@ -98,7 +106,7 @@ export async function generateMetadata({
               url: ogImage,
               width: 1200,
               height: 630,
-              alt: post.title,
+              alt: post.mainImage?.alt || post.title,
             },
           ]
         : undefined,
