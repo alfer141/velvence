@@ -8,17 +8,6 @@ export const postType = defineType({
   icon: DocumentTextIcon,
   fields: [
     defineField({
-      name: 'title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-      },
-    }),
-    defineField({
       name: 'seo',
       title: 'SEO',
       type: 'object',
@@ -45,6 +34,17 @@ export const postType = defineType({
           validation: (rule) => rule.max(170).warning('La meta description no debe exceder 170 caracteres.'),
         }),
       ],
+    }),
+    defineField({
+      name: 'title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+      },
     }),
     defineField({
       name: 'author',
