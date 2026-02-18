@@ -91,7 +91,7 @@ export async function generateMetadata({
 
   return createPageMetadata({
     path: `/blog/${slug}`,
-    title: `${metaTitle} | Velvence® Blog`,
+    title: `${metaTitle}`,
     description: metaDescription,
     alternates: {
       canonical: `${baseUrl}/blog/${slug}`,
