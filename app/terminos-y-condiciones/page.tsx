@@ -7,6 +7,7 @@ export const metadata = createPageMetadata({
   title: "Velvence® | Términos y Condiciones",
   description:
     "Consulta los términos y condiciones de uso de los servicios de Velvence, clínica de blanqueamiento dental en Querétaro.",
+  robots: "noindex, nofollow",
   openGraph: {
     title: "Velvence® | Términos y Condiciones",
     description:
