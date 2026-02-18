@@ -215,7 +215,8 @@ export default function AgendarCitaClient() {
               {/* Disclaimer */}
               <p className="text-xs text-gray-500 leading-relaxed">
                 Al enviar este formulario, aceptas nuestros{" "}
-                <Link href="/terminos-y-condiciones">Términos y Condiciones</Link> y el Aviso de Privacidad, y autorizas
+                <Link href="/terminos-y-condiciones" className="underline underline-offset-2 hover:text-primary-dark transition-colors">Términos y Condiciones</Link> y el{" "}
+                <Link href="/aviso-de-privacidad" className="underline underline-offset-2 hover:text-primary-dark transition-colors">Aviso de Privacidad</Link>, y autorizas
                 el contacto por parte de Velvence para dar seguimiento a tu solicitud.
               </p>
             </form>

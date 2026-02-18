@@ -96,12 +96,12 @@ export function Footer() {
             <h4 className="text-primary-dark font-semibold text-lg mb-6">Enlaces</h4>
             <ul className="space-y-3">
               <li>
-                <Link   href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="/aviso-de-privacidad" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Aviso de privacidad
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-primary-dark transition text-sm">
+                <Link href="/terminos-y-condiciones" className="text-gray-600 hover:text-primary-dark transition text-sm">
                   Términos y condiciones
                 </Link>
               </li>
