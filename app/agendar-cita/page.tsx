@@ -3,12 +3,12 @@ import AgendarCitaClient from "./agendar-cita-client"
 
 export const metadata = createPageMetadata({
   path: "/agendar-cita",
-  title: "Velvence® | Agendar Cita",
+  title: "Agendar una cita | Velvence®",
   description:
-    "Agenda tu cita de blanqueamiento dental o limpieza profesional en Velvence. Clínicas en Querétaro y Estado de México.",
+    "Encuentra una clínica cerca de ti y reserva tu cita: Blanqueamiento dental, Limpieza dental profunda, desvanecer manchas blancas o una consulta de valoración. ",
   openGraph: {
-    title: "Velvence® | Agendar Cita",
-    description: "Reserva tu cita para blanqueamiento o limpieza dental profesional en cualquiera de nuestras clínicas.",
+    title: "Agendar una cita | Velvence®",
+    description: "Encuentra una clínica cerca de ti y reserva tu cita: Blanqueamiento dental, Limpieza dental profunda, desvanecer manchas blancas o una consulta de valoración.",
   },
 })
 

@@ -3,13 +3,13 @@ import { createPageMetadata } from "@/lib/metadata"
 
 export const metadata = createPageMetadata({
   path: "/contacto",
-  title: "Velvence® | Contacto",
+  title: "Resuelve tus dudas y consultas | Contacto Velvence®",
   description:
-    "Contacta con Velvence. Teléfono, email, ubicaciones en Querétaro y formulario de contacto. ¡Estamos listos para atenderte!",
+    "Ponte en contacto con nuestra clínica por teléfono, email o redes sociales.Ubica la sucursal más cerca de ti y envíanos tus consultas y dudas a través de nuestros medios de contacto.",
   openGraph: {
-    title: "Velvence® | Contacto",
+    title: "Resuelve tus dudas y consultas | Contacto Velvence®",
     description:
-      "Ponte en contacto con nuestra clínica por teléfono, email o redes sociales. Dos sucursales en Querétaro.",
+      "Ponte en contacto con nuestra clínica por teléfono, email o redes sociales.Ubica la sucursal más cerca de ti y envíanos tus consultas y dudas a través de nuestros medios de contacto.",
   },
 })
 

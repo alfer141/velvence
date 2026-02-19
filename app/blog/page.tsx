@@ -11,12 +11,12 @@ export const revalidate = 60 // Revalida cada 60 segundos como fallback
 
 export const metadata = createPageMetadata({
   path: "/blog",
-  title: "Velvence® | Blog",
+  title: "Datos y consejos útiles para tu salud bucal| Velvence®",
   description:
-    "Lee nuestro blog sobre salud bucal, blanqueamiento dental, tips de higiene y novedades en tecnología dental.",
+    "Descubre tips claros y prácticos para cuidar tu sonrisa todos los días. Mantén tus dientes sanos, lindos y con más brillo con hábitos simples.",
   openGraph: {
-    title: "Velvence® | Blog",
-    description: "Artículos y tips sobre salud bucal, blanqueamiento dental y cuidado de tus dientes.",
+    title: "Datos y consejos útiles para tu salud bucal| Velvence®",
+    description: "Descubre tips claros y prácticos para cuidar tu sonrisa todos los días. Mantén tus dientes sanos, lindos y con más brillo con hábitos simples.",
   },
 })
 
