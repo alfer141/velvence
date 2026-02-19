@@ -7,7 +7,6 @@ export const metadata = createPageMetadata({
   title: "Velvence® | Aviso de Privacidad",
   description:
     "Conoce el aviso de privacidad de Velvence. Información sobre el tratamiento y protección de tus datos personales.",
-  robots: "noindex, nofollow",
   openGraph: {
     title: "Velvence® | Aviso de Privacidad",
     description:
