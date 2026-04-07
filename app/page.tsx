@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/metadata"
+import { localBusinessSchema } from "@/lib/schema"
 import { Hero } from "@/components/sections/home/hero"
 import { FeaturesSection } from "@/components/sections/home/features-section"
 import { BeforeAfterGallery } from "@/components/sections/home/before-after-gallery"
@@ -18,6 +19,13 @@ export const metadata = createPageMetadata({
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {localBusinessSchema.map((schema) => (
+        <script
+          key={schema["@id"]}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Hero />
       <FeaturesSection />
       <BeforeAfterGallery />

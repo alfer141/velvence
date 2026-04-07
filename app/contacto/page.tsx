@@ -1,5 +1,6 @@
 import ContactoClientPage from "./contacto-client"
 import { createPageMetadata } from "@/lib/metadata"
+import { localBusinessSchema } from "@/lib/schema"
 
 export const metadata = createPageMetadata({
   path: "/contacto",
@@ -14,5 +15,16 @@ export const metadata = createPageMetadata({
 })
 
 export default function ContactoPage() {
-  return <ContactoClientPage />
+  return (
+    <>
+      {localBusinessSchema.map((schema) => (
+        <script
+          key={schema["@id"]}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <ContactoClientPage />
+    </>
+  )
 }

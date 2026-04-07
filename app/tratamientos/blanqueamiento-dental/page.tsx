@@ -1,6 +1,6 @@
 import BlanqueamientoPage from "./blanqueamiento-dental-client"
 import { createPageMetadata, baseUrl } from "@/lib/metadata"
-import Script from "next/script"
+import { localBusinessMarques, localBusinessAifa } from "@/lib/schema"
 
 export const metadata = createPageMetadata({
   path: "/tratamientos/blanqueamiento-dental",
@@ -44,31 +44,12 @@ const jsonLd = {
     name: "Pacientes que desean aclarar el tono de sus dientes, reducir manchas externas causadas por café, té, vino, tabaco y el amarillamiento natural. No apto para mujeres embarazadas o en período de lactancia. Manchas internas por ciertos medicamentos, traumatismos o endodoncia pueden tener resultados limitados; se realiza valoración previa para establecer expectativas realistas.",
   },
   recognizingAuthority: {
-    "@type": "Organization",
-    name: "Velvence",
-    url: baseUrl,
+    "@id": `${baseUrl}/#organization`,
   },
-  performer: {
-    "@type": "LocalBusiness",
-    name: "Velvence",
-    url: baseUrl,
-    telephone: "+5215521819153",
-    address: [
-      {
-        "@type": "PostalAddress",
-        addressLocality: "Querétaro",
-        addressRegion: "Querétaro",
-        addressCountry: "MX",
-        streetAddress: "Prol. Constituyentes",
-      },
-      {
-        "@type": "PostalAddress",
-        addressLocality: "Ojo de Agua",
-        addressRegion: "Estado de México",
-        addressCountry: "MX",
-      },
-    ],
-  },
+  performer: [
+    { "@id": localBusinessMarques["@id"] },
+    { "@id": localBusinessAifa["@id"] },
+  ],
   offers: {
     "@type": "Offer",
     price: "5499",
@@ -81,11 +62,11 @@ const jsonLd = {
 export default function BlanqueamientoLanding() {
   return (
     <>
-      <Script
-        id="blanqueamiento-jsonld"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([jsonLd, localBusinessMarques, localBusinessAifa]),
+        }}
       />
       <BlanqueamientoPage />
     </>
