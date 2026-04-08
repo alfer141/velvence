@@ -9,6 +9,7 @@ import { Calendar, User, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Script from "next/script"
 import type { Metadata } from "next"
+import { organizationSchema } from "@/lib/schema"
 
 // Query para obtener un post específico
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
@@ -166,8 +167,50 @@ export default async function PostPage({
     )
   }
 
+  // Schema Article/BlogPosting para SEO
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.seo?.metaTitle || post.title,
+    description: post.seo?.metaDescription || post.body?.[0]?.children?.[0]?.text?.substring(0, 160) || post.title,
+    image: post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : `${baseUrl}/og-image.png`,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    url: `${baseUrl}/blog/${slug}`,
+    author: post.author ? {
+      "@type": "Person",
+      name: post.author.name,
+    } : {
+      "@type": "Organization",
+      name: "Velvence",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Velvence",
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/velvence-icon.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/blog/${slug}`,
+    },
+    isPartOf: {
+      "@id": organizationSchema["@id"],
+    },
+  }
+
   return (
     <>
+      {/* Schema BlogPosting */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
+      />
+
       {/* Nav con variante static */}
       <Header variant="static" />
 
