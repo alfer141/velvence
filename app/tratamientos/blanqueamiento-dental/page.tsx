@@ -59,13 +59,76 @@ const jsonLd = {
   },
 }
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿El blanqueamiento dental duele?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "En la mayoría de los casos, el blanqueamiento dental con luz no duele. Lo que algunas personas sienten es una sensación temporal (como cosquilleo o leve sensibilidad), especialmente si ya tenían sensibilidad previa. En Velvence hacemos una valoración previa de encías y esmalte, y ajustamos el protocolo para que el tratamiento sea cómodo y seguro.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿El blanqueamiento dental deja los dientes sensibles?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Puede haber sensibilidad dental leve y temporal, pero no le ocurre a todos. Cuando aparece, suele durar de unas horas hasta 24–48 horas. Por eso la clave es hacerlo de forma profesional: evaluamos tu caso y te damos recomendaciones de cuidado para minimizarla.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿En cuánto tiempo veo resultados y cuántos tonos aclara?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los resultados son inmediatos: sales de tu cita con una sonrisa visiblemente más blanca. En Velvence el objetivo del protocolo es lograr de 5 a 8 tonos en una sola cita según diagnóstico y tipo de mancha.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto duran los resultados del aclarado dental?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La duración depende de hábitos y del tipo de mancha, pero en promedio el resultado puede mantenerse meses e incluso más tiempo con buenos cuidados. La mejor forma de prolongarlo es mantener una buena higiene, realizar limpiezas profesionales periódicas y seguir las recomendaciones posteriores a tu sesión.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué manchas sí se quitan y cuáles no?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El blanqueamiento dental funciona muy bien para manchas externas (por café, té, vino, tabaco y pigmentos) y para el amarillamiento natural con el tiempo. Hay manchas más complejas que pueden responder menos, como algunas manchas internas (por ciertos medicamentos, traumatismos o dientes con endodoncia).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Necesito limpieza dental antes del blanqueamiento?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí, en la mayoría de los casos se recomienda una limpieza dental profesional antes del blanqueamiento. Remover placa, biofilm y manchas superficiales ayuda a que el gel actúe de forma más uniforme y los resultados sean mejores.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuál es la diferencia entre la tecnología de blanqueamiento dental de Velvence y el blanqueamiento tradicional?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La tecnología Philips Zoom utiliza una luz LED avanzada que activa el gel blanqueador de forma más rápida y uniforme, logrando dientes hasta varios tonos más blancos en menos tiempo y con menor sensibilidad. El blanqueamiento tradicional no cuenta con esta activación controlada, por lo que los resultados suelen ser más lentos y menos uniformes.",
+      },
+    },
+  ],
+}
+
 export default function BlanqueamientoLanding() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([jsonLd, localBusinessMarques, localBusinessAifa]),
+          __html: JSON.stringify([jsonLd, faqSchema, localBusinessMarques, localBusinessAifa]),
         }}
       />
       <BlanqueamientoPage />

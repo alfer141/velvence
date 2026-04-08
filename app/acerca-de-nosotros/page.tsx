@@ -1,5 +1,6 @@
 import { createPageMetadata } from "@/lib/metadata"
 import { AboutUsClientPage } from "./page.client"
+import { organizationSchema, localBusinessMarques, localBusinessAifa } from "@/lib/schema"
 
 export const metadata = createPageMetadata({
   path: "/acerca-de-nosotros",
@@ -13,5 +14,15 @@ export const metadata = createPageMetadata({
 })
 
 export default function AboutUsPage() {
-  return <AboutUsClientPage />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([organizationSchema, localBusinessMarques, localBusinessAifa]),
+        }}
+      />
+      <AboutUsClientPage />
+    </>
+  )
 }
