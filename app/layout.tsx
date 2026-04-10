@@ -4,6 +4,7 @@ import Script from "next/script"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { organizationSchema } from "@/lib/schema"
 import "./globals.css"
 
@@ -92,18 +93,7 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-FQS78C697L"
           strategy="afterInteractive"
         />
-        <Script
-          id="ga4"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-FQS78C697L');
-            `,
-          }}
-        />
+    
         {/* MailerLite Universal (Next.js optimized) */}
         <Script
           id="mailerlite-stub"
@@ -127,6 +117,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights/>
+        <GoogleAnalytics gaId="G-FQS78C697L" />
       </body>
     </html>
   )
