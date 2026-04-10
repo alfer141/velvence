@@ -41,20 +41,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: "/velvence-icon.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/velvence-icon.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/velvence-icon.svg",
-        type: "image/svg+xml",
-      },
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/velvence-icon.png", sizes: "any" },
     ],
     apple: "/apple-icon.png",
+    shortcut: "/favicon.png",
   },
 }
 
