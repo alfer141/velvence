@@ -5,7 +5,7 @@ import { PortableText } from "@portabletext/react"
 import { urlFor } from "@/lib/sanity.image"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { Calendar, User, ArrowLeft } from "lucide-react"
+import { Calendar, User, ArrowLeft, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import Script from "next/script"
 import type { Metadata } from "next"
@@ -18,6 +18,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   mainImage,
   body,
   seo,
+  faq,
   "author": author->{name, image},
   "categories": categories[]->title
 }`
@@ -52,6 +53,73 @@ const components = {
         </figure>
       )
     },
+    simpleTable: ({ value }: any) => {
+      const rows: { cells?: string[] }[] = value?.rows ?? []
+      if (!rows.length) return null
+      const hasHeader = value?.hasHeader !== false
+      const headerRow = hasHeader ? rows[0] : null
+      const bodyRows = hasHeader ? rows.slice(1) : rows
+
+      return (
+        <figure className="my-8 overflow-x-auto">
+          <table className="w-full border-collapse text-left text-sm">
+            {value?.caption && (
+              <caption className="caption-bottom pt-3 text-sm italic text-gray-600">
+                {value.caption}
+              </caption>
+            )}
+            {headerRow?.cells?.length ? (
+              <thead>
+                <tr className="border-b-2 border-gray-300">
+                  {headerRow.cells.map((cell, i) => (
+                    <th key={i} scope="col" className="px-4 py-3 font-medium text-primary">
+                      {cell}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+            ) : null}
+            <tbody>
+              {bodyRows.map((row, rIdx) => (
+                <tr key={rIdx} className="border-b border-gray-200 last:border-b-0">
+                  {row.cells?.map((cell, cIdx) => (
+                    <td key={cIdx} className="px-4 py-3 text-gray-700 align-top">
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </figure>
+      )
+    },
+  },
+}
+
+// Convierte Portable Text de una respuesta FAQ a texto plano para JSON-LD
+function portableTextToPlain(blocks: any[] = []): string {
+  return blocks
+    .map((block) => {
+      if (block._type !== "block" || !block.children) return ""
+      return block.children.map((child: any) => child.text).join("")
+    })
+    .filter(Boolean)
+    .join("\n\n")
+    .trim()
+}
+
+// Componentes minimos para renderizar la respuesta del FAQ
+const faqAnswerComponents = {
+  block: {
+    normal: ({ children }: any) => <p className="mb-3 last:mb-0 text-gray-700 leading-relaxed">{children}</p>,
+  },
+  marks: {
+    link: ({ children, value }: any) => (
+      <a href={value.href} target="_blank" rel="noopener noreferrer" className="text-[#a2b71c] hover:underline">
+        {children}
+      </a>
+    ),
   },
 }
 
@@ -167,6 +235,28 @@ export default async function PostPage({
     )
   }
 
+  // Normaliza FAQ y prepara Schema FAQPage si hay items
+  const faqItems: { question: string; answer: any[] }[] = Array.isArray(post?.faq?.items)
+    ? post.faq.items.filter((i: any) => i?.question && Array.isArray(i?.answer) && i.answer.length > 0)
+    : []
+  const faqTitle: string = post?.faq?.title || "Preguntas frecuentes"
+
+  const faqSchema =
+    faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: portableTextToPlain(item.answer),
+            },
+          })),
+        }
+      : null
+
   // Schema Article/BlogPosting para SEO
   const articleSchema = {
     "@context": "https://schema.org",
@@ -210,6 +300,16 @@ export default async function PostPage({
           __html: JSON.stringify(articleSchema),
         }}
       />
+
+      {/* Schema FAQPage (solo si hay FAQs) */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
+      )}
 
       {/* Nav con variante static */}
       <Header variant="static" />
@@ -293,6 +393,33 @@ export default async function PostPage({
           <div className="prose prose-lg max-w-none">
             <PortableText value={post.body} components={components} />
           </div>
+
+          {/* FAQ (debajo del articulo) */}
+          {faqItems.length > 0 && (
+            <section className="mt-16" aria-labelledby="faq-title">
+              <h2 id="faq-title" className="text-3xl font-medium text-primary mb-6">
+                {faqTitle}
+              </h2>
+              <div className="divide-y divide-gray-200 border-t border-b border-gray-200">
+                {faqItems.map((item, idx) => (
+                  <details key={idx} className="group py-5">
+                    <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+                      <h3 className="text-lg font-medium text-primary leading-snug">
+                        {item.question}
+                      </h3>
+                      <ChevronDown
+                        className="mt-1 h-5 w-5 shrink-0 text-gray-500 transition-transform group-open:rotate-180"
+                        aria-hidden="true"
+                      />
+                    </summary>
+                    <div className="mt-3 pr-8">
+                      <PortableText value={item.answer} components={faqAnswerComponents} />
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Newsletter (segmento blog) */}
           <section className="mt-16">
