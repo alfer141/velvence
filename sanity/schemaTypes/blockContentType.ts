@@ -1,5 +1,5 @@
-import {defineType, defineArrayMember} from 'sanity'
-import {ImageIcon} from '@sanity/icons'
+import {defineType, defineArrayMember, defineField} from 'sanity'
+import {ImageIcon, ThLargeIcon} from '@sanity/icons'
 
 /**
  * This is the schema type for block content used in the post document type
@@ -71,6 +71,68 @@ export const blockContentType = defineType({
           title: 'Alternative Text',
         }
       ]
+    }),
+    // Tabla sencilla: filas con celdas de texto + headers opcionales
+    defineArrayMember({
+      type: 'object',
+      name: 'simpleTable',
+      title: 'Tabla',
+      icon: ThLargeIcon,
+      fields: [
+        defineField({
+          name: 'caption',
+          title: 'Titulo / Caption (opcional)',
+          type: 'string',
+          description: 'Se muestra como <caption> debajo del titulo de la tabla. Util para SEO y accesibilidad.',
+        }),
+        defineField({
+          name: 'hasHeader',
+          title: 'La primera fila es encabezado',
+          type: 'boolean',
+          initialValue: true,
+        }),
+        defineField({
+          name: 'rows',
+          title: 'Filas',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              name: 'row',
+              title: 'Fila',
+              fields: [
+                defineField({
+                  name: 'cells',
+                  title: 'Celdas',
+                  type: 'array',
+                  of: [{type: 'string'}],
+                  options: {layout: 'tags'},
+                  description:
+                    'Agrega una celda por columna. Usa el mismo numero de celdas en todas las filas.',
+                }),
+              ],
+              preview: {
+                select: {cells: 'cells'},
+                prepare({cells}) {
+                  const joined = Array.isArray(cells) ? cells.join(' | ') : ''
+                  return {title: joined || 'Fila vacia'}
+                },
+              },
+            }),
+          ],
+          validation: (rule) => rule.min(1).error('Agrega al menos una fila.'),
+        }),
+      ],
+      preview: {
+        select: {caption: 'caption', rows: 'rows'},
+        prepare({caption, rows}) {
+          const count = Array.isArray(rows) ? rows.length : 0
+          return {
+            title: caption || 'Tabla',
+            subtitle: `${count} fila${count === 1 ? '' : 's'}`,
+          }
+        },
+      },
     }),
   ],
 })

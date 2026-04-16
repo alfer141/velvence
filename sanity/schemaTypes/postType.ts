@@ -78,6 +78,76 @@ export const postType = defineType({
       name: 'body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'faq',
+      title: 'Preguntas Frecuentes (FAQ)',
+      type: 'object',
+      description:
+        'Se renderiza debajo del articulo e inyecta Schema.org FAQPage para SEO.',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Titulo de la seccion',
+          type: 'string',
+          description: 'Ej: "Preguntas frecuentes" o un titulo especifico al tema del articulo.',
+          initialValue: 'Preguntas frecuentes',
+        }),
+        defineField({
+          name: 'items',
+          title: 'Preguntas',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              name: 'faqItem',
+              title: 'Pregunta',
+              fields: [
+                defineField({
+                  name: 'question',
+                  title: 'Pregunta',
+                  type: 'string',
+                  validation: (rule) => rule.required().min(5).max(300),
+                }),
+                defineField({
+                  name: 'answer',
+                  title: 'Respuesta',
+                  type: 'array',
+                  of: [
+                    defineArrayMember({
+                      type: 'block',
+                      styles: [{title: 'Normal', value: 'normal'}],
+                      lists: [{title: 'Bullet', value: 'bullet'}],
+                      marks: {
+                        decorators: [
+                          {title: 'Strong', value: 'strong'},
+                          {title: 'Emphasis', value: 'em'},
+                        ],
+                        annotations: [
+                          {
+                            title: 'URL',
+                            name: 'link',
+                            type: 'object',
+                            fields: [{title: 'URL', name: 'href', type: 'url'}],
+                          },
+                        ],
+                      },
+                    }),
+                  ],
+                  validation: (rule) => rule.required(),
+                }),
+              ],
+              preview: {
+                select: {title: 'question'},
+              },
+            }),
+          ],
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {
