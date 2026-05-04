@@ -207,16 +207,16 @@ export default function BlanqueamientoDentalPage() {
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">Blanqueamiento dental</h1>
             <h2 className="text-xl mb-4">Una sonrisa luminosa con un aclarado dental de nueva generación</h2>
             <p className="text-lg text-secondary-light leading-relaxed max-w-xl opacity-70">
-              Transforma tu sonrisa con un blanqueamiento dental con láser. Nuestra tecnología 
-              es capaz de aclarar el tono de tus dientes de forma segura y efectiva en una sola 
-              sesión, ayudando a eliminar manchas dentales profundas causadas por alimentos y hábitos 
-              del día a día. Cómo resultado podrás lucir una sonrisa más luminosa y dientes 
+              Transforma tu sonrisa con un blanqueamiento dental con láser. Nuestra tecnología
+              es capaz de aclarar el tono de tus dientes de forma segura y efectiva en una sola
+              sesión, ayudando a eliminar manchas dentales profundas causadas por alimentos y hábitos
+              del día a día. Cómo resultado podrás lucir una sonrisa más luminosa y dientes
               visiblemente más blancos al instante.
             </p>
             <div className="flex flex-wrap items-center gap-6 py-4">
               <div className="flex items-baseline gap-3">
                 <span className="text-sm text-secondary-light line-through">$ 6,200mxn</span>
-                <span className="text-3xl font-medium text-accent">$5,499</span>
+                <span className="text-3xl font-medium text-accent">$5,900 MXN</span>
               </div>
               <div className="h-10 w-px bg-white/20" />
               <div className="text-sm">
@@ -275,18 +275,18 @@ export default function BlanqueamientoDentalPage() {
               className="space-y-6"
             >
               <p className="text-gray-600 leading-relaxed">
-                El protocolo de blanqueamiento dental en Velvence está diseñado para que tus dientes 
-                se vean de 5 a 8 tonos más blancos en una sesión. 
-                Este tratamiento de aclarado dental actúa sobre las manchas profundas y pigmentos 
-                que hacen lucir tus dientes amarillos u opacos, logrando un desmanchamiento dental 
-                altamente efectivo que mejora la apariencia de tu sonrisa sin comprometer la salud 
+                El protocolo de blanqueamiento dental en Velvence está diseñado para que tus dientes
+                se vean de 5 a 8 tonos más blancos en una sesión.
+                Este tratamiento de aclarado dental actúa sobre las manchas profundas y pigmentos
+                que hacen lucir tus dientes amarillos u opacos, logrando un desmanchamiento dental
+                altamente efectivo que mejora la apariencia de tu sonrisa sin comprometer la salud
                 del esmalte o causar sesibilidad dental.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental con 
-                láser, que permite obtener resultados visibles desde la primera sesión. Este 
-                procedimiento se realiza en el consultorio y se adapta de manera personalizada, 
-                priorizando tu comodidad, el cuidado de tus dientes y un resultado natural que 
+                Trabajamos con tecnología Philips Zoom, un sistema de blanqueamiento dental con
+                láser, que permite obtener resultados visibles desde la primera sesión. Este
+                procedimiento se realiza en el consultorio y se adapta de manera personalizada,
+                priorizando tu comodidad, el cuidado de tus dientes y un resultado natural que
                 se integre de forma armónica con tu sonrisa.
               </p>
               <Link
@@ -515,7 +515,7 @@ export default function BlanqueamientoDentalPage() {
           </div>
         </div>
       </section>
-      
+
       <BeforeAfterGallery />
 
       {/* Features Cards with LED Icons */}
@@ -550,7 +550,7 @@ export default function BlanqueamientoDentalPage() {
           <motion.div {...fadeInUp} className="space-y-6">
             <p className="text-sm font-medium text-primary opacity-75">[Preguntas frecuentes]</p>
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-primary-dark">
-              Las dudas más comunes de nuestros pacientes sobre el aclarado dental. 
+              Las dudas más comunes de nuestros pacientes sobre el aclarado dental.
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Si nuestras preguntas frecuentes no resuelven tu duda, envíanos un mensaje y con gusto te brindamos atención personalizada.

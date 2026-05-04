@@ -52,7 +52,7 @@ const jsonLd = {
   ],
   offers: {
     "@type": "Offer",
-    price: "5499",
+    price: "5900",
     priceCurrency: "MXN",
     url: `${baseUrl}/agendar-cita`,
     availability: "https://schema.org/InStock",
